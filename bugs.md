@@ -13,7 +13,7 @@
 
 ## C Compiler PRO-68K ver2.1 NewKit
 * INCLUDE\TIME.Hで`CLOCKS_PER_SEC`が定義されていない。
-  * 代わりにINCLUDE\STDDEF.H `CLOCKS_PAR_SEC`が定義されている。
+  * 代わりにINCLUDE\STDDEF.Hで`CLOCKS_PAR_SEC`が定義されている。
 
 ----
 # 2000年問題
@@ -27,7 +27,7 @@ bup -l/-lm でファイルの日付の表示が乱れる。パッチあり。
 ファイルの日付の表示が乱れる。パッチあり。
 
 ## EDR-plus version 2.0.1(yakko-chan)
-セレクタ画面のファイルの日付の表示が乱れる。
+セレクタ画面のファイルの日付の表示が乱れる。パッチあり。
 
 ## lhv version 0.95.2
 セレクタ画面のファイルの日付の表示が乱れる。パッチあり。
