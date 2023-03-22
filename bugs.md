@@ -1,9 +1,9 @@
 # 不具合
 
 ## cpupower.r Ver0.1
-実行時にMFP TCDR($e88023; Timer-Cデータレジスタ)の値を本来の値200から256相当に書き換えるが、
+* 実行時にMFP TCDR($e88023; Timer-Cデータレジスタ)の値を本来の値200から256相当に書き換えるが、
 終了時に戻さないためTimer-C割り込みの間隔が1.28倍に変わってしまう。  
-カーソル点滅速度やSystem Informationのprocessor performance値に影響する。
+  * カーソル点滅速度やSystem Informationのprocessor performance値に影響する。
 
 参考：[@kg68k/1492793567512711170](https://twitter.com/kg68k/status/1492793567512711170)
 
@@ -11,7 +11,11 @@
 * リモートファイルシステム上でMakefileを読み込めない。
 * リモートファイルシステム上で別のディレクトリを同一視してしまう。
 
+## C Compiler PRO-68K ver2.1 NewKit
+* INCLUDE\TIME.Hで`CLOCKS_PER_SEC`が定義されていない。
+  * 代わりにINCLUDE\STDDEF.H `CLOCKS_PAR_SEC`が定義されている。
 
+----
 # 2000年問題
 
 この節では修正パッチや改造版があるソフトウェアも掲載しています。
