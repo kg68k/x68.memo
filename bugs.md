@@ -2,17 +2,18 @@
 
 ## cpupower.r Ver0.1
 * 実行時にMFP TCDR($e88023; Timer-Cデータレジスタ)の値を本来の値200から256相当に書き換えるが、
-終了時に戻さないためTimer-C割り込みの間隔が1.28倍に変わってしまう。  
+終了時に戻さないためTimer-C割り込みの間隔が1.28倍に変わってしまう。
+([@kg68k/1492793567512711170](https://twitter.com/kg68k/status/1492793567512711170))
   * カーソル点滅速度やSystem Informationのprocessor performance値に影響する。
-
-参考：[@kg68k/1492793567512711170](https://twitter.com/kg68k/status/1492793567512711170)
 
 ## GNU Make version 3.79 human68k-1.2
 * リモートファイルシステム上でMakefileを読み込めない。
 * リモートファイルシステム上で別のディレクトリを同一視してしまう。
 
 ## C Compiler PRO-68K ver2.1 NewKit
+* STUDIO KAMADA &gt; X680x0 のメーカー純正ソフトウェアの不具合について &gt; [4. XC ライブラリの不具合](https://stdkmd.net/bugsx68k/#xclib)
 * INCLUDE\TIME.Hで`CLOCKS_PER_SEC`が定義されていない。
+([@towser_meow/1638474969494724609](https://twitter.com/towser_meow/status/1638474969494724609))
   * 代わりにINCLUDE\STDDEF.Hで`CLOCKS_PAR_SEC`が定義されている。
 
 ----
