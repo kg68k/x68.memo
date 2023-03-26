@@ -12,9 +12,14 @@
 
 ## C Compiler PRO-68K ver2.1 NewKit
 * STUDIO KAMADA &gt; X680x0 のメーカー純正ソフトウェアの不具合について &gt; [4. XC ライブラリの不具合](https://stdkmd.net/bugsx68k/#xclib)
-* INCLUDE\TIME.Hで`CLOCKS_PER_SEC`が定義されていない。
+* INCLUDE\\TIME.Hで`CLOCKS_PER_SEC`が定義されていない。
 ([@towser_meow/1638474969494724609](https://twitter.com/towser_meow/status/1638474969494724609))
-  * 代わりにINCLUDE\STDDEF.Hで`CLOCKS_PAR_SEC`が定義されている。
+  * 代わりにINCLUDE\\STDDEF.Hで`CLOCKS_PAR_SEC`が定義されている。
+
+## RAM DISK DRIVER 「GRAD.r」 Version 1.30
+* DOS \_MALLOC2でメモリを確保しているプロセスがあるときにGRAD.rを`-g -b`オプションで登録しようとするとエラー終了するが、
+その際にグラフィック画面の使用モード(IOCS \_TGUSEMD)が「1:システムが使用中」に変更されてしまう。
+
 
 ----
 # 2000年問題
