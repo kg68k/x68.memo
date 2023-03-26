@@ -43,7 +43,7 @@ C言語の聖典的な本。
 
 
 ## Programming languages — C (ワーキングドラフト)
-[https://www.open-std.org/jtc1/sc22/wg14/www/projects](Project status and milestones)  
+[ISO/IEC JTC1/SC22/WG14 - C](https://www.open-std.org/jtc1/sc22/wg14/)  
 n3054.pdf
 
 C言語の次期バージョンC2x(C23)のドラフト文書。  
