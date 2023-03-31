@@ -1,5 +1,7 @@
 # X68000 Z
 
+* [よくある質問](faq.md)
+
 ## 機種一覧
 * X68000 Z HACKER'S EDITION
 * X68000 Z COMPLETE SET PROTOTYPE
