@@ -7,11 +7,15 @@
 
 ## グラディウスと超連射68kが起動できません。
 
-[マニュアル](https://www.zuiki.co.jp/x68000z/#support)を読んでください。
+[マニュアル](https://www.zuiki.co.jp/x68000z/#support)を読んで下さい。
 
 ## グラディウスと超連射68kのSDカードが空メディアです。
 
-[マニュアル](https://www.zuiki.co.jp/x68000z/#support)を読んでください。
+[マニュアル](https://www.zuiki.co.jp/x68000z/#support)を読んで下さい。
+
+## SDカードが認識されない。
+
+[ver.1.1.3](https://www.zuiki.co.jp/x68000z/forum/)にアップデートして下さい。
 
 
 ----
