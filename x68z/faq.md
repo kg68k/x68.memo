@@ -23,6 +23,13 @@
 
 (少なくとも現時点では)対応していません。
 
+## キーボードの一部のキーが正しく入力できません。
+
+キーボード底面のWin/X68スイッチをX68側に切り替えて下さい。  
+
+ESC、HOME、DEL、ROLL UP、ROLL DOWN、UNDO、INS、BREAK、CTRL、OPT.1、OPT.2
+がスイッチの影響を受けると思われます。
+
 
 ----
 goto [index](../README.md) / [x68000z](./README.md)
