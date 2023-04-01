@@ -36,6 +36,10 @@ ESC、HOME、DEL、ROLL UP、ROLL DOWN、UNDO、INS、BREAK、CTRL、OPT.1、OPT
 
 [ver.1.1.3](https://www.zuiki.co.jp/x68000z/forum/)にアップデートして下さい。
 
+SDカードをスロットから取り出し、挿し直してみて下さい。  
+MicroSD用変換アダプタを使用している場合は、アダプタからMicroSDカードを抜き差ししてからスロットに再挿入してみて下さい。
+
+
 ----
 ## その他
 
