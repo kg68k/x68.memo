@@ -1,6 +1,7 @@
 # X68000 Z
 
 * [よくある質問](faq.md)
+* [関連リンク](link.md)
 
 ## 機種一覧
 * X68000 Z HACKER'S EDITION
