@@ -7,8 +7,9 @@
   * カーソル点滅速度やSystem Informationのprocessor performance値に影響する。
 
 ## GNU Make version 3.79 human68k-1.2
-* リモートファイルシステム上でMakefileを読み込めない。
-* リモートファイルシステム上で別のディレクトリを同一視してしまう。
+* version 3.79 human68k-1.4で修正済み。ただし仮想ディレクトリまわりの処理がまだ完全には解決していないはず。
+  * ~~リモートファイルシステム上でMakefileを読み込めない。~~
+  * ~~リモートファイルシステム上で別のディレクトリを同一視してしまう。~~
 
 ## C Compiler PRO-68K ver2.1 NewKit
 * STUDIO KAMADA &gt; X680x0 のメーカー純正ソフトウェアの不具合について &gt; [4. XC ライブラリの不具合](https://stdkmd.net/bugsx68k/#xclib)
