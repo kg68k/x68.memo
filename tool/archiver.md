@@ -16,7 +16,7 @@ X680x0で使用されるアーカイバは、主にLHA、ZIP、tar(tar+gzip)が�
 * [桑島技研Online | kg68k.github.io](https://kg68k.github.io/)  
   Zip 2.3 human68k-1.2、UnZip 5.50 human68k-1.4
 * [zx.r - アーカイバ / ファイル圧縮 / ファイル差分 - ツール - ソフトウェアライブラリ - X68000 LIBRARY](http://retropc.net/x68000/software/tools/archiver/zx/)  
-  zx.r version 1.2
+  zx.r version 1.21
 
 
 ----
