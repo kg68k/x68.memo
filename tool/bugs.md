@@ -50,4 +50,4 @@ bup -l/-lm でファイルの日付の表示が乱れる。パッチあり。
 
 
 ----
-[goto index](README.md)
+goto [index](../README.md) / [ツール](./README.md)
