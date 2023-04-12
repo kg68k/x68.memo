@@ -11,5 +11,7 @@ X680x0に関するメモです。
 * [ツール](tool/README.md)
   * [不具合](tool/bugs.md)
   * [アーカイバ](tool/archiver.md)
-* プログラミング
-  * [参考資料](reference.md)
+* [プログラミング](prog/README.md)
+  * [参考資料](prog/reference.md)
+  * [Motorola発行マニュアルの正誤情報](prog/m68um_errata.md)
+
