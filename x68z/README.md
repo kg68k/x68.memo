@@ -14,6 +14,7 @@
 * モニターへの貸与のみ。
 * SoCはZUIKI Z7213(動作周波数は非公開)。
   * [復刻版ゲーム機でたどる半導体30年の進化：製品分解で探るアジアの新トレンド（46）（4/4 ページ） - EE Times Japan](https://eetimes.itmedia.co.jp/ee/articles/2005/29/news034_4.html)
+  * [復刻版ミニハードの中身とか | UnderConstruction](https://milkchoco.info/archives/4476)
 * キーボードLEDは白色。
 * マウスは付属しない。
 * β版オリジナルエミュレータ。
