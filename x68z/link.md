@@ -13,6 +13,7 @@
 ## 参考情報
 
 * [X68000Z230401](https://scrapbox.io/X68000Z230401/)
+* [Raspberry Pi Pico による X68000Z Keyboard LED 制御デモ](https://github.com/yunkya2/x68kzkbd-pico)
 
 
 ----
