@@ -22,8 +22,7 @@
 その際にグラフィック画面の使用モード(IOCS \_TGUSEMD)が「1:システムが使用中」に変更されてしまう。
 
 ## PD LIBC
-https://gist.github.com/kg68k/4b64e5de6b5be72492640b8ec41c46dd  
-LIBCとLIBCぱっちをまとめて書き連ねてるのでご了承願います。
+- [TODO](../prog/libc.md#todo)
 
 ----
 # 2000年問題
