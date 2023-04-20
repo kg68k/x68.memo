@@ -40,6 +40,8 @@ src\stdio\tempnam.c で xglob.h と同時にインクルードしているが、
 ### iocslib.hでTLINEPTRが定義されない(未確認、要調査)
 XC iocslib.h struct TLINEPTR
 
+### 未実装機能のヘッダファイル
+注意書きに「supprted」という脱字がある。
 
 ## 機能の追加改善
 
