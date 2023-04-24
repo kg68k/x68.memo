@@ -28,6 +28,31 @@
 * `DOS _KEEPPR`に渡す常駐バイト数にデータセクションの大きさが含まれておらず、またスタック範囲外の値を加算している。
   他の部分のコードの影響により結果として問題が顕在化しないことが多いと思われるが、場合(値)によっては異常動作を引き起こす。
 
+## HAS060.X version 3.09+89
+* HAS060.X - アセンブラ - プログラミング - ソフトウェアライブラリ - X68000 LIBRARY &gt;
+  [既知の不具合](http://retropc.net/x68000/software/develop/as/has060/knownbug.htm)
+* `-c4`オプションを指定すると、`ADDA.W #$8000,An`が`SUBA.W #$8000,An`に変更されてしまう。
+  [Xperiment68k - has060c4](https://github.com/kg68k/xperiment68k#has060c4)
+* ベースディスプレースメントにサイズを指定しないと「オフセットが範囲外です」になることがある。
+```
+.cpu 68020
+  moveq #0,d0
+  tst.b (foo,pc,d0.l)  ;Error: オフセットが範囲外です
+  tst.b (bar,pc,d0.l)
+
+; tst.b (foo,pc,d0.l)  ;barに.lをつければOK
+; tst.b (bar.l,pc,d0.l)
+
+; tst.b (foo+1,pc,d0.l)  ;foo+1またはfoo-1にしてもOK
+; tst.b (bar,pc,d0.l)
+  .dc $ff00
+
+  .ds.b 32755
+foo: .ds.b 9
+bar: .ds.b 1
+.end
+```
+
 
 ----
 # 2000年問題
