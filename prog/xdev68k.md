@@ -2,6 +2,29 @@
 https://github.com/yosshin4004/xdev68k
 
 
+----
+## IOCS _B_SUPERのdefer-pop対策
+`IOCS _B_SUPER`を使う関数に`"-fno-defer-pop"`属性を指定する。
+```c
+#include <stdio.h>
+
+extern int B_SUPER(int);
+
+void
+__attribute__((optimize("-fno-defer-pop")))
+foo(void)
+{
+  int usp = B_SUPER(0);
+
+  printf("%d\n", 1);
+  printf("%s\n", "test");
+  printf("%c\n", 'a');
+
+  B_SUPER(usp);
+}
+```
+
+----
 ## 事前定義されるマクロの一覧
 xdev68k(WSL/gcc 12.2.0)にて`m68k-elf-gcc -dM -E - < /dev/null` で出力したものです。  
 バージョンにより違いがあるかもしれないので注意してください。
