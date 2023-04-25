@@ -16,9 +16,6 @@ https://twitter.com/kg68k/status/1601896787207258112
 ### access()が失敗時にも成功を返す
 https://twitter.com/kg68k/status/1562037717994651649
 
-### 近代的なGCCでbuiltin-declaration-mismatchが起きる
-https://twitter.com/kamadox/status/1476568081996849153
-
 ### include/sys/xstdio.h `#define __sys_xglob_h__`
 インクルードガードが `__sys_xglob_h__` になっている。
 src\stdio\tempnam.c で xglob.h と同時にインクルードしているが、xstdio.h
@@ -59,6 +56,16 @@ XC iocslib.h struct TLINEPTR
 
 ### getexecname(): 実行ファイルのフルパス名を返す
 https://twitter.com/kg68k/status/1610270055765520384
+
+
+## xdev68k対応
+
+### vfprintf()などでbuiltin-declaration-mismatch警告が発生する
+https://twitter.com/kamadox/status/1476568081996849153
+
+### flexible array memberをGCCかつC99未満の場合のみ`[0]`と記述する
+https://twitter.com/kg68k/status/1603411122329190401
+
 
 ## 未確認、要調査
 
