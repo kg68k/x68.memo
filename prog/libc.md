@@ -40,6 +40,10 @@ XC iocslib.h struct TLINEPTR
 ### 未実装機能のヘッダファイル
 注意書きに「supprted」という脱字がある。
 
+### sys/dos.hのstruct _dpbptrのメンバ`id`が`ide`になっている。
+リファレンスは`id`となっており、またXCとの互換が必要なため、単なる誤字。
+
+
 ## 機能の追加改善
 
 ### C23に対応(需要のあるものから)
