@@ -53,6 +53,11 @@ bar: .ds.b 1
 .end
 ```
 
+## Pure PASCAL Compiler v1.01
+* DEKOのアヤシいお部屋。 &gt; ぴゅあぱすかる。 &gt;
+  [既知の問題 (ver 1.01)](https://ht-deko.com/pure.html#%E6%97%A2%E7%9F%A5%E3%81%AE%E5%95%8F%E9%A1%8C-ver-101)
+
+
 
 ----
 # 2000年問題
