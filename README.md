@@ -31,6 +31,7 @@ X680x0に関するメモです。
 * MAS「鱒」(MADRV用のMusic file selecter)
 * cgcopy.r
 * dskbench.x v0.45の正規書庫
+* mt32pi.x
 * SRAMに書き込みを行うフロッピーディスク用IPLに関する情報
 * その他ROMや拡張ボードの情報
 
