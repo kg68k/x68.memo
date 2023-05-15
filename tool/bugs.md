@@ -57,7 +57,10 @@ bar: .ds.b 1
 * DEKOのアヤシいお部屋。 &gt; ぴゅあぱすかる。 &gt;
   [既知の問題 (ver 1.01)](https://ht-deko.com/pure.html#%E6%97%A2%E7%9F%A5%E3%81%AE%E5%95%8F%E9%A1%8C-ver-101)
 
-
+## ZMSC3LIB Version 0.01
+* スーパーバイザモードで`zm_check_zmsc()` (ZMCHECKZMSC.HAS)を呼び出すとアドレスエラーが発生する。
+  * スーパーバイザになるための`IOCS _B_SUPER`の返り値を見てユーザーモードに戻るための`_B_SUPER`を省略しなければならないが、
+    その処理が抜けているため。
 
 ----
 # 2000年問題
