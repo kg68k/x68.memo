@@ -63,14 +63,21 @@ bar: .ds.b 1
     その処理が抜けているため。
 
 ## Z-MUSIC Ver.3.02C
-* ZMC3.X
+* ZMC.X
   * 上限下限あり8ビット値の配列で、値の直後の2連続セパレータが単独のセパレータとして解釈されてしまう。
     ([@kg68k/1482025079017926658](https://twitter.com/kg68k/status/1482025079017926658))
   * 上限下限あり16ビット値の配列で、上限値・下限値が正しく適用されないことがある。
   ([@kg68k/1482027532736245763](https://twitter.com/kg68k/status/1482027532736245763))
+  * `.FM_TUNE_SETUP`をint16_tではなくint8_tとしてコンパイルしてしまう。
+  ([@arith_rose/1481388558246051842](https://twitter.com/arith_rose/status/1481388558246051842))
 * 未検証
   * https://twitter.com/T_Forth_3/status/1630378141385654272
   * https://twitter.com/T_Forth_3/status/1630425279058542592
+  * mpcm.x非常駐時に`zm_se_adpcm1`でADPCMが再生されない。
+    ([@DD_samidare_kai/1662447722979532801](https://twitter.com/DD_samidare_kai/status/1662447722979532801))  
+    `se_mode`をセットして`adpcmout:`を呼ぶ → `adpcm_end:`で`se_mode`がセットされているためDMAを停止しない、という動作が影響？
+* マニュアル(ZM302_M.LZH)
+  * ZM4.MAN - `.FM_TUNE_SETUP`、`.ADPCM_TUNE_SETUP`のt1～t128の値の上限が+32768と書かれている(本文は正しい)。
 
 
 ----
