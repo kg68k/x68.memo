@@ -1,5 +1,8 @@
 # 不具合
 
+## PD LIBC
+* [TODO](../prog/libc.md#todo)
+
 ## cpupower.r Ver0.1
 * 実行時にMFP TCDR($e88023; Timer-Cデータレジスタ)の値を本来の値200から256相当に書き換えるが、
 終了時に戻さないためTimer-C割り込みの間隔が1.28倍に変わってしまう。
@@ -20,9 +23,6 @@
 ## RAM DISK DRIVER 「GRAD.r」 Version 1.30
 * DOS \_MALLOC2でメモリを確保しているプロセスがあるときにGRAD.rを`-g -b`オプションで登録しようとするとエラー終了するが、
 その際にグラフィック画面の使用モード(IOCS \_TGUSEMD)が「1:システムが使用中」に変更されてしまう。
-
-## PD LIBC
-* [TODO](../prog/libc.md#todo)
 
 ## X68k RCD: RC play driver v3.01q
 * `DOS _KEEPPR`に渡す常駐バイト数にデータセクションの大きさが含まれておらず、またスタック範囲外の値を加算している。
@@ -78,6 +78,14 @@ bar: .ds.b 1
     `se_mode`をセットして`adpcmout:`を呼ぶ → `adpcm_end:`で`se_mode`がセットされているためDMAを停止しない、という動作が影響？
 * マニュアル(ZM302_M.LZH)
   * ZM4.MAN - `.FM_TUNE_SETUP`、`.ADPCM_TUNE_SETUP`のt1～t128の値の上限が+32768と書かれている(本文は正しい)。
+
+## こ-ＢＡＳＩＣ ver.0.01 (H8/11/11 版)
+* kofunc.docの
+  ```
+  DrawCardMono( wno;int, x;int, y;int, num;int, card;int )
+  ```
+  の関数名は`DrawMonoCard`が正しい。
+  ([@ShirohSuzuki/1672859593654022146](https://twitter.com/ShirohSuzuki/status/1672859593654022146))
 
 
 ----
