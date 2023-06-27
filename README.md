@@ -34,6 +34,7 @@ X680x0に関するメモです。
 * cgcopy.r
 * dskbench.x v0.45の正規書庫
 * mt32pi.x
+* Crt_mode select utility (1989/12/24) by ねこ
 * SRAMに書き込みを行うフロッピーディスク用IPLに関する情報
 * その他ROMや拡張ボードの情報
 
