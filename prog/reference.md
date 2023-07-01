@@ -45,7 +45,7 @@ C言語の聖典的な本。
 
 ## Programming languages — C (ワーキングドラフト)
 [ISO/IEC JTC1/SC22/WG14 - C](https://www.open-std.org/jtc1/sc22/wg14/)  
-n3054.pdf
+n3096.pdf
 
 C言語の次期バージョンC2x(C23)のドラフト文書。  
 xdev68kやelf2x68kの登場で最新のC言語が使えるようになったので読んでおくと良い。
