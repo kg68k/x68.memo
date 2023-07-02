@@ -4,13 +4,17 @@
 # M680x0
 
 ## 68000 Family Programmer's Reference Manual
-[Low Cost 32-Bit Microprocessor (Including HC000, HC001, EC000 and SEC000) | NXP Semiconductors](https://www.nxp.com/products/processors-and-microcontrollers/legacy-mpu-mcus/32-bit-coldfire-mcus-mpus/68k-processors-legacy/m680x0/low-cost-32-bit-microprocessor-including-hc000-hc001-ec000-and-sec000:MC68000)  
-M68000PRM.pdf
+* [Low Cost 32-Bit Microprocessor (Including HC000, HC001, EC000 and SEC000) | NXP Semiconductors](https://www.nxp.com/products/processors-and-microcontrollers/legacy-mpu-mcus/32-bit-coldfire-mcus-mpus/68k-processors-legacy/m680x0/low-cost-32-bit-microprocessor-including-hc000-hc001-ec000-and-sec000:MC68000)  
+  M68000PRM.pdf
 
-Motorola公式の資料。たいていの場合はこれだけで足りる。  
+Motorola公式の資料(Freescaleを経て現在はNXPが管轄)。たいていの場合はこれだけで足りる。  
 ほかにもマニュアル類が多数置かれている。
 
-[正誤情報](m68um_errata.md)
+[非公式正誤表](m68um_errata.md)
+
+* [Superscalar 68K Microprocessor (Including the LC060 and EC060) | NXP Semiconductors](https://www.nxp.jp/products/no-longer-manufactured/superscalar-68k-microprocessorbr-including-the-lc060-and-ec060:MC68060)
+* [MC68HC901 - Multi-Function Peripheral | NXP Semiconductors](https://www.nxp.jp/products/no-longer-manufactured/mc68hc901-multi-function-peripheral:MC68901)
+
 
 ## 68000プログラマーズ・ハンドブック
 宍倉幸則、技術評論社、1986年。
