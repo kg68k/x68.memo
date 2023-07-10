@@ -9,10 +9,8 @@
 ([@kg68k/1492793567512711170](https://twitter.com/kg68k/status/1492793567512711170))
   * カーソル点滅速度やSystem Informationのprocessor performance値に影響する。
 
-## GNU Make version 3.79 human68k-1.2
-* version 3.79 human68k-1.4で修正済み。ただし仮想ディレクトリまわりの処理がまだ完全には解決していないはず。
-  * ~~リモートファイルシステム上でMakefileを読み込めない。~~
-  * ~~リモートファイルシステム上で別のディレクトリを同一視してしまう。~~
+## GNU Make version 3.79 human68k-1.4
+* 仮想ディレクトリまわりの処理がまだ完全には解決していないはず。
 
 ## C Compiler PRO-68K ver2.1 NewKit
 * STUDIO KAMADA &gt; X680x0 のメーカー純正ソフトウェアの不具合について &gt; [4. XC ライブラリの不具合](https://stdkmd.net/bugsx68k/#xclib)
@@ -28,11 +26,9 @@
 * `DOS _KEEPPR`に渡す常駐バイト数にデータセクションの大きさが含まれておらず、またスタック範囲外の値を加算している。
   他の部分のコードの影響により結果として問題が顕在化しないことが多いと思われるが、場合(値)によっては異常動作を引き起こす。
 
-## HAS060.X version 3.09+89
+## HAS060.X version 3.09+91
 * HAS060.X - アセンブラ - プログラミング - ソフトウェアライブラリ - X68000 LIBRARY &gt;
   [既知の不具合](http://retropc.net/x68000/software/develop/as/has060/knownbug.htm)
-* `-c4`オプションを指定すると、`ADDA.W #$8000,An`が`SUBA.W #$8000,An`に変更されてしまう。
-  [Xperiment68k - has060c4](https://github.com/kg68k/xperiment68k#has060c4)
 * ベースディスプレースメントにサイズを指定しないと「オフセットが範囲外です」になることがある。
 ```
 .cpu 68020
