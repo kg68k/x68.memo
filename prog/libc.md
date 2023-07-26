@@ -71,6 +71,12 @@ https://twitter.com/kamadox/status/1476568081996849153
 https://twitter.com/kg68k/status/1603411122329190401
 
 
+## 機能の削減
+
+* `gets()`
+* I/O接続のコプロセッサ(68881/68882)を直接制御する数学関数(マクロ `__DIRECT_IOFPU__`)
+* `_spawn()`でコマンドラインが256バイト以上かつ実行ファイルがHUPAIR準拠でない場合の強制実行、インダイレクト実行(環境変数 `HUGEARG`)
+
 ## 未確認、要調査
 
 ### xdev68k(gcc12)で変更になる挙動の影響調査
@@ -81,7 +87,7 @@ https://twitter.com/kg68k/status/1603411122329190401
 ## その他
 
 - 改造版の名称、ライセンスを再検討してリブート(2024年を目標)
-- Cコンパイラをxdev68k/gcc12に変更
+- Cコンパイラをxdev68k/gcc13に変更
 
 ----
 goto [index](../README.md) / [プログラミング](./README.md)
