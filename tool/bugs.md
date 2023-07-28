@@ -67,10 +67,12 @@ bar: .ds.b 1
   ([@kg68k/1492793567512711170](https://twitter.com/kg68k/status/1492793567512711170))
   * カーソル点滅速度やSystem Informationのprocessor performance値に影響する。
 
-### Winner2.X v1.30R4
-* float performanceは実質的に「integer performance」の別バージョン
-  ([@kamadox/1684887533090660352](https://twitter.com/kamadox/status/1684887533090660352))
+### Winner2.X v1.33R4
 * 最新バージョンはv1.33R4だが実行時の表示はVer 1.30R4となっている(integerの綴りが直っているのがv1.33R4)。
+* float performanceは実質的に「integer performance」の別バージョン。
+  ([@kamadox/1684887533090660352](https://twitter.com/kamadox/status/1684887533090660352))
+* 日曜日に実行すると時計の曜日が「？」になる。
+  ([@kamadox/1684880439541215232](https://twitter.com/kamadox/status/1684880439541215232))
 
 
 ## ディスク
