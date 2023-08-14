@@ -35,6 +35,7 @@ X680x0に関するメモです。
 * dskbench.x v0.45の正規書庫
 * mt32pi.x
 * Crt_mode select utility (1989/12/24) by ねこ
+* pfloat.x
 * FSHARPのライブラリ
 * fj.binaries.x68000のアーカイブ
   (fj.sys.x68000は[Googleグループ](https://groups.google.com/g/fj.sys.x68000)で読めます)
