@@ -61,6 +61,9 @@ bar: .ds.b 1
 ### X-BASIC version 2.02
 * `print using "#,";1e308`で「おかしな命令を実行しました」等のエラーが発生する。
 
+### ぺけ-ＢＡＳＩＣ ver.0.02
+* [X-BASIC'(X-BASIC for iOS)サポート(日本語): ぺけ-BASICのバグについて（見つけ次第更新）](http://x-basicforios.blogspot.com/2013/04/basic.html)
+
 
 ## 情報表示
 
