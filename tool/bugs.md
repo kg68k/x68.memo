@@ -58,6 +58,9 @@ bar: .ds.b 1
   の関数名は`DrawMonoCard`が正しい。
   ([@ShirohSuzuki/1672859593654022146](https://twitter.com/ShirohSuzuki/status/1672859593654022146))
 
+### X-BASIC version 2.02
+* `print using "#,";1e308`で「おかしな命令を実行しました」等のエラーが発生する。
+
 
 ## 情報表示
 
