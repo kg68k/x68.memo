@@ -116,6 +116,10 @@ bar: .ds.b 1
 * マニュアル(ZM302_M.LZH)
   * ZM4.MAN - `.FM_TUNE_SETUP`、`.ADPCM_TUNE_SETUP`のt1～t128の値の上限が+32768と書かれている(本文は正しい)。
 
+### Z-MUSIC (詳細未確認)
+* ピッチベンドの際に時折計算を間違えてデータ2バイトの最上位ビットが立ってしまう事がある
+  ([A ♪SOUND mind in a SOUND <body> : Z-MUSIC for the Web - Qiita](https://qiita.com/toyoshim/items/38dafc97629a98434267))
+
 
 ----
 # 2000年問題
