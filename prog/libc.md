@@ -43,6 +43,9 @@ XC iocslib.h struct TLINEPTR
 ### sys/dos.hのstruct _dpbptrのメンバ`id`が`ide`になっている。
 リファレンスは`id`となっており、またXCとの互換が必要なため、単なる誤字。
 
+### mkstemp()
+- `mktemp()`を使うのをやめ、`DOS _MAKETMP`でファイル名の作成とファイルの作成オープンを同時に行う。
+
 
 ## 機能の追加改善
 
