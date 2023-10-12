@@ -121,6 +121,17 @@ bar: .ds.b 1
   ([A ♪SOUND mind in a SOUND <body> : Z-MUSIC for the Web - Qiita](https://qiita.com/toyoshim/items/38dafc97629a98434267))
 
 
+## 画面制御
+
+### 768.x v1.23
+* `IOCS _CRTMOD`を`d1.w = $ffff`(現在の画面モードの取得)で呼び出すと、常に`d0.l = $10`が返される。
+
+### CRT_Hi.x Ver 1.00
+* `IOCS _CRTMOD`を呼び出した際に低解像度から高解像度への変更が正しく行われない(例:モード3を指定するとモード2に変更される)。
+* 画面モード18以上に対応していない(例:モード18を指定するとモード17に変更される)。
+
+
+
 ----
 # 2000年問題
 
