@@ -8,6 +8,7 @@ X680x0に関するメモです。
 * [X68000 Z](x68z/README.md)
   * [よくある質問](x68z/faq.md)
 * [実行ファイル](execfile.md)
+* [CRTC](crtc.md)
 * [ツール](tool/README.md)
   * [不具合](tool/bugs.md)
   * [アーカイバ](tool/archiver.md)
@@ -30,7 +31,6 @@ X680x0に関するメモです。
 * OVERTAKE (配布版)
 * infinity (縦シュー)
 * 瘋 (日本語FEP)
-* MAS「鱒」(MADRV用のMusic file selecter)
 * cgcopy.r
 * dskbench.x v0.45の正規書庫
 * mt32pi.x
