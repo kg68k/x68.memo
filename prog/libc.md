@@ -46,6 +46,8 @@ XC iocslib.h struct TLINEPTR
 ### mkstemp()
 - `mktemp()`を使うのをやめ、`DOS _MAKETMP`でファイル名の作成とファイルの作成オープンを同時に行う。
 
+### wabs()
+- src/stdlib/wabs.s: 引数が0または正数のときd0.wを符号拡張(`ext.l d0`)しないため、d0.lの上位ワードが不定の値となる。実害はない。
 
 ## 機能の追加改善
 
