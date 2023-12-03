@@ -81,11 +81,18 @@ bar: .ds.b 1
   ([@kamadox/1684880439541215232](https://twitter.com/kamadox/status/1684880439541215232))
 
 
+## デバイスドライバ
+
+### (V)TwentyOne.sys patchlevel 10
+* 環境変数pathが未設定だと、`DOS _EXEC{2:pathchk}`で実行ファイルをpath=ディレクトリから検索してしまう。
+  ([@kg68k/1731322218410652071](https://twitter.com/kg68k/status/1731322218410652071))
+
+
 ## ディスク
 
 ### RAM DISK DRIVER 「GRAD.r」 Version 1.30
-* DOS \_MALLOC2でメモリを確保しているプロセスがあるときにGRAD.rを`-g -b`オプションで登録しようとするとエラー終了するが、
-その際にグラフィック画面の使用モード(IOCS \_TGUSEMD)が「1:システムが使用中」に変更されてしまう。
+* `DOS _MALLOC2`でメモリを確保しているプロセスがあるときにGRAD.rを`-g -b`オプションで登録しようとするとエラー終了するが、
+その際にグラフィック画面の使用モード(`IOCS _TGUSEMD`)が「1:システムが使用中」に変更されてしまう。
 
 
 ## 音源ドライバ
