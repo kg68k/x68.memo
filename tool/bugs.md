@@ -64,6 +64,13 @@ bar: .ds.b 1
 ### ぺけ-ＢＡＳＩＣ ver.0.02
 * [X-BASIC'(X-BASIC for iOS)サポート(日本語): ぺけ-BASICのバグについて（見つけ次第更新）](http://x-basicforios.blogspot.com/2013/04/basic.html)
 
+### Ko-Window 開発基本セット Version 2.24+14
+* corlib.a::`DefGraphicPalet()`が動作しない(インラインアセンブラの記述に`trap #15`がない)
+  ([libcor.aのバグを見つけました](https://spyffe68k.blogspot.com/2023/09/libcora.html))。
+  * コンパイル済みのライブラリファイルはないが、
+    [Ko-Window ソースセット 2.24+14.2](https://www.vector.co.jp/soft/x68/util/se027930.html)
+    のソースコードは修正されている。詳しく調査はしていないが、他にも更新されたファイルがある。
+
 
 ## 情報表示
 
@@ -142,28 +149,29 @@ bar: .ds.b 1
 * 画面モード18以上に対応していない(例:モード18を指定するとモード17に変更される)。
 
 
-
 ----
 # 2000年問題
 
 この節では修正パッチや改造版があるソフトウェアも掲載しています。
 
-## Binary file updater v1.2 rel.2
+### Binary file updater v1.2 rel.2
 * bup -l/-lm でファイルの日付の表示が乱れる。パッチあり。
 
-## Ease Filer (95/04/07 版)
+### Ease Filer (95/04/07 版)
 * ファイルの日付の表示が乱れる。パッチあり。
 
-## EDR-plus version 2.0.1(yakko-chan)
+### EDR-plus version 2.0.1(yakko-chan)
 * セレクタ画面のファイルの日付の表示が乱れる。[パッチあり](patch/edrp201.pat)。
 
-## lhv version 0.95.2
+### lhv version 0.95.2
 * セレクタ画面のファイルの日付の表示が乱れる。パッチあり。
 
-## WS v0.90
+### WS v0.90
 * 現在の日付の表示が乱れる。パッチあり。
 
-## 時計.X (SX-Window version 3.10)
+## SX-Window
+
+### 時計.X (SX-Window version 3.10)
 * 西暦の表示が乱れる。パッチあり。
 
 ## 市販ゲーム
@@ -174,18 +182,18 @@ bar: .ds.b 1
 # SHARP純正ソフトウェア
 * STUDIO KAMADA &gt; [X680x0 のメーカー純正ソフトウェアの不具合について](https://stdkmd.net/bugsx68k/)
 
-## FASTOPEN.X
+### FASTOPEN.X
 * ヘルプメッセージの誤字「常時使用可能な**な**オプション」。
 
 
 ----
 # 市販ゲーム
 
-## アクアレス
+### アクアレス
 * セーブデータの日付の表示が乱れる。
 ([@huye_4589/1720698235961155723](https://twitter.com/huye_4589/status/1720698235961155723))
 
-## ボスコニアン
+### ボスコニアン
 * 4月8日に起動するとデモプレイ開始直後にバスエラーが発生する。
   ([@bml3mk5/1512402885682012163](https://twitter.com/bml3mk5/status/1512402885682012163))
   * 4月8日、4月9日、6月1日でメインメモリ6MB未満の場合？
