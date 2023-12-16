@@ -65,8 +65,8 @@ bar: .ds.b 1
 * [X-BASIC'(X-BASIC for iOS)サポート(日本語): ぺけ-BASICのバグについて（見つけ次第更新）](http://x-basicforios.blogspot.com/2013/04/basic.html)
 
 ### Ko-Window 開発基本セット Version 2.24+14
-* corlib.a::`DefGraphicPalet()`が動作しない(インラインアセンブラの記述に`trap #15`がない)
-  ([libcor.aのバグを見つけました](https://spyffe68k.blogspot.com/2023/09/libcora.html))。
+* corlib.a::`DefGraphicPalet()`が動作しない([libcor.aのバグを見つけました](https://spyffe68k.blogspot.com/2023/09/libcora.html))。
+  インラインアセンブラの記述に`trap #15`が抜けているため。
   * コンパイル済みのライブラリファイルはないが、
     [Ko-Window ソースセット 2.24+14.2](https://www.vector.co.jp/soft/x68/util/se027930.html)
     のソースコードは修正されている。詳しく調査はしていないが、他にも更新されたファイルがある。
@@ -88,11 +88,7 @@ bar: .ds.b 1
   ([@kamadox/1684880439541215232](https://twitter.com/kamadox/status/1684880439541215232))
 
 
-## デバイスドライバ
-
-### (V)TwentyOne.sys patchlevel 10
-* 環境変数pathが未設定だと、`DOS _EXEC{2:pathchk}`で実行ファイルをpath=ディレクトリから検索してしまう。
-  ([@kg68k/1731322218410652071](https://twitter.com/kg68k/status/1731322218410652071))
+<!-- ## デバイスドライバ -->
 
 
 ## ディスク
