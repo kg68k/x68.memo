@@ -71,6 +71,12 @@ bar: .ds.b 1
     [Ko-Window ソースセット 2.24+14.2](https://www.vector.co.jp/soft/x68/util/se027930.html)
     のソースコードは修正されている。詳しく調査はしていないが、他にも更新されたファイルがある。
 
+### newlib-1.19.0-human68k 
+* [crt0.S](https://github.com/Lydux/newlib-1.19.0-human68k/blob/master/newlib/libc/sys/human68k/crt0.S#L39-L46)
+  で間違ったサイズでBSSをクリアしている
+  ([Charlie Balogh: "Did I catch a bug in the X6800…" - Mastodon](https://mastodon.social/@chainq/111461500478055714))。
+  * そもそもOSがクリアしているのでプログラム側によるクリアは不要。
+
 
 ## 情報表示
 
