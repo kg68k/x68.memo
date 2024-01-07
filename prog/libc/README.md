@@ -95,4 +95,4 @@ https://twitter.com/kg68k/status/1603411122329190401
 - Cコンパイラをxdev68k/gcc13またはelf2x68kに変更する
 
 ----
-goto [index](../README.md) / [プログラミング](./README.md)
+goto [index](../../README.md) / [プログラミング](../README.md)
