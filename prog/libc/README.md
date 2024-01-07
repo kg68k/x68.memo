@@ -92,7 +92,7 @@ https://twitter.com/kg68k/status/1603411122329190401
 ## その他
 
 - 改造版の名称、ライセンスを再検討してリブート(2024年を目標)
-- Cコンパイラをxdev68k/gcc13に変更
+- Cコンパイラをxdev68k/gcc13またはelf2x68kに変更する
 
 ----
 goto [index](../README.md) / [プログラミング](./README.md)
