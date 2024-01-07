@@ -13,6 +13,12 @@
 * INCLUDE\\TIME.Hで`CLOCKS_PER_SEC`が定義されていない。
 ([@towser_meow/1638474969494724609](https://twitter.com/towser_meow/status/1638474969494724609))
   * 代わりにINCLUDE\\STDDEF.Hで`CLOCKS_PAR_SEC`が定義されている。
+* ライブラリディスクの\ASK30\FILES.Cの93行目の条件式が`ftotal <= MAXFILES`となっているため、ファイルが多いとバッファオーバーフローが起きる。
+  ```c
+  		} while (nfiles() == 0 && ftotal <= MAXFILES);
+  ```
+* [無償公開版](http://retropc.net/x68000/software/sharp/xc21/)に特有と思われる不具合。
+  * XC2103.LZH, XC2103I.LZH: \ASK30\MAKEFILEの内容がACI.Hと同一。
 
 ### HAS060.X version 3.09+91
 * HAS060.X - アセンブラ - プログラミング - ソフトウェアライブラリ - X68000 LIBRARY &gt;
