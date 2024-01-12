@@ -67,13 +67,24 @@ XC iocslib.h struct TLINEPTR
 https://twitter.com/kg68k/status/1610270055765520384
 
 
-## xdev68k対応
+## 近代的なGCC環境(elf2x68k、xdev68k)への対応
 
 ### vfprintf()などでbuiltin-declaration-mismatch警告が発生する
 https://twitter.com/kamadox/status/1476568081996849153
 
 ### flexible array memberをGCCかつC99未満の場合のみ`[0]`と記述する
 https://twitter.com/kg68k/status/1603411122329190401
+
+### sys/iocs_i.h
+インラインアセンブラの仕様変更に対応する。
+
+### sys/dos_i.h
+`__DOSCALL`宣言がないので、全てインラインアセンブラにする。
+
+### 未確認、要調査
+- NaN、Inf
+- long longのエンディアン
+- long double
 
 
 ## 機能の削減
@@ -82,17 +93,12 @@ https://twitter.com/kg68k/status/1603411122329190401
 * I/O接続のコプロセッサ(68881/68882)を直接制御する数学関数(マクロ `__DIRECT_IOFPU__`)
 * `_spawn()`でコマンドラインが256バイト以上かつ実行ファイルがHUPAIR準拠でない場合の強制実行、インダイレクト実行(環境変数 `HUGEARG`)
 
-## 未確認、要調査
-
-### xdev68k(gcc12)で変更になる挙動の影響調査
-- NaN、Inf
-- long longのエンディアン
-- long double
 
 ## その他
 
 - 改造版の名称、ライセンスを再検討してリブート(2024年を目標)
 - Cコンパイラをelf2x68k(gcc-13.2.0)に変更する
+
 
 ----
 goto [index](../../README.md) / [プログラミング](../README.md)
