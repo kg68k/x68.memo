@@ -5,7 +5,7 @@ https://github.com/yunkya2/elf2x68k
 ----
 ## 事前定義されるマクロの一覧
 
-elf2x68k(Release 20231202)にて
+elf2x68k(Release 20240114、GCC 13.2.0)にて
 `m68k-xelf-gcc -dM -E - < /dev/null | sort`
 で出力したものです。  
 
@@ -28,7 +28,7 @@ elf2x68k(Release 20231202)にて
 #define __DBL_HAS_DENORM__ 1
 #define __DBL_HAS_INFINITY__ 1
 #define __DBL_HAS_QUIET_NAN__ 1
-#define __DBL_IS_IEC_60559__ 2
+#define __DBL_IS_IEC_60559__ 1
 #define __DBL_MANT_DIG__ 53
 #define __DBL_MAX_10_EXP__ 308
 #define __DBL_MAX_EXP__ 1024
@@ -49,7 +49,7 @@ elf2x68k(Release 20231202)にて
 #define __FLT32X_HAS_DENORM__ 1
 #define __FLT32X_HAS_INFINITY__ 1
 #define __FLT32X_HAS_QUIET_NAN__ 1
-#define __FLT32X_IS_IEC_60559__ 2
+#define __FLT32X_IS_IEC_60559__ 1
 #define __FLT32X_MANT_DIG__ 53
 #define __FLT32X_MAX_10_EXP__ 308
 #define __FLT32X_MAX_EXP__ 1024
@@ -65,7 +65,7 @@ elf2x68k(Release 20231202)にて
 #define __FLT32_HAS_DENORM__ 1
 #define __FLT32_HAS_INFINITY__ 1
 #define __FLT32_HAS_QUIET_NAN__ 1
-#define __FLT32_IS_IEC_60559__ 2
+#define __FLT32_IS_IEC_60559__ 1
 #define __FLT32_MANT_DIG__ 24
 #define __FLT32_MAX_10_EXP__ 38
 #define __FLT32_MAX_EXP__ 128
@@ -81,7 +81,7 @@ elf2x68k(Release 20231202)にて
 #define __FLT64_HAS_DENORM__ 1
 #define __FLT64_HAS_INFINITY__ 1
 #define __FLT64_HAS_QUIET_NAN__ 1
-#define __FLT64_IS_IEC_60559__ 2
+#define __FLT64_IS_IEC_60559__ 1
 #define __FLT64_MANT_DIG__ 53
 #define __FLT64_MAX_10_EXP__ 308
 #define __FLT64_MAX_EXP__ 1024
@@ -99,7 +99,7 @@ elf2x68k(Release 20231202)にて
 #define __FLT_HAS_DENORM__ 1
 #define __FLT_HAS_INFINITY__ 1
 #define __FLT_HAS_QUIET_NAN__ 1
-#define __FLT_IS_IEC_60559__ 2
+#define __FLT_IS_IEC_60559__ 1
 #define __FLT_MANT_DIG__ 24
 #define __FLT_MAX_10_EXP__ 38
 #define __FLT_MAX_EXP__ 128
@@ -127,8 +127,8 @@ elf2x68k(Release 20231202)にて
 #define __GNUC_PATCHLEVEL__ 0
 #define __GNUC_STDC_INLINE__ 1
 #define __GNUC_WIDE_EXECUTION_CHARSET_NAME "UTF-32BE"
-#define __GNUC__ 12
-#define __GXX_ABI_VERSION 1017
+#define __GNUC__ 13
+#define __GXX_ABI_VERSION 1018
 #define __HAVE_SPECULATION_SAFE_VALUE 1
 #define __INT16_C(c) c
 #define __INT16_MAX__ 0x7fff
@@ -266,7 +266,7 @@ elf2x68k(Release 20231202)にて
 #define __UINT_LEAST8_MAX__ 0xff
 #define __UINT_LEAST8_TYPE__ unsigned char
 #define __USER_LABEL_PREFIX__ 
-#define __VERSION__ "12.2.0"
+#define __VERSION__ "13.2.0"
 #define __WCHAR_MAX__ 0x7fffffffL
 #define __WCHAR_MIN__ (-__WCHAR_MAX__ - 1)
 #define __WCHAR_TYPE__ long int
