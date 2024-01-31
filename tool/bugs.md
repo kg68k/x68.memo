@@ -126,6 +126,12 @@ bar: .ds.b 1
     その処理が抜けているため。
 
 ### Z-MUSIC Ver.3.02C
+* ZMSC3.X
+  * ファンクション`$13 ZM_SE_ADPCM1`
+    * MPCM.X非常駐時、優先度が低くて再生されない場合の戻り値`d0.l`の値が不定(0以外の値にはなる)。
+    * MPCM.X常駐時、成功すると`d0.l`に0以外の値が返る。
+      * MPCMの不具合の影響を受けているが、それだけではなく、マニュアル記載の仕様ではMPCM`M_EFCT_OUT`は「d0.l≧0 正常終了」であるのに対し、
+        ZMSC3.X`ZM_SE_ADPCM1`は「d0.l=0:正常終了」であるので、戻り値の上書きが必要だがこれをしていない。
 * ZMC.X
   * 上限下限あり8ビット値の配列で、値の直後の2連続セパレータが単独のセパレータとして解釈されてしまう。
     ([@kg68k/1482025079017926658](https://twitter.com/kg68k/status/1482025079017926658))
@@ -133,19 +139,13 @@ bar: .ds.b 1
   ([@kg68k/1482027532736245763](https://twitter.com/kg68k/status/1482027532736245763))
   * `.FM_TUNE_SETUP`をint16_tではなくint8_tとしてコンパイルしてしまう。
   ([@arith_rose/1481388558246051842](https://twitter.com/arith_rose/status/1481388558246051842))
-* 未検証
-  * https://twitter.com/T_Forth_3/status/1630378141385654272
-  * https://twitter.com/T_Forth_3/status/1630425279058542592
-  * mpcm.x非常駐時に`zm_se_adpcm1`でADPCMが再生されない。
-    ([@DD_samidare_kai/1662447722979532801](https://twitter.com/DD_samidare_kai/status/1662447722979532801))  
-    `se_mode`をセットして`adpcmout:`を呼ぶ → `adpcm_end:`で`se_mode`がセットされているためDMAを停止しない、という動作が影響？
-* マニュアル(ZM302_M.LZH)
-  * ZM4.MAN - `.FM_TUNE_SETUP`、`.ADPCM_TUNE_SETUP`のt1～t128の値の上限が+32768と書かれている(本文は正しい)。
-  * ZM15.MAN - ファンクション`$10xx M_EFCT_OUT`の項目の「ファンクション$8005」は、正しくは「ファンクション$8006」。
 * ZP3.R
   * ファイル名を大文字ドライブ名指定すると、そのドライブに対し特殊ブロックデバイス用の`DOS _DRVCTRL (MD=$34xx)`
     を発行し、返り値によってはファイルがあってもオープンできない。  
     FOPEN.HAS::check_drvchgで`d0`レジスタ(の上位バイト)を初期化していないため、。
+* マニュアル(ZM302_M.LZH)
+  * ZM4.MAN - `.FM_TUNE_SETUP`、`.ADPCM_TUNE_SETUP`のt1～t128の値の上限が+32768と書かれている(本文は正しい)。
+  * ZM15.MAN - ファンクション`$10xx M_EFCT_OUT`の項目の「ファンクション$8005」は、正しくは「ファンクション$8006」。
 
 ### Z-MUSIC v2 (詳細未確認)
 * ピッチベンドの際に時折計算を間違えてデータ2バイトの最上位ビットが立ってしまう事がある
@@ -155,7 +155,7 @@ bar: .ds.b 1
 ## PCMドライバ
 
 ### MPCM version 0.45A
-* ファンクション `$10xx M_EFCT_OUT`
+* ファンクション`$10xx M_EFCT_OUT`
   * 再生中(DMA使用中)であっても常にDMAの転送開始設定を行ってしまい、音が乱れることがある。
     * ほかのファンクションと違い、ここだけ`func_00xx_DMA_start`を呼ぶ前に`play_flag`を見ていないため。
   * 成功時に`d0.l`に戻り値が代入されないため、エラーを正しく検出することができない。
