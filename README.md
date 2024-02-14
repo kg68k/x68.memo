@@ -11,6 +11,7 @@ X680x0に関するメモです。
 * [CRTC](crtc.md)
 * [ツール](tool/README.md)
   * [不具合](tool/bugs.md)
+  * [相性問題](tool/conflict.md)
   * [アーカイバ](tool/archiver.md)
 * [プログラミング](prog/README.md)
   * [アセンブリ言語](prog/asm.md)
