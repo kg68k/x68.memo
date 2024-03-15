@@ -3,7 +3,7 @@
 ## 開発ツール
 
 ### PD LIBC
-* [TODO](../prog/libc.md#todo)
+* [TODO](../prog/libc/README.md#todo)
 
 ### GNU Make version 3.79 human68k-1.4
 * 仮想ディレクトリまわりの処理がまだ完全には解決していないはず。
