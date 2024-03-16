@@ -51,8 +51,9 @@ XC iocslib.h struct TLINEPTR
 
 ### char* sys_errlist[]
 * `[0]`に`"Unknown error"`が挿入されているため、`sys_errlist[errno]`でエラー文字列を得ることができない。
+  * XC互換のための仕様かもしれない。
   * GCC真理子版のLIBCビルド時に対処が必要。
-  * 古い環境の変数で現在は非推奨なので、削除すべきかも。
+  * UN*X環境では現在は非推奨、XCと仕様が違う、などの理由からいっそ削除したほうが良い。
 
 
 ## 機能の追加改善
