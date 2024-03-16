@@ -49,6 +49,12 @@ XC iocslib.h struct TLINEPTR
 ### wabs()
 - src/stdlib/wabs.s: 引数が0または正数のときd0.wを符号拡張(`ext.l d0`)しないため、d0.lの上位ワードが不定の値となる。実害はない。
 
+### char* sys_errlist[]
+* `[0]`に`"Unknown error"`が挿入されているため、`sys_errlist[errno]`でエラー文字列を得ることができない。
+  * GCC真理子版のLIBCビルド時に対処が必要。
+  * 古い環境の変数で現在は非推奨なので、削除すべきかも。
+
+
 ## 機能の追加改善
 
 ### C23に対応(需要のあるものから)
