@@ -108,10 +108,12 @@ bar: .ds.b 1
 ### RAM DISK DRIVER 「GRAD.r」 Version 1.30
 * `DOS _MALLOC2`でメモリを確保しているプロセスがあるときにGRAD.rを`-g -b`オプションで登録しようとするとエラー終了するが、
 その際にグラフィック画面の使用モード(`IOCS _TGUSEMD`)が「1:システムが使用中」に変更されてしまう。
+  * [GRADX](https://github.com/kg68k/gradx)で修正されている。
 
 ### SUSIE V1.21A
 * SCSI IOCS未登録時に実行すると白帯エラー($01F5)が発生する。なおV1.14Aでは問題なく、V1.15Aはエラーになる。
   * トラブルシューティングの手順(OPT.1によるFD起動、`SCSIDEV=OFF`)で発生する。
+  * [SUSIEX](https://github.com/kg68k/susiex)で修正されている。
 
 
 ## 音源ドライバ
