@@ -1,0 +1,201 @@
+*-------------------------------------------------------*
+*    ( Human68k v2.01 hacker's manual )     by h.o	*
+*-------------------------------------------------------*
+
+　例によって、「Ｈｕｍａｎ６８ｋ　ｖｅｒ２．０」には
+
+マニュアル（ユーザーズマニュアル）にはないスイッチや
+
+キーワードがあるので、わかった範囲で紹介してみる。
+
+　このように、隠れスイッチが多いと（有用なものが多い）
+
+逆アセンブルをかかすことができない。
+
+
+１．Human68k v2.01
+	config.sys   newfat keyword ok  ( newfat 2 )
+	PDB structure ･･･ $64(MCB).b = module number
+
+　　・CONFIG.SYS 中で使えるコマンド（キーワード）として、 NEWFAT という
+
+　　　コマンドがある。NEWFAT 0 または、 NEWFAT 2 と指定する。大容量ファ
+
+　　　イルに対応するためのコマンドと思われる。CHKDSK.X で表示される FAT
+
+　　　も表示桁が多くなり、大容量に対応している。
+
+　　　Human.sys ファイルの先頭部分にはデフォルトの定数が固まっているので
+
+　　　この部分を変えるだけでカスタマイズできる。
+
+　　・PDB （プロセス管理ワーク）のオフセット $064 - $07F は未使用であっ
+
+　　　たが、$064.B ( 1 BYTE ) にモジュール番号が格納されるようになった。
+
+	－－－　PDB, PSP どちらの用語が正しいのか？　－－－
+
+	　　ＣではＰＳＰ(PROCESS SEGMENT PREFIX ?)、ＤＯＳコールでは
+
+	　　ＰＤＢ(PROCESS DEFINITION BLOCK ?)が使われている。
+
+２．command.x v2.01
+	prompt command $Q ok
+	cmd.x, commando.x binded
+
+　　・PROMPT コマンドにおいて、“$Q”により“=”で始まるプロンプトを設定
+
+　　　することができる（  $Q を使わないと = で始まるプロンプトを設定でき
+
+　　　ない。 $Q は v1.01 でも使用可能）。
+
+　　・COMMAND.X v2.01 は、CMD.X  と、COMMANDO.X がバインドされている。
+
+　　　COMMAND.X が子プロセスとして呼ばれた時は、CMD.X とワークエリアだけ
+
+　　　があらたにメモリに展開され、実際の処理は COMMANDO.X が行う。
+
+		BIND /L COMMAND.X
+
+　　　とすると、SYSTEM RESERVED FILE  と表示されて内容が隠されているが、
+
+		BIND /X COMMAND.X CMD.X
+
+		BIND /X COMMAND.X COMMANDO.X
+
+　　　とすることで、復元できる。 
+
+
+３．bind.x v1.00
+	switch /a /b /v
+	binded file
+		offset $003C  module infomation ( same as file dir )
+		first fat (2 bytes) = bind attribute, file length (4 bytes) = offset
+		attribute s,h = system reserved
+
+　　・switch /a はバインドされるファイルのバインダー内でのattributeを変更する。
+
+　　　ファイルのattributeはそのまま残す（バインド、及び更新時のみ指定可能）。
+
+		bind /a+r command.x cmd.x commando.x
+
+			command.x にバインドされるcmd.x,commando.xのattributeを変更する。
+							（更新に対する保護）
+
+			/a+rh, /a+r /a+h は同じ。r,h,s は小文字のこと。
+
+			/a+A は大文字でもよい。/a-r も可能。
+
+		bind /a+s or /a+h  ･･･ system reserved file となる。
+
+　　・switch /v はバーボーズモード。
+
+　　・switch /b は、バインドされているファイルを強制バインドする。
+
+　　　通常は、バインドされているファイルはバインドできない。
+
+		bind cmd.x /b ab2.x  （　ab2.x はバインドファイルだがさらにバインドする　）
+
+　　・バインドされているファイルの情報は、Ｘファイルの先頭＄４０バイトのヘッダー
+
+　　　部分の $03C からのロングワードにその情報へのオフセットが格納されている。
+
+　　　（ $03C が $00NN_NNNN のばあい、dump file.x /xNNNNNNN とすれば覗ける ）
+
+　　・その情報の構成は、ディスクのディレクトリの構成と同じになっている（３２バイト。
+
+　　　プログラマーズマニュアルＰ４８２参照）。そして、最初のＦＡＴ番号（２バイト）に
+
+　　　相当するところ（の下位）が、バインドアトリビュートになっている。次のファイルサイズ
+
+　　　（４バイト）がそのモジュールへのオフセットである。
+
+　　・BIND.X  のエラー出力は正しく、標準エラー出力（ＳＴＤＥＲＲ）に出力されており、
+
+　　　使用法の表示の取り込みには、DUP.X を使う必要がある。
+
+４．timer.x v1.00
+	switch /kill		; remove option
+	switch /x time file	; command exec
+
+　　・timer /kill とすることで TIMER.X の常駐を解除することができる。
+
+　　・timer /x time file.x とすることで、指定時刻にコマンドを起動することが
+
+　　　できる。ただし、どのようなコマンドでも実行可能かは不明。
+
+　　・TIMER.X のエラー出力は、標準エラー出力に出力されていない。フィルター以外では
+
+　　　あまり深刻な影響はないかもしれないが、AUTOEXEC.BAT  で、タイマーの設定をして
+
+　　　出力を NUL  にリダイレクトすることを考えると、TIMER.X の出力こそ標準エラー出
+
+　　　力に出力して欲しいところである（ BIND.X も、アセンブル、リンクと一緒にバッチ
+
+　　　処理されることは有り得る）。 EXITCODE は１以外にも設定されているようである
+
+　　　（ WAIT.X にて確認できるが、このような情報もできればマニュアルに欲しい）。
+
+
+５．prndrv.sys v1.00  (89-02-10)
+	program changed but version same ( 24 dot feed data )
+
+　　・PRNDRV.SYS  は、１バイト変更されているのに、バージョンが変わっていない。
+
+　　　作成日付だけは変更してある。変更箇所はプリンター・コンフィグレーション
+
+　　　データの 24 dot feed data である。ということは、ＲＯＭのデータから誤って
+
+　　　いるということか？
+
+６．copyall.x v1.10
+	switch /q  query mode
+
+　　・便利なコマンドであるが、マニュアル、使用法表示にないスイッチとして
+
+　　　command.x の内部コマンド copy と同様に、 /q が使える。
+
+	（ＡＢＩＩでは、増設ＲＡＭをＲＡＭディスクとして使う時に、ファイル
+
+	　コピーに使用しているようである。CZ-6BE1A が欲しい。 ＡＢＩＩのオ
+
+	  マケプログラムの作者は｢ 本物のプログラマ ｣である。なぜなら・・・）
+
+
+７．switch.x v2.01
+	switch.x switch1.x switch2.x binded
+	switch d  ( ROM_DB ) ON/OFF ok
+
+　　・SWITCH.X は、SWITCH.X, SWITCH1.X, SWITCH2.X がバインドされている。
+
+　　　SWITCH1.X は、コマンドライン版、SWITCH2.X は、メニュー版である。
+
+　　　SWITCH1.X は、SWITCH.X v1.11  ほとんど同じである。コマンドライン
+
+　　　から使えば、d パラメータ（ＲＯＭ＿ＤＢの自動起動のオン・オフ）も
+
+　　　指定できる。
+
+８．diskcopy.x v2.00
+	diskcopy.x diskcp1.x diskcp2.x binded
+
+　　・DISKCOPY.X は、DISKCOPY.X, DISKCP1.X, DISKCP2.X がバインドされて
+
+　　　いる。このようにメニュー化されたコマンドはほとんどが、コマンドラ
+
+　　　イン版とメニュー版がバインドされているので、コマンドライン版を引
+
+　　　き出して使えばかなりディスク容量を節約できる。
+
+	FORMAT.X  は、ＨＤの分を除くと、かなり小さくなる。
+
+９．process.x v2.00
+	memdrv  $04(MCB) = $FE
+
+　　・常駐プロセスでは、そのＭＣＢの４バイト目が、＄ＦＦになっているが、
+
+　　　PROCESS.X v2.00 では、＄ＦＥの時　ＭＥＭＤＲＶ　と表示するように
+
+　　　なっている。これはいったいなんであろうか。
+
+（ＥＯＦ）
