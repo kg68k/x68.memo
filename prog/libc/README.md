@@ -55,6 +55,10 @@ XC iocslib.h struct TLINEPTR
   * GCC真理子版のLIBCビルド時に対処が必要。
   * UN*X環境では現在は非推奨、XCと仕様が違う、などの理由からいっそ削除したほうが良い。
 
+### _dos_ioctrlfdctl()、_dos_ioctrldvctl()、IOCTRLFDCTL()、IOCTRLDVCTL()
+* 機能が入れ替わっているが、XCのDOSLIBがそうなっている。
+  * 互換性維持のため入れ替わったままにしておき、ドキュメントでの説明で対応する。
+  * 正しい関数を用意したい。暫定案: `_dos_ioctrlfdctl12()`、`_dos_ioctrldvctl13()`
 
 ## 機能の追加改善
 
