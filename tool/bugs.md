@@ -8,7 +8,7 @@
 ### GNU Make version 3.79 human68k-1.4
 * 仮想ディレクトリまわりの処理がまだ完全には解決していないはず。
 
-### C Compiler PRO-68K ver2.1 NewKit
+### C Compiler PRO-68K ver2.1 NEW KIT
 * STUDIO KAMADA &gt; X680x0 のメーカー純正ソフトウェアの不具合について &gt; [4. XC ライブラリの不具合](https://stdkmd.net/bugsx68k/#xclib)
 * INCLUDE\\TIME.Hで`CLOCKS_PER_SEC`が定義されていない。
 ([@towser_meow/1638474969494724609](https://twitter.com/towser_meow/status/1638474969494724609))
@@ -19,6 +19,8 @@
   ```
 * [無償公開版](http://retropc.net/x68000/software/sharp/xc21/)に特有と思われる不具合。
   * XC2103.LZH, XC2103I.LZH: \ASK30\MAKEFILEの内容がACI.Hと同一。
+* (おそらく全バージョン) DOSLIBの`IOCTRLFDCTL()`と`IOCTRLDVCTL()`が入れ替わっている。  
+  NEW KITの拡張マニュアルには`IOCTRLFDCTL()`がドライブ番号`drive`を指定する関数という説明が記載されている。
 
 ### HAS060.X version 3.09+91
 * HAS060.X - アセンブラ - プログラミング - ソフトウェアライブラリ - X68000 LIBRARY &gt;
