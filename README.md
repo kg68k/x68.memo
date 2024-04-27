@@ -44,6 +44,7 @@ X680x0に関するメモです。
 * FSHARPのライブラリ
 * fj.binaries.x68000のアーカイブ
   (fj.sys.x68000は[Googleグループ](https://groups.google.com/g/fj.sys.x68000)で読めます)
+* XCなどに収録されているデバッガのDB.X version 3.02が何に収録されているかの情報
 * SRAMに書き込みを行うフロッピーディスク用IPLに関する情報
 * その他ROMや拡張ボードの情報
 
