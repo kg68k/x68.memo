@@ -1,7 +1,7 @@
 # リンク
 
-- [LIBC 1.1.32A - ライブラリ - プログラミング - ソフトウェアライブラリ - X68000 LIBRARY](http://retropc.net/x68000/software/develop/lib/libc1132a/)
-- [LIBC 1.1.32A ぱっち DON 版 - ライブラリ - プログラミング - ソフトウェアライブラリ - X68000 LIBRARY](http://retropc.net/x68000/software/develop/lib/libcdon/)
+* [LIBC 1.1.32A - ライブラリ - プログラミング - ソフトウェアライブラリ - X68000 LIBRARY](http://retropc.net/x68000/software/develop/lib/libc1132a/)
+* [LIBC 1.1.32A ぱっち DON 版 - ライブラリ - プログラミング - ソフトウェアライブラリ - X68000 LIBRARY](http://retropc.net/x68000/software/develop/lib/libcdon/)
 
 
 ----
@@ -22,17 +22,17 @@ src\stdio\tempnam.c で xglob.h と同時にインクルードしているが、
 側の関数を使用していないので問題になっていなかった。
 
 ### _pathexpand() (_fullpath())
-- TwentyOneのSYSROOTを正しく展開できない。
-- ルートディレクトリを指定すると`D://`のようにルートのパスデリミタが重複する。
+* TwentyOneのSYSROOTを正しく展開できない。
+* ルートディレクトリを指定すると`D://`のようにルートのパスデリミタが重複する。
 
 ### _isremotefs()
 間違ったドライブを調べてしまう。
 
 ### _statsub() (stat())
-- 仮想ディレクトリを正しく処理できない。
-- ボリュームラベルの`st_ino`の下位桁が`0`であることを仕様に明記する
+* 仮想ディレクトリを正しく処理できない。
+* ボリュームラベルの`st_ino`の下位桁が`0`であることを仕様に明記する
   (同一ドライブ上で同一inode値のボリュームラベルが存在することがある)。
-- `st_ino`の上位桁にドライブ番号を入れないようにする。
+* `st_ino`の上位桁にドライブ番号を入れないようにする。
 
 ### iocslib.hでTLINEPTRが定義されない(未確認、要調査)
 XC iocslib.h struct TLINEPTR
@@ -44,10 +44,10 @@ XC iocslib.h struct TLINEPTR
 リファレンスは`id`となっており、またXCとの互換が必要なため、単なる誤字。
 
 ### mkstemp()
-- `mktemp()`を使うのをやめ、`DOS _MAKETMP`でファイル名の作成とファイルの作成オープンを同時に行う。
+* `mktemp()`を使うのをやめ、`DOS _MAKETMP`でファイル名の作成とファイルの作成オープンを同時に行う。
 
 ### wabs()
-- src/stdlib/wabs.s: 引数が0または正数のときd0.wを符号拡張(`ext.l d0`)しないため、d0.lの上位ワードが不定の値となる。実害はない。
+* src/stdlib/wabs.s: 引数が0または正数のときd0.wを符号拡張(`ext.l d0`)しないため、d0.lの上位ワードが不定の値となる。実害はない。
 
 ### char* sys_errlist[]
 * `[0]`に`"Unknown error"`が挿入されているため、`sys_errlist[errno]`でエラー文字列を得ることができない。
@@ -62,17 +62,17 @@ XC iocslib.h struct TLINEPTR
 
 ## 機能の追加改善
 
-### C23に対応(需要のあるものから)
-- stdbool.h
-- stdint.h
-- inttypes.h
+### C23、C2yに対応(需要のあるものから)
+* stdbool.h
+* stdint.h
+* inttypes.h
 
 ### Visual C++との互換性向上
-- fopen_s()
-- _O_BINARY
-- _countof()
-- _fileno()
-- _setmode()
+* fopen_s()
+* _O_BINARY
+* _countof()
+* _fileno()
+* _setmode()
 
 ### getexecname(): 実行ファイルのフルパス名を返す
 https://twitter.com/kg68k/status/1610270055765520384
@@ -93,9 +93,9 @@ https://twitter.com/kg68k/status/1603411122329190401
 `__DOSCALL`宣言がないので、全てインラインアセンブラにする。
 
 ### 未確認、要調査
-- NaN、Inf
-- long longのエンディアン
-- long double
+* NaN、Inf
+* long longのエンディアン
+* long double
 
 
 ## 機能の削減
@@ -103,6 +103,12 @@ https://twitter.com/kg68k/status/1603411122329190401
 * `gets()`
 * I/O接続のコプロセッサ(68881/68882)を直接制御する数学関数(マクロ `__DIRECT_IOFPU__`)
 * `_spawn()`でコマンドラインが256バイト以上かつ実行ファイルがHUPAIR準拠でない場合の強制実行、インダイレクト実行(環境変数 `HUGEARG`)
+* `_dos_link()`、`_dos_unlink()`
+
+
+## ドキュメント (X680x0 libc Vol.2 Programmer's Reference)
+
+* p.533 `_dos_vernum` 下位16ビットと上位16ビットが逆。
 
 
 ## その他
