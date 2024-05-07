@@ -33,8 +33,9 @@ Macintoshに関する本で、プログラミング入門というほどでは�
 
 ## 最適化技術
 
-* [68000 TRICKS AND TRAPS](http://www.easy68k.com/paulrsm/doc/trick68k.htm)
+* [Some peephole optimizations for M68000](https://gist.github.com/flamewing/ad17bf22875be36ad4ae26f159a94f8b)
 * [ASP68K 680x0 peephole optimization guide (v6, Jan 1994)](http://www.easy68k.com/paulrsm/doc/asp68k6.txt)
+* [68000 TRICKS AND TRAPS](http://www.easy68k.com/paulrsm/doc/trick68k.htm)
 
 
 ----
@@ -49,10 +50,11 @@ C言語の聖典的な本。
 
 ## Programming languages — C (ワーキングドラフト)
 [ISO/IEC JTC1/SC22/WG14 - C](https://www.open-std.org/jtc1/sc22/wg14/)  
-n3096.pdf
 
-C言語の次期バージョンC2x(C23)のドラフト文書。  
+C言語のドラフト文書。  
 xdev68kやelf2x68kの登場で最新のC言語が使えるようになったので読んでおくと良い。
+* n3096.pdf - C23の最終ドラフト
+* n3220.pdf - C2y
 
 
 ## C compiler PRO-68K マニュアル
