@@ -28,10 +28,16 @@ MOTOROLA M68000 FALMILY Programmer's Reference Manual REV.1
   >>&#x37;. MOVE16 (ax)+,(ay)+ is functionally the same as MOVE16 (ax),(ay)+ when ax = ay. The address register is
   >>only incremented once, and the line is copied over itself rather than to the next line.
 
+* https://twitter.com/kg68k/status/1787837754682003505
+  >M68000PRM.pdf ページB-4 (PDFのページ番号でいうと631)  
+  >Format $3の+$06の値がFormat $2と同じ0010になっているが、0011が正しい。
+
+
 # MC68030UM.pdf
 MC68030 ENHANCED 32-BIT MICROPROCESSOR USER'S MANUAL Therd Edition
 
 * [X68000 関係資料正誤表のコーナー](http://www.pastel-flower.jp/~isaki/inside-bug2.php) &gt; おまけ2：MC68030UM.pdf 正誤表
+
 
 # MC68030 ユーザーズ・マニュアル 第1版
 
@@ -45,7 +51,9 @@ MC68030 ENHANCED 32-BIT MICROPROCESSOR USER'S MANUAL Therd Edition
     >日本語版 MC68030 UM の第9章 メモリ管理ユニット で 表9-3 MMUSRの各ビットの定義 の PTEST, レベル0 の時の「透過(T)」には「Iビットがセットされているときは未定義」と書かれているのに 図9-39 PTEST Level 0による MMUステータスの取得 では Iビットより先にTビットをチェックしている矛盾がある
 
 
+# MC68040 ユーザーズ・マニュアル 第1版
 
+* P.222 表9-2 左下 誤「実効後」正「実行後」。
 
 
 ----
