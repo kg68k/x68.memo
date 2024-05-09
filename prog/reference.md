@@ -38,6 +38,13 @@ Macintoshに関する本で、プログラミング入門というほどでは�
 * [68000 TRICKS AND TRAPS](http://www.easy68k.com/paulrsm/doc/trick68k.htm)
 
 
+## その他
+
+* [060turbo.sys - 060turbo 関連 - 特定のハードウェア用のソフトウェア - ソフトウェアライブラリ - X68000 LIBRARY](http://retropc.net/x68000/software/hardware/060turbo/060turbo_sys/)
+  * 060turbo の世界、６８０６０を斬る！！、MC68060 の命令の実行時間
+* STUDIO KAMADA &gt; [M68000 ファミリのビットフィールド命令](https://stdkmd.net/bitfield/)
+
+
 ----
 # C言語
 
@@ -133,6 +140,13 @@ Oh!X連載の単行本化。グラフィックを描画するルーチンを自�
 奥村晴彦、技術評論社、2018年。
 
 自分が持っているのは改訂新版でない古い方ですが……。
+
+
+----
+# その他
+
+* STUDIO KAMADA &gt; [文字コード表](https://stdkmd.net/charcode/)
+
 
 
 ----
