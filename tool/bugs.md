@@ -11,7 +11,7 @@
 ### C Compiler PRO-68K ver2.1 NEW KIT
 * STUDIO KAMADA &gt; X680x0 のメーカー純正ソフトウェアの不具合について &gt; [4. XC ライブラリの不具合](https://stdkmd.net/bugsx68k/#xclib)
 * INCLUDE\\TIME.Hで`CLOCKS_PER_SEC`が定義されていない。
-([@towser_meow/1638474969494724609](https://twitter.com/towser_meow/status/1638474969494724609))
+([@towser_meow/1638474969494724609](https://x.com/towser_meow/status/1638474969494724609))
   * 代わりにINCLUDE\\STDDEF.Hで`CLOCKS_PAR_SEC`が定義されている。
 * ライブラリディスクの\ASK30\FILES.Cの93行目の条件式が`ftotal <= MAXFILES`となっているため、ファイルが多いとバッファオーバーフローが起きる。
   ```c
@@ -64,7 +64,7 @@ bar: .ds.b 1
   DrawCardMono( wno;int, x;int, y;int, num;int, card;int )
   ```
   の関数名は`DrawMonoCard`が正しい。
-  ([@ShirohSuzuki/1672859593654022146](https://twitter.com/ShirohSuzuki/status/1672859593654022146))
+  ([@ShirohSuzuki/1672859593654022146](https://x.com/ShirohSuzuki/status/1672859593654022146))
 
 ### X-BASIC version 2.02
 * `print using "#,";1e308`で「おかしな命令を実行しました」等のエラーが発生する。
@@ -91,15 +91,15 @@ bar: .ds.b 1
 ### cpupower.r Ver0.1
 * 実行時にMFP TCDR($e88023; Timer-Cデータレジスタ)の値を本来の値200から256相当に書き換えるが、
   終了時に戻さないためTimer-C割り込みの間隔が1.28倍に変わってしまう。
-  ([@kg68k/1492793567512711170](https://twitter.com/kg68k/status/1492793567512711170))
+  ([@kg68k/1492793567512711170](https://x.com/kg68k/status/1492793567512711170))
   * カーソル点滅速度やSystem Informationのprocessor performance値に影響する。
 
 ### Winner2.X v1.33R4
 * 最新バージョンはv1.33R4だが実行時の表示はVer 1.30R4となっている(integerの綴りが直っているのがv1.33R4)。
 * float performanceは実質的に「integer performance」の別バージョン。
-  ([@kamadox/1684887533090660352](https://twitter.com/kamadox/status/1684887533090660352))
+  ([@kamadox/1684887533090660352](https://x.com/kamadox/status/1684887533090660352))
 * 日曜日に実行すると時計の曜日が「？」になる。
-  ([@kamadox/1684880439541215232](https://twitter.com/kamadox/status/1684880439541215232))
+  ([@kamadox/1684880439541215232](https://x.com/kamadox/status/1684880439541215232))
 
 
 <!-- ## デバイスドライバ -->
@@ -141,11 +141,11 @@ bar: .ds.b 1
         ZMSC3.X`ZM_SE_ADPCM1`は「d0.l=0:正常終了」であるので、戻り値の上書きが必要だがこれをしていない。
 * ZMC.X
   * 上限下限あり8ビット値の配列で、値の直後の2連続セパレータが単独のセパレータとして解釈されてしまう。
-    ([@kg68k/1482025079017926658](https://twitter.com/kg68k/status/1482025079017926658))
+    ([@kg68k/1482025079017926658](https://x.com/kg68k/status/1482025079017926658))
   * 上限下限あり16ビット値の配列で、上限値・下限値が正しく適用されないことがある。
-  ([@kg68k/1482027532736245763](https://twitter.com/kg68k/status/1482027532736245763))
+  ([@kg68k/1482027532736245763](https://x.com/kg68k/status/1482027532736245763))
   * `.FM_TUNE_SETUP`をint16_tではなくint8_tとしてコンパイルしてしまう。
-  ([@arith_rose/1481388558246051842](https://twitter.com/arith_rose/status/1481388558246051842))
+  ([@arith_rose/1481388558246051842](https://x.com/arith_rose/status/1481388558246051842))
 * ZP3.R
   * ファイル名を大文字ドライブ名指定すると、そのドライブに対し特殊ブロックデバイス用の`DOS _DRVCTRL (MD=$34xx)`
     を発行し、返り値によってはファイルがあってもオープンできない。  
@@ -232,18 +232,36 @@ bar: .ds.b 1
 
 ### アクアレス
 * セーブデータの日付の表示が乱れる。
-([@huye_4589/1720698235961155723](https://twitter.com/huye_4589/status/1720698235961155723))
+([@huye_4589/1720698235961155723](https://x.com/huye_4589/status/1720698235961155723))
 
 ### ボスコニアン
 * 4月8日に起動するとデモプレイ開始直後にバスエラーが発生する。
-  ([@bml3mk5/1512402885682012163](https://twitter.com/bml3mk5/status/1512402885682012163))
+  ([@bml3mk5/1512402885682012163](https://x.com/bml3mk5/status/1512402885682012163))
   * 4月8日、4月9日、6月1日でメインメモリ6MB未満の場合？
-    ([@bml3mk5/1512694332721344520](https://twitter.com/bml3mk5/status/1512694332721344520))
+    ([@bml3mk5/1512694332721344520](https://x.com/bml3mk5/status/1512694332721344520))
 
 ### ギャラガ'88
 * `IOCS _CRTMOD`でグラフィックパレットの初期化が正しく行われない不具合を利用しているため、
   `_CRTMOD`が修正されると逆に問題が発生する(起動時のローディング画像の表示が乱れる)。
   * 修正環境としてXEiJやcrtmod16.xがあり、対策としてあえて不具合を再現するcrtmod16b.xがある。
+
+### スーパーリアル麻雀PIV
+* 同じ牌が5枚でる。フロッピーディスクでプレイするとアニメーションリプレイが正常に機能しない。メーカーから修正版送付あり。
+  ([@Nitro_alpha/1791821035995865367](https://x.com/Nitro_alpha/status/1791821035995865367))
+
+### OLTEUS II (オルテウス2)
+* 不明。メーカーから修正版送付あり。
+  ([@Nitro_alpha/1785976214827782479](https://x.com/Nitro_alpha/status/1785976214827782479))
+
+### 幻影都市
+* 不明。メーカーから修正版送付あり(1993年7月に2回目の送付)。
+  ([@Nitro_alpha/1782721863371927840](https://x.com/Nitro_alpha/status/1782721863371927840))
+* 移動・メッセージ表示の設定を変更しても速くならないのはX68000のマシンパワー不足。
+
+### ドラゴンスレイヤー英雄伝説
+* 進行不能？ メーカーから修正版送付あり(1993年1月28日)。
+  ([@Nitro_alpha/1779152524244914584](https://x.com/Nitro_alpha/status/1779152524244914584))
+
 
 
 ----
