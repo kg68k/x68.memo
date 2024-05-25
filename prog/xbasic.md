@@ -1,6 +1,6 @@
 # X-BASIC
 
-## <a id="float-literal-testcase">浮動小数点数表記のテストケース</a>
+## 浮動小数点数表記のテストケース
 
 ```basic
 ? 0.5e+1#
