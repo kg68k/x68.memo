@@ -17,6 +17,7 @@ X680x0に関するメモです。
   * [アセンブリ言語](prog/asm.md)
   * [オンラインコンパイラ](prog/onlinecompiler.md)
   * [LIBC](prog/libc/README.md)
+  * [X-BASIC](prog/xbasic.md)
   * [XC](prog/xc/README.md)
   * [xdev68k](prog/xdev68k.md)
   * [elf2x68k](prog/elf2x68k.md)
