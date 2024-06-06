@@ -38,5 +38,21 @@
 (BASIC.Xで実行する場合はCRLF改行、末尾にEOF付きで保存し、`load@`で読み込みます)
 
 
+## BASTOC用テストケース
+BASIC.Xでエラーなく動作するコードですが、BC.Xで正しく変換できないものがあるかもしれません。
+
+```basic
+/*print 0**//
+print '\'
+print "\"
+int a$=1,b=2
+print a$b
+print "foo""bar"
+print "foo"1"bar"
+print "foo"b"bar"
+print "done."
+```
+
+
 ----
 goto [index](../README.md) / [プログラミング](./README.md)
