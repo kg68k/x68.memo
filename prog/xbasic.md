@@ -2,7 +2,7 @@
 
 ## 浮動小数点数表記のテストケース
 
-```basic
+```
 ? 0.5e+1#
 ? 0.5e+1
 ? 0.5e-1#
@@ -41,7 +41,7 @@
 ## BASTOC用テストケース
 BASIC.Xでエラーなく動作するコードですが、BC.Xで正しく変換できないものがあるかもしれません。
 
-```basic
+```
 /*print 0**//
 print '\'
 print "\"
@@ -51,6 +51,26 @@ print "foo""bar"
 print "foo"1"bar"
 print "foo"b"bar"
 print "done."
+```
+
+## 「関数の str 型戻り値」のエスケープ解析のテストケース
+```
+print f2()
+print f3()
+end
+/**/
+func str f2()
+str s="foo"
+return((s))
+endfunc
+/**/
+func str f3sub(s; str)
+return(s)
+endfunc
+func str f3()
+str s="bar"
+return(f3sub(s))
+endfunc
 ```
 
 
