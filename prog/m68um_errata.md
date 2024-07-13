@@ -7,9 +7,8 @@ MOTOROLA M68000 FALMILY Programmer's Reference Manual REV.1
 * [X68000 関係資料正誤表のコーナー](http://www.pastel-flower.jp/~isaki/inside-bug2.php) &gt; おまけ：M68000PRM.pdf 正誤表
 
 * https://twitter.com/kamadox/status/1055037518666584067
+  * ノンブル1-27(PDF p.38)
   >M68000 Family Programmer's Reference Manual の 1.7.1 に書かれている supervisor function code (SFC) and data function code (DFC) は source ～ と destination ～ の間違い。その後の bits 0P2 は bits 0-2。 https://www.nxp.com/files-static/archives/doc/ref_manual/M68000PRM.pdf
-
-  PDFのページ数でいうと38、ノンブルは1-27
 
 * https://twitter.com/kg68k/status/1364229639598612487
   >『M68000 FAMILY PROGRAMMER'S REFERENCE MANUAL』P.1-16。EXP 0が二つあることが知られてる図だけど(正しくは左がEXP 2)、ビット番号の96、65、32も間違ってる。
@@ -19,18 +18,22 @@ MOTOROLA M68000 FALMILY Programmer's Reference Manual REV.1
 
 * https://twitter.com/kg68k/status/1507365691921661960
   >M68040 User's ManualやM68060 User's Manualにあるmove16命令の注釈、PROGRAMMER'S REFERENCE MANUAL (M68000PM/AD REV.1)には見当たらない。
+  >>&#x37;. MOVE16 (ax)+,(ay)+ is functionally the same as MOVE16 (ax),(ay)+ when ax = ay. The address register is
+  >>only incremented once, and the line is copied over itself rather than to the next line.
 
 * https://zenn.dev/link/comments/3374282d808748
   >BFEXTUとBFFFO、公式リファレンスだと定数ビットが丸かぶりしてるんだけど、もしかしたらリファレンスがミスってるかも。
 
-* https://twitter.com/kg68k/status/1507365691921661960
-  >M68040 User's ManualやM68060 User's Manualにあるmove16命令の注釈、PROGRAMMER'S REFERENCE MANUAL (M68000PM/AD REV.1)には見当たらない。
-  >>&#x37;. MOVE16 (ax)+,(ay)+ is functionally the same as MOVE16 (ax),(ay)+ when ax = ay. The address register is
-  >>only incremented once, and the line is copied over itself rather than to the next line.
-
 * https://twitter.com/kg68k/status/1787837754682003505
   >M68000PRM.pdf ページB-4 (PDFのページ番号でいうと631)  
   >Format $3の+$06の値がFormat $2と同じ0010になっているが、0011が正しい。
+
+* [XEiJ &gt; MC68060.java](https://stdkmd.net/xeij/source/MC68060.htm)
+  * ノンブル4-93(PDF p.197) DIVS.W、アドレッシングモード「data alterable」(データ可変)は「data」(データ)が正しい。
+  * ノンブル4-93(PDF p.198) DIVS.LとDIVSL.L、アドレッシングモード「data alterable」(データ可変)は「data」(データ)が正しい。
+  * ノンブル4-97(PDF p.201) DIVU.W、NOTEのオーバーフロー条件「16-bit signed integer」は「16-bit unsigned integer」が正しい。
+  * ノンブル5-105(PDF p.407) FREM、INEX2の「Cleared」は「Refer to inexact result in the appropriate user’s manual.」
+    (結果に誤差があるときセット、それ以外はクリア)が正しい。
 
 
 # MC68030UM.pdf
