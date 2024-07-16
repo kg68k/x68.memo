@@ -32,7 +32,7 @@ src\stdio\tempnam.c で xglob.h と同時にインクルードしているが、
 * 仮想ディレクトリを正しく処理できない。
 * ボリュームラベルの`st_ino`の下位桁が`0`であることを仕様に明記する
   (同一ドライブ上で同一inode値のボリュームラベルが存在することがある)。
-* `st_ino`の上位桁にドライブ番号を入れないようにする。
+* `st_ino`の上位桁にドライブ番号を入れないようにする(include/sys/xstat.h `MAKEINODE()`マクロ)。
 
 ### iocslib.hでTLINEPTRが定義されない(未確認、要調査)
 XC iocslib.h struct TLINEPTR
@@ -59,6 +59,13 @@ XC iocslib.h struct TLINEPTR
 * 機能が入れ替わっているが、XCのDOSLIBがそうなっている。
   * 互換性維持のため入れ替わったままにしておき、ドキュメントでの説明で対応する。
   * 正しい関数を用意したい。暫定案: `_dos_ioctrlfdctl12()`、`_dos_ioctrldvctl13()`
+
+### readdir()
+* `d_reclen`メンバーが`d_namlen`と同じ値になっているので、レコード(`struct dirent`)の大きさにする。
+  * opendir()実行時にすべてのエントリを読み込んでいるので実際の処理はopendir()内にある。
+
+### closedir()
+* 返り値が`void`になっているので、`int`にする。
 
 ## 機能の追加改善
 
