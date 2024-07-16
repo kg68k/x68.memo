@@ -2,7 +2,7 @@
 
 * [LIBC 1.1.32A - ライブラリ - プログラミング - ソフトウェアライブラリ - X68000 LIBRARY](http://retropc.net/x68000/software/develop/lib/libc1132a/)
 * [LIBC 1.1.32A ぱっち DON 版 - ライブラリ - プログラミング - ソフトウェアライブラリ - X68000 LIBRARY](http://retropc.net/x68000/software/develop/lib/libcdon/)
-
+* https://github.com/kg68k/libc-tests
 
 ----
 # TODO
@@ -59,6 +59,10 @@ XC iocslib.h struct TLINEPTR
 * 機能が入れ替わっているが、XCのDOSLIBがそうなっている。
   * 互換性維持のため入れ替わったままにしておき、ドキュメントでの説明で対応する。
   * 正しい関数を用意したい。暫定案: `_dos_ioctrlfdctl12()`、`_dos_ioctrldvctl13()`
+
+### opendir()
+* `opendir("")`をエラーにする(WSL2/Ubuntuではエラーになっている)。
+* その他機能テスト用のマクロを定義するなど、direntの仕様を改善する。
 
 ### readdir()
 * `d_reclen`メンバーが`d_namlen`と同じ値になっているので、レコード(`struct dirent`)の大きさにする。
