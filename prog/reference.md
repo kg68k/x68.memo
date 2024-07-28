@@ -43,6 +43,8 @@ Macintoshに関する本で、プログラミング入門というほどでは�
 * [060turbo.sys - 060turbo 関連 - 特定のハードウェア用のソフトウェア - ソフトウェアライブラリ - X68000 LIBRARY](http://retropc.net/x68000/software/hardware/060turbo/060turbo_sys/)
   * 060turbo の世界、６８０６０を斬る！！、MC68060 の命令の実行時間
 * STUDIO KAMADA &gt; [M68000 ファミリのビットフィールド命令](https://stdkmd.net/bitfield/)
+* [Plutiedev](https://www.plutiedev.com/)
+  メガドライブプログラミング。64ビット演算などM68000の記事あり。
 
 
 ----
