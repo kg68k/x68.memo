@@ -50,4 +50,5 @@ X680x0に関するメモです。
 * その他ROMや拡張ボードの情報
 * METALMDX.LZH(METAL SIGHT内蔵音源版BGMのMDX全曲集)で使用されているcryptmdxに関する情報
 * MXDRV ver.2.06+16 Rel.13a
+* P8KEYM.X ver 0.90, 0.96, 1.00
 
