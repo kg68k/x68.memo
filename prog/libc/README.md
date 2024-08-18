@@ -93,6 +93,15 @@ XC iocslib.h struct TLINEPTR
 ### getexecname(): 実行ファイルのフルパス名を返す
 https://twitter.com/kg68k/status/1610270055765520384
 
+### getopt.hの追加
+* getopt() (unistd.hでの宣言と重複する)
+* getopt_long()
+* getopt_long_only()
+
+### X-BASIC用ライブラリ
+* include/basic.h
+* include/basic0.h
+* lib/libbas.a
 
 ## 近代的なGCC環境(elf2x68k、xdev68k)への対応
 
