@@ -42,13 +42,16 @@ X680x0に関するメモです。
 * mt32pi.x
 * Crt_mode select utility (1989/12/24) by ねこ
 * pfloat.x
-* FSHARPのライブラリ
-* fj.binaries.x68000のアーカイブ
-  (fj.sys.x68000は[Googleグループ](https://groups.google.com/g/fj.sys.x68000)で読めます)
-* デバッガのDB.X v3.01、v3.02、SCD.X v3.01が何に収録されているかの情報
-* SRAMに書き込みを行うフロッピーディスク用IPLに関する情報
-* その他ROMや拡張ボードの情報
-* METALMDX.LZH(METAL SIGHT内蔵音源版BGMのMDX全曲集)で使用されているcryptmdxに関する情報
 * MXDRV ver.2.06+16 Rel.13a
 * P8KEYM.X ver 0.90, 0.96, 1.00
+* NOSF.X ver 2.03 (X68K Normal to Shift Format Converter)
+* ミラー
+  * FSHARPのライブラリ
+  * fj.binaries.x68000のアーカイブ
+    (fj.sys.x68000は[Googleグループ](https://groups.google.com/g/fj.sys.x68000)で読めます)
+* その他
+  * デバッガのDB.X v3.01、v3.02、SCD.X v3.01が何に収録されているかの情報
+  * SRAMに書き込みを行うフロッピーディスク用IPLに関する情報
+  * その他ROMや拡張ボードの情報
+  * METALMDX.LZH(METAL SIGHT内蔵音源版BGMのMDX全曲集)で使用されているcryptmdxに関する情報
 
