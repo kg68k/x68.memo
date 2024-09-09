@@ -103,6 +103,11 @@ https://twitter.com/kg68k/status/1610270055765520384
 * include/basic0.h
 * lib/libbas.a
 
+### ディスク入出力(unistd.h)
+* sync()
+* fsync()
+
+
 ## 近代的なGCC環境(elf2x68k、xdev68k)への対応
 
 ### vfprintf()などでbuiltin-declaration-mismatch警告が発生する
