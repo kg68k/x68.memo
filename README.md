@@ -21,6 +21,7 @@ X680x0に関するメモです。
   * [XC](prog/xc/README.md)
   * [xdev68k](prog/xdev68k.md)
   * [elf2x68k](prog/elf2x68k.md)
+  * [構造化アセンブラ](prog/structured_asm.md)
   * [参考資料](prog/reference.md)
   * [Motorola発行マニュアルの正誤情報](prog/m68um_errata.md)
 * [Human68k](human68k/README.md)
