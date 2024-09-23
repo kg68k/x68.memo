@@ -2,6 +2,10 @@
 
 ## X680x0用
 
+* Assembler Pre-Processor 「ＡＳＰ．ｒ」
+  … RAMDISKドライバGRADで使用されている(GRADに同梱)。拡張子`.ASP`。
+* Assembler PreProcessor 「AP.r」
+  … APICGで使用されている(APICGに同梱)。ASP.rよりAP.rの方が新しい。拡張子`.AP`。
 * PP68K
   … 株式会社ジェー・イー・エルが発売した市販ソフト。
   * Oh!X 1988年11月号に広告あり、名称はペペ68Kと読む。
