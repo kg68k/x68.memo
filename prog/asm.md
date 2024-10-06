@@ -108,6 +108,48 @@ B:
   .even
 ```
 
+### 32ビット値の偶数化
+
+データレジスタが奇数なら+1して偶数にする。
+```
+doeven1: .macro dn
+  addq.l #1,dn
+  andi.b #$fe,dn
+.endm
+```
+
+入出力が同じアドレスレジスタの場合。
+```
+doeven2: .macro an,dn
+  move.l an,dn    ;4
+  addq.l #1,dn    ;8
+  andi.b #$fe,dn  ;8
+  movea.l dn,an   ;4
+.endm
+```
+
+クロック数は同じだが1ワード小さくなる。
+```
+doeven3: .macro an,dn
+  move.w an,dn  ;4
+  lsr.w #1,dn   ;8
+  subx.w dn,dn  ;4
+  suba.w dn,an  ;8
+.endm
+```
+実際には入出力が同じアドレスレジスタというケースはあまりないかも。
+
+入出力が同じメモリの場合(基本形)。
+```
+doeven4: .macro ea,dn
+  moveq #1,dn
+  and.l ea,dn
+  add.l dn,ea
+.endm
+```
+
+短くするために`andi.b #$fe,dn`と書きましたが、`andi #$fffe,dn`の方が好み。
+
 
 ----
 goto [index](../README.md) / [プログラミング](./README.md)
