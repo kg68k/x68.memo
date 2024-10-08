@@ -132,6 +132,15 @@ bar: .ds.b 1
 * `DOS _KEEPPR`に渡す常駐バイト数にデータセクションの大きさが含まれておらず、またスタック範囲外の値を加算している。
   他の部分のコードの影響により結果として問題が顕在化しないことが多いと思われるが、場合(値)によっては異常動作を引き起こす。
 
+### Z-MUSIC v2 (詳細未確認)
+* ピッチベンドの際に時折計算を間違えてデータ2バイトの最上位ビットが立ってしまう事がある
+  ([A ♪SOUND mind in a SOUND <body> : Z-MUSIC for the Web - Qiita](https://qiita.com/toyoshim/items/38dafc97629a98434267))
+
+### Z-MUSIC Version 2.08e
+* ZPCONV.R version 2.04d
+  * X68000(MPU 68000)で実行すると`IOCS _SYS_STAT`を呼び出して白帯になる。
+  * Z-MUSIC Version 2.08に同梱のZPCONV.R version 2.04を使えばよい。
+
 ### ZMSC3LIB Version 0.01
 * ZMCHECKZMSC.HAS `zm_check_zmsc()`: スーパーバイザモードで呼び出すとアドレスエラーが発生する。
   * スーパーバイザになるための`IOCS _B_SUPER`の返り値を見てユーザーモードに戻るための`_B_SUPER`を省略しなければならないが、
@@ -166,10 +175,6 @@ bar: .ds.b 1
       正しくは「d4.lw:再生チャンネル(0-7)」。
   * ZM15.MAN
     * ファンクション`$10xx M_EFCT_OUT`の「ファンクション$8005」は、正しくは「ファンクション$8006」。
-
-### Z-MUSIC v2 (詳細未確認)
-* ピッチベンドの際に時折計算を間違えてデータ2バイトの最上位ビットが立ってしまう事がある
-  ([A ♪SOUND mind in a SOUND <body> : Z-MUSIC for the Web - Qiita](https://qiita.com/toyoshim/items/38dafc97629a98434267))
 
 
 ## PCMドライバ
