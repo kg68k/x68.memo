@@ -136,6 +136,12 @@ bar: .ds.b 1
 * ピッチベンドの際に時折計算を間違えてデータ2バイトの最上位ビットが立ってしまう事がある
   ([A ♪SOUND mind in a SOUND <body> : Z-MUSIC for the Web - Qiita](https://qiita.com/toyoshim/items/38dafc97629a98434267))
 
+### Z-MUSIC Version 2.08
+* ZP.R version 2.02
+  * 常駐検査時に常駐プロセスではないメモリブロックを検査したり、メモリブロックの範囲外を参照することがある。
+    これにより誤判定やバスエラーが起きることがある。
+  * 派生版も修正されていなければ同じ不具合あり。
+
 ### Z-MUSIC Version 2.08e
 * ZPCONV.R version 2.04d
   * X68000(MPU 68000)で実行すると`IOCS _SYS_STAT`を呼び出して白帯になる。
