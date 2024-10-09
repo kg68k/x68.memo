@@ -147,6 +147,12 @@ bar: .ds.b 1
   * X68000(MPU 68000)で実行すると`IOCS _SYS_STAT`を呼び出して白帯になる。
   * Z-MUSIC Version 2.08に同梱のZPCONV.R version 2.04を使えばよい。
 
+### ZMUSIC.L Version 2.01
+* `zm_ver()`: スーパーバイザモードで呼び出すとバスエラーが発生する。
+  * スーパーバイザになるための`DOS _SUPER`の返り値を見てユーザーモードに戻るための`_SUPER`を省略しなければならないが、
+    その処理が抜けているため。
+* `zm_ver()`: Z-MUSIC Ver.3が常駐していると、`0`(常駐していない)ではなくZ-MUSIC Ver.3のバージョン番号を返す。
+
 ### ZMSC3LIB Version 0.01
 * ZMCHECKZMSC.HAS `zm_check_zmsc()`: スーパーバイザモードで呼び出すとアドレスエラーが発生する。
   * スーパーバイザになるための`IOCS _B_SUPER`の返り値を見てユーザーモードに戻るための`_B_SUPER`を省略しなければならないが、
