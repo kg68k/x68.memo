@@ -5,8 +5,6 @@ X680x0に関するメモです。
 気が向いたときに気が向いた項目を書き留めていきます。
 
 ## 目次
-* [X68000 Z](x68z/README.md)
-  * [よくある質問](x68z/faq.md)
 * [実行ファイル](execfile.md)
 * [CRTC](crtc.md)
 * [ツール](tool/README.md)
@@ -26,6 +24,9 @@ X680x0に関するメモです。
   * [Motorola発行マニュアルの正誤情報](prog/m68um_errata.md)
 * [Human68k](human68k/README.md)
   * [CONFIG.SYS](human68k/configsys/README.md)
+  * [OPMDRV*.Xを体感する方法](human68k/opmdrv.md)
+* [X68000 Z](x68z/README.md)
+  * [よくある質問](x68z/faq.md)
 * [ウイルス](virus.md)
 
 
