@@ -44,6 +44,8 @@ MC68030 ENHANCED 32-BIT MICROPROCESSOR USER'S MANUAL Therd Edition
 
 # MC68030 ユーザーズ・マニュアル 第1版
 
+* [X68000 関係資料正誤表のコーナー](http://www.pastel-flower.jp/~isaki/inside-bug2.php) &gt; おまけ3:「MC68030ユーザーズ・マニュアル」(日本語版) 正誤表
+
 * https://twitter.com/isaki68k/status/1561694664305979393
   >MC68030ユーザーズマニュアル(日本語) p.457 表9-3、透過(T)の行、レベル0欄の説明の後半の一文。  
   >×「Iビットがセットされている場合は未定義。」  
