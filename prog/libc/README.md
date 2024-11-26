@@ -76,6 +76,12 @@ XC iocslib.h struct TLINEPTR
   * `opendir()`、`ftw()`、`stat()`、`lstat()`において使用できないドライブ名を指定できてしまう
     (例えば`subst d:\dir x:`としたときx:はアクセスできないが、`opendir("x:/")`が成功してしまう)。
 
+### strftime()
+* `form()`でバッファサイズが足りないと`va_end()`マクロを呼び出さずに`return`している(未定義動作)。
+* `count`が負数の場合にデクリメントしてしまう、`strout:`ラベルでバッファ不足のとき`strptr`をデクリメントしてしまう、
+  という挙動も気になるが特に問題はおきないはず。
+
+
 ## 機能の追加改善
 
 ### C23、C2yに対応(需要のあるものから)
@@ -107,8 +113,14 @@ https://twitter.com/kg68k/status/1610270055765520384
 * sync()
 * fsync()
 
+### 時計操作(time.h)
+* asctime_r() ... POSIX.1-2024では廃止されている。
+* ctime_r() ... POSIX.1-2024では廃止されている。
+* gmtime_r()
+* localtime_r()
 
-## 近代的なGCC環境(elf2x68k、xdev68k)への対応
+
+## 近代的なGCC環境(elf2x68k)への対応
 
 ### vfprintf()などでbuiltin-declaration-mismatch警告が発生する
 https://twitter.com/kamadox/status/1476568081996849153
