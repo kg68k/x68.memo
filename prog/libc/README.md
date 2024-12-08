@@ -118,6 +118,8 @@ https://twitter.com/kg68k/status/1610270055765520384
 * ctime_r() ... POSIX.1-2024では廃止されている。
 * gmtime_r()
 * localtime_r()
+  * C11で追加された拡張のlocaltime_s()は、glibcでサポートされていない、MSVCで同名の関数があるが仕様が異なる、
+    という状況のため当面は対応しない。
 
 
 ## 近代的なGCC環境(elf2x68k)への対応
