@@ -88,6 +88,7 @@ XC iocslib.h struct TLINEPTR
 * stdbool.h
 * stdint.h
 * inttypes.h
+* [C23の改善点：文字列検索関数でのconst性の維持](https://zenn.dev/mod_poppo/articles/c23-constness)
 
 ### Visual C++との互換性向上
 * fopen_s()
@@ -157,7 +158,7 @@ https://twitter.com/kg68k/status/1603411122329190401
 
 ## その他
 
-* 改造版の名称、ライセンスを再検討してリブート(2024年を目標)
+* 改造版の名称、ライセンスを再検討してリブート(2025年を目標)
 * Cコンパイラをelf2x68k(gcc-13.2.0)に変更する
 * X680x0固有のヘッダファイルをinclude/x68k/ディレクトリに移動する。
   * sys/dos.h、sys/iocs.hは互換性維持のため`#include <x68k/*.h>`という内容のエイリアスにする。
