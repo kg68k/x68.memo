@@ -1,7 +1,9 @@
 # X-BASIC
+* BAISC.Xで動作確認しています。
+* BASIC.Xで実行する場合はCRLF改行、末尾にEOF付きで保存し、`load@`で読み込みます。
+* BC.Xで正しく変換できないものがあるかもしれませんが、BC.Xの動作についてはここでは取り扱いません。
 
-## 浮動小数点数表記のテストケース
-
+## 浮動小数点数表記
 ```
 ? 0.5e+1#
 ? 0.5e+1
@@ -35,12 +37,8 @@
 ? .5#
 ? .5
 ```
-(BASIC.Xで実行する場合はCRLF改行、末尾にEOF付きで保存し、`load@`で読み込みます)
 
-
-## BASTOC用テストケース
-BASIC.Xでエラーなく動作するコードですが、BC.Xで正しく変換できないものがあるかもしれません。
-
+## print文
 ```
 /*print 0**//
 print '\'
@@ -53,7 +51,7 @@ print "foo"b"bar"
 print "done."
 ```
 
-## 「関数の str 型戻り値」のエスケープ解析のテストケース
+## 「関数のstr型戻り値」のエスケープ解析
 ```
 print f2()
 print f3()
@@ -70,6 +68,18 @@ endfunc
 func str f3()
 str s="bar"
 return(f3sub(s))
+endfunc
+```
+
+## 文字列演算の多重使用
+```
+print f1("abc","xyz")
+end
+func str f1(a; str, b; str)
+return(a+f2("-",b))
+endfunc
+func str f2(a; str, b; str)
+return(a+b)
 endfunc
 ```
 
