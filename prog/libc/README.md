@@ -105,6 +105,10 @@ https://twitter.com/kg68k/status/1610270055765520384
 * getopt_long()
 * getopt_long_only()
 
+### XCとの互換性向上
+* include/class.h
+  * doslib.h、iocslib.hから読み込まれる。
+
 ### X-BASIC用ライブラリ
 * include/basic.h
 * include/basic0.h
