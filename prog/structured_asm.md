@@ -18,6 +18,8 @@
   … プリプロセッサ。拡張子`.ss`、`.ll`。
 * PAS v1.0: preprocesser for X68000 AS.X
   … プリプロセッサ。PASMを参考にしている。拡張子`.T`。
+* asm_if.x Aprication for HAS 3.nn
+  … 対戦格闘”空手道”で使用されている(空手道に同梱)。拡張子`.ASM`。
 
 
 ## その他の機種用
