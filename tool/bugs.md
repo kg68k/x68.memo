@@ -143,6 +143,12 @@ bar: .ds.b 1
     * 派生版も修正されていなければ同じ不具合あり(ZP3.Rでは修正されている)。
   * 空きメモリが少ない状態で実行するとプロセスのメモリブロック範囲外を読み書きすることがある。
     これによりバスエラーやハングアップなどが起きる。
+* マニュアル(ZMSC2MAN.LZH)
+  * 備考：配布アーカイブ(MANUAL.LZH)によっては全ファイルにMacBinaryが書き込まれている場合がある。
+    当アカウントの[zmusic2リポジトリ](https://github.com/kg68k/zmusic2)や、現在のX68000 LIBRARYの
+    [Z-MUSIC ver2](http://retropc.net/x68000/software/sound/zmusic/zmusic2/)にあるものは問題ない。
+  * ZM03.MAN
+    * `m_tempo(tm)`の引数「tm＝トラック番号」は「tm＝テンポ値」が正しい。
 
 ### Z-MUSIC Version 2.08e
 * ZPCONV.R version 2.04d
