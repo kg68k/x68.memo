@@ -149,6 +149,9 @@ bar: .ds.b 1
     [Z-MUSIC ver2](http://retropc.net/x68000/software/sound/zmusic/zmusic2/)にあるものは問題ない。
   * ZM03.MAN
     * `m_tempo(tm)`の引数「tm＝トラック番号」は「tm＝テンポ値」が正しい。
+    * `m_stat(ch)`の引数2行目の「全て」は不要。
+  * ZM16.MAN
+    * `m_stat()`の引数「`track_bit_pattern`」は「`channel_no`」が正しい。詳しくはZMUSIC.Lの項を参照のこと。
 
 ### Z-MUSIC Version 2.08e
 * ZPCONV.R version 2.04d
@@ -161,6 +164,10 @@ bar: .ds.b 1
     その処理が抜けているため。
   * X-BASIC用外部関数MUSICZ.FNCのライブラリ版という位置付けのため、もともとスーパーバイザモードを想定していないのかも。
 * `zm_ver()`: Z-MUSIC Ver.3が常駐していると、`0`(常駐していない)ではなくZ-MUSIC Ver.3のバージョン番号を返す。
+* zmusic.h: `m_stat()`の引数はチャンネル番号(または0=全チャンネル指定)なので、変数名`track_bit_pattern`は正しくない。
+  `m_assign()`に合わせると`channel_no`が適切。
+  * 備考：Z-MUSICのファンクション`$09`はビットマップで複数チャンネルを指定できるが、
+    MUSICZ.FNCとZMUSIC.Lはその呼び出し方法には対応していない。
 
 ### Z-MUSIC Ver.3.02C
 * ZMSC3.X
