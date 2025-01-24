@@ -147,11 +147,15 @@ bar: .ds.b 1
   * 備考：配布アーカイブ(MANUAL.LZH)によっては全ファイルにMacBinaryが書き込まれている場合がある。
     当アカウントの[zmusic2リポジトリ](https://github.com/kg68k/zmusic2)や、現在のX68000 LIBRARYの
     [Z-MUSIC ver2](http://retropc.net/x68000/software/sound/zmusic/zmusic2/)にあるものは問題ない。
-  * ZM03.MAN
+  * ZM3.MAN
     * `m_tempo(tm)`の引数「tm＝トラック番号」は「tm＝テンポ値」が正しい。
     * `m_stat(ch)`の引数2行目の「全て」は不要。
     * `m_assign2(ch,tr)`のコード例のchとtrが逆になっている。
       ([X-Basic_Manual.pdf](https://junk-pro68k.booth.pm/items/5940250) Page 170)
+    * `m_wave_form()`の「オルタニティヴ」は「オルタナティヴ」が正しいと思われる
+      (ソースコードで該当する機能が「alternative」なので)。
+  * ZM4.MAN
+     * `.WAVE_FORM`の「オルタニティヴ」は「オルタナティヴ」が正しいと思われる。
   * ZM16.MAN
     * `m_stat()`の引数「`track_bit_pattern`」は「`channel_no`」が正しい。詳しくはZMUSIC.Lの項を参照のこと。
 
