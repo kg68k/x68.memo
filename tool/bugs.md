@@ -150,6 +150,8 @@ bar: .ds.b 1
   * ZM03.MAN
     * `m_tempo(tm)`の引数「tm＝トラック番号」は「tm＝テンポ値」が正しい。
     * `m_stat(ch)`の引数2行目の「全て」は不要。
+    * `m_assign2(ch,tr)`のコード例のchとtrが逆になっている。
+      ([X-Basic_Manual.pdf](https://junk-pro68k.booth.pm/items/5940250) Page 170)
   * ZM16.MAN
     * `m_stat()`の引数「`track_bit_pattern`」は「`channel_no`」が正しい。詳しくはZMUSIC.Lの項を参照のこと。
 
