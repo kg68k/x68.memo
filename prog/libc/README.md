@@ -170,6 +170,7 @@ https://twitter.com/kg68k/status/1603411122329190401
 
 ## ドキュメント (X680x0 libc Vol.2 Programmer's Reference)
 
+* p.190 `kbhit` 戻り値は「キーボードが押されていれば(入力データがれば)0以外を返し」が正しい。
 * p.533 `_dos_vernum` 下位16ビットと上位16ビットが逆。
 
 
