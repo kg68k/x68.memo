@@ -22,6 +22,12 @@
   … 対戦格闘”空手道”で使用されている(空手道に同梱)。拡張子`.ASM`。
 
 
+## (参考) X680x0用で構造化アセンブラではないもの
+
+* CMA68K … シティソフトが発売した市販ソフト。
+  * Oh!X 1989年1月号にレビュー記事あり。オートコードジェネレーション機能は専用リンカ(SLINK)が必要とのこと。
+
+
 ## その他の機種用
 
 * [Microsoft Macro Assembler](https://learn.microsoft.com/en-us/cpp/assembler/masm/microsoft-macro-assembler-reference?view=msvc-170)
