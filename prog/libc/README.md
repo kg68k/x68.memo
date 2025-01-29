@@ -166,6 +166,7 @@ https://twitter.com/kg68k/status/1603411122329190401
 * I/O接続のコプロセッサ(68881/68882)を直接制御する数学関数(マクロ `__DIRECT_IOFPU__`)
 * `_spawn()`でコマンドラインが256バイト以上かつ実行ファイルがHUPAIR準拠でない場合の強制実行、インダイレクト実行(環境変数 `HUGEARG`)
 * `_dos_link()`、`_dos_unlink()`
+* GCCの`-mshort`オプションへの対応。
 
 
 ## ドキュメント (X680x0 libc Vol.2 Programmer's Reference)
