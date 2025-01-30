@@ -31,8 +31,9 @@ ref. [2009-Semi1-Yuusuke_Miyazaki.pdf](http://www.wata-lab.meijo-u.ac.jp/file/se
 
 ## BEEPウイルス(仮)
 * [復刻版「ヴァリスト・レスナルト」の不具合に関して｜BEEP](https://www.beep-shop.com/blog/19808/)
-* [X68000用ゲーム「ヴァリストレスナルト」SRAMに侵入してFDに感染する謎のIPL - Togetter](https://togetter.com/li/1844403)
-* [X68000用ゲーム「ヴァリストレスナルト」IPLについて販売元からの発表 - Togetter](https://togetter.com/li/1850750)
+* [X68000用ゲーム「ヴァリストレスナルト」SRAMに侵入してFDに感染する謎のIPL - posfie](https://posfie.com/@rentan_org/p/6c6XvOO)
+* [X68000用ゲーム「ヴァリストレスナルト」IPLについて販売元からの発表 - posfie](https://posfie.com/@rentan_org/p/FRcVmkk)
+
 
 # ツール
 * WAC.X ... ワクチンプログラム by CARROT PARTY
