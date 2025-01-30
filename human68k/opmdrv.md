@@ -4,7 +4,7 @@
 OPMDRV3.Xが削除されておりそれ以前のバージョンも公開されていません。
 
 * [X68000のOPMDRVについての考察｜あうぇっど](https://note.com/nankin68000/n/nba5591db6737)
-* [X68000用純正音源ドライバOPMDRV.Xの開発経緯 - Togetter [トゥギャッター]](https://togetter.com/li/2305002)
+* [X68000用純正音源ドライバOPMDRV.Xの開発経緯 - posfie](https://posfie.com/@rentan_org/p/CKfV6l9)
 * [OPMDRVのことを知りたい｜JUNK-Pro68k](https://note.com/junk_pro68k/n/nb778276db88c)
 
 実用上であればZ-MUSICなど上位互換ドライバを使えばいいでしょうが、OPMDRV*.X
