@@ -137,6 +137,8 @@ bar: .ds.b 1
   ([A ♪SOUND mind in a SOUND <body> : Z-MUSIC for the Web - Qiita](https://qiita.com/toyoshim/items/38dafc97629a98434267))
 
 ### Z-MUSIC Version 2.08
+* 奇数アドレスに配置したZMDデータをOPMデバイスに書き込むとアドレスエラーが発生する。不具合として扱うべきかは検討の余地あり。
+  ([@kg68k/1886460468925227335](https://x.com/kg68k/status/1886460468925227335))
 * ZP.R version 2.02
   * 常駐検査時に常駐プロセスではないメモリブロックを検査したり、メモリブロックの範囲外を参照することがある。
     これにより誤判定やバスエラーが起きることがある。
