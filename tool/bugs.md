@@ -179,10 +179,15 @@ bar: .ds.b 1
     その処理が抜けているため。
   * X-BASIC用外部関数MUSICZ.FNCのライブラリ版という位置付けのため、もともとスーパーバイザモードを想定していないのかも。
 * `zm_ver()`: Z-MUSIC Ver.3が常駐していると、`0`(常駐していない)ではなくZ-MUSIC Ver.3のバージョン番号を返す。
-* zmusic.h: `m_stat()`の引数はチャンネル番号(または0=全チャンネル指定)なので、変数名`track_bit_pattern`は正しくない。
+* `m_stat()`: 引数はチャンネル番号(または0=全チャンネル指定)なので、zmusic.hでの引数名`track_bit_pattern`は正しくない。
   `m_assign()`に合わせると`channel_no`が適切。
   * 備考：Z-MUSICのファンクション`$09`はビットマップで複数チャンネルを指定できるが、
     MUSICZ.FNCとZMUSIC.Lはその呼び出し方法には対応していない。
+* `m_play()`, `m_stop()`, `m_cont()`: track_no?=='NASI'以降を無視しない。
+* `m_out()`: 引数に-1または'NASI'がない場合、スタック上の引数列の末尾を超えてメモリを読み込む。
+* `m_mute()`, `m_solo()`: ch_no?=='NASI'以降を無視しない。
+  * zmusic.hのコメントの「全トラック」は「全チャンネル」が正しい。
+* zmusic.h: m_trk()のMML_ptrなど、書き換えをしないchar\*引数にconstが付いていない。
 
 ### Z-MUSIC Ver.3.02C
 * ZMSC3.X
