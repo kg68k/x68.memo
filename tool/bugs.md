@@ -225,6 +225,14 @@ bar: .ds.b 1
   ([@kg68k/1482027532736245763](https://x.com/kg68k/status/1482027532736245763))
   * `.FM_TUNE_SETUP`をint16_tではなくint8_tとしてコンパイルしてしまう。
   ([@arith_rose/1481388558246051842](https://x.com/arith_rose/status/1481388558246051842))
+  * 参考情報：隠し機能かもしれない挙動。
+    * `@Kn1,n2,dly,bnd`、`@Bn1,n2,dly,bnd`のdlyに-32768～-1を指定できる。
+  * 参考情報：ZMDフォーマット(ZM12.MAN)では対応しているが、ZMC.Xの動作やMMLコマンド解説(ZM5.MAN)では使用できない数値指定。
+      * `U±n`、`@U±n`、`Kn`、`@P±n`、`[VOLUME v]`、`[@VOLUME v]`、`[VELOCITY u]`、`[@VELOCITY u]`、`[PANPOT p]`、
+        `[@PANPOT p]`、`[CH_PRESSURE n]`
+        の下限は-127だが、ZMD仕様では-128。
+      * `_n`の上限は127だが、ZMD仕様では128(ZMDデータ上は-128)。
+      * `@Kn1,n2,dly,bnd`と`@Bn1,n2,dly,bnd`のbnd、`@Qn`の下限は-32767だが、ZMD仕様では-32768。
 * ZP3.R
   * ファイル名を大文字ドライブ名指定すると、そのドライブに対し特殊ブロックデバイス用の`DOS _DRVCTRL (MD=$34xx)`
     を発行し、返り値によってはファイルがあってもオープンできない。  
@@ -238,6 +246,10 @@ bar: .ds.b 1
 * マニュアル(ZM302_M.LZH)
   * ZM4.MAN
     * `.FM_TUNE_SETUP`、`.ADPCM_TUNE_SETUP`のt1～t128の値の上限が+32768と書かれている(本文は正しい)。
+  * ZM5.MAN
+    * 値の範囲をA-Bと表記しているものと、A～Bと表記しているものがあり統一されていない。
+    * `[TRACK_DELAY n]`のnの上限は32768ではなく32767。
+    * `[VELOCITY u]`の「・u:-127～+127」は「・u:0～127」が正しい。
   * ZM10.MAN
     * ファンクション`$13 ZM_SE_ADPCM1`、`$14 ZM_SE_ADPCM2`の「d4.lw:再生チャンネル(0-15)」は、
       正しくは「d4.lw:再生チャンネル(0-7)」。
