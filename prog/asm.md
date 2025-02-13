@@ -151,5 +151,14 @@ doeven4: .macro ea,dn
 短くするために`andi.b #$fe,dn`と書きましたが、`andi #$fffe,dn`の方が好み。
 
 
+### 符号拡張後の2倍
+```
+  ext.l d0
+  add.l d0
+```
+は`add.l`を`add.w`にすれば4クロック速い(フラグ変化は異なる)。
+
+
+
 ----
 goto [index](../README.md) / [プログラミング](./README.md)
