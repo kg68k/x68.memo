@@ -42,6 +42,10 @@ ref. [2009-Semi1-Yuusuke_Miyazaki.pdf](http://www.wata-lab.meijo-u.ac.jp/file/se
   * X68K用 SRAMチェックツール
 * BOOTMENU ... FD IPLの感染チェック機能あり
 * ch30*_omake.sys ... FD IPLの感染チェック機能あり
+* 電脳クラブ84号「X680x0 に感染するコンピュータ・ウイルスの確認報告」(鎌田誠氏)。
+  ウイルスが2種確認されている(名称不明)。
+  * IPLVCK (IPL Virus Checker)
+  * SPAIM (SRAM Program Area Initializer Maker)
 
 
 ----
