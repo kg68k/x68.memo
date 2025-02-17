@@ -21,6 +21,8 @@
   * XC2103.LZH, XC2103I.LZH: \ASK30\MAKEFILEの内容がACI.Hと同一。
 * (おそらく全バージョン) DOSLIBの`IOCTRLFDCTL()`と`IOCTRLDVCTL()`が入れ替わっている。  
   NEW KITの拡張マニュアルには`IOCTRLFDCTL()`がドライブ番号`drive`を指定する関数という説明が記載されている。
+* SCD.X
+  * (おそらくv3系すべて?) gcc -gで生成した実行ファイルのソースコードデバッグでステップ実行するとアドレスエラーが発生する。
 
 ### HAS060.X version 3.09+91
 * HAS060.X - アセンブラ - プログラミング - ソフトウェアライブラリ - X68000 LIBRARY &gt;
