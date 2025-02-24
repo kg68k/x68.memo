@@ -2,6 +2,7 @@
 
 * [CONFIG.SYS](configsys/README.md)
 * [OPMDRV*.Xを体感する方法](opmdrv.md)
+* [FLOAT2.X](float2.md)
 
 
 ## リンク
