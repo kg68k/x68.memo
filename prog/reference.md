@@ -45,7 +45,11 @@ Macintoshに関する本で、プログラミング入門というほどでは�
 * STUDIO KAMADA &gt; [M68000 ファミリのビットフィールド命令](https://stdkmd.net/bitfield/)
 * [Plutiedev](https://www.plutiedev.com/)
   メガドライブプログラミング。64ビット演算などM68000の記事あり。
-
+* [MC680x0 Reference 1.1, ©April,May 1995 by Flint/DARKNESS.](http://oldwww.nvg.ntnu.no/amiga/MC680x0_Sections/index.HTML)
+* [Motorola 68000 Articles - EEEGUIDE.COM](https://www.eeeguide.com/motorola-68000-articles/)
+* [68000 interrupt acknowledge cycle duration - NXP Community](https://community.nxp.com/t5/ColdFire-68K-Microcontrollers/68000-interrupt-acknowledge-cycle-duration/m-p/135573/highlight/true#M1626)
+* [The Undocumented 68000](https://pasti.fxatari.com/68kdocs/)
+  ... DIVU &amp; DIVS cycle accurate timing, Instruction prefetch
 
 ----
 # C言語
