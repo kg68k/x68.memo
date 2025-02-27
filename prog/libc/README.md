@@ -154,6 +154,27 @@ https://twitter.com/kg68k/status/1603411122329190401
 ### sys/dos_i.h
 `__DOSCALL`宣言がないので、全てインラインアセンブラにする。
 
+### interrupt.h
+真理子版GCCでない場合はマクロを使用不可にする。
+```c
+#ifdef __MARIKO_CC__
+#define IJUMP(addr) __builtin_saveregs (addr)
+#else
+__attribute__((__error__("msg"))) static inline IJUMP(void* _addr);
+#endif
+```
+真理子版でも削除したいが、errorやdeprecatedの属性をつける手段がなくユーザーへのフォローができないので、
+とりあえずそのまま有効とする。
+
+ちなみにマクロを使うのは古い書き方なので、`rte`で戻るだけの割り込み関数なら関数宣言に
+`interrupt`か`attribute((interrupt))`をつける方法にすべきです。  
+```c
+#ifndef __MARIKO_CC__
+#define interrupt __attribute__((__interrupt__))
+#endif
+```
+というのも検討。
+
 ### 未確認、要調査
 * NaN、Inf
 * long longのエンディアン
