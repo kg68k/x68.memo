@@ -10,20 +10,21 @@
 
 ### C Compiler PRO-68K ver2.1 NEW KIT
 * STUDIO KAMADA &gt; X680x0 のメーカー純正ソフトウェアの不具合について &gt; [4. XC ライブラリの不具合](https://stdkmd.net/bugsx68k/#xclib)
-* INCLUDE\\TIME.Hで`CLOCKS_PER_SEC`が定義されていない。
-([@towser_meow/1638474969494724609](https://x.com/towser_meow/status/1638474969494724609))
-  * 代わりにINCLUDE\\STDDEF.Hで`CLOCKS_PAR_SEC`が定義されている。
+* SCD.X
+  * (おそらくv3系すべて?) gcc -gで生成した実行ファイルのソースコードデバッグでステップ実行するとアドレスエラーが発生することがある。
+    -finline-functionsを指定する(または環境変数`GCC_OPTION1=I`)と発生しない。SCD.X側の問題かどうかは不明。
+* [無償公開版](http://retropc.net/x68000/software/sharp/xc21/)に特有と思われる不具合。
+  * XC2103.LZH, XC2103I.LZH: \ASK30\MAKEFILEの内容がACI.Hと同一。
 * ライブラリディスクの\ASK30\FILES.Cの93行目の条件式が`ftotal <= MAXFILES`となっているため、ファイルが多いとバッファオーバーフローが起きる。
   ```c
   		} while (nfiles() == 0 && ftotal <= MAXFILES);
   ```
-* [無償公開版](http://retropc.net/x68000/software/sharp/xc21/)に特有と思われる不具合。
-  * XC2103.LZH, XC2103I.LZH: \ASK30\MAKEFILEの内容がACI.Hと同一。
+* INCLUDE\\TIME.Hで`CLOCKS_PER_SEC`が定義されていない。
+([@towser_meow/1638474969494724609](https://x.com/towser_meow/status/1638474969494724609))
+  * 代わりにINCLUDE\\STDDEF.Hで`CLOCKS_PAR_SEC`が定義されている。
 * (おそらく全バージョン) DOSLIBの`IOCTRLFDCTL()`と`IOCTRLDVCTL()`が入れ替わっている。  
   NEW KITの拡張マニュアルには`IOCTRLFDCTL()`がドライブ番号`drive`を指定する関数という説明が記載されている。
-* SCD.X
-  * (おそらくv3系すべて?) gcc -gで生成した実行ファイルのソースコードデバッグでステップ実行するとアドレスエラーが発生することがある。
-    -finline-functionsを指定する(または環境変数`GCC_OPTION1=I`)と発生しない。SCD.X側の問題かどうかは不明。
+* spawnl()、spawnle()、spawnv()、spawnve()で環境変数pathで指定したディレクトリから実行ファイルを検索してしまう。
 
 ### HAS060.X version 3.09+91
 * HAS060.X - アセンブラ - プログラミング - ソフトウェアライブラリ - X68000 LIBRARY &gt;
