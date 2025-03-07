@@ -91,6 +91,16 @@ XC iocslib.h struct TLINEPTR
   * ただし、`errno = EINTR;`として-1を返す仕様に変更すべき。
 * `usleep()`の引数を`useconds_t`型にする。
 
+### spawnv()、spawnve()、spawnvp()
+* 第3引数と第4引数の`char*`にconstが付いていない。以下のようにする。
+  ```c
+  int spawnv (int _mode, const char* _path, const char* const _argv[]);
+  ```
+  ソースコードは以下のようにする(`argv = ...;`という書き換えを禁止する書き方。別にしなくてもいい)。
+  ```c
+  int spawnv (int mode, const char* path, const char* const argv[const]) { ... }
+  ```
+
 
 ## 機能の追加改善
 
