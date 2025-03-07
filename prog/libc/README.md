@@ -96,10 +96,6 @@ XC iocslib.h struct TLINEPTR
   ```c
   int spawnv (int _mode, const char* _path, const char* const _argv[]);
   ```
-  ソースコードは以下のようにする(`argv = ...;`という書き換えを禁止する書き方。別にしなくてもいい)。
-  ```c
-  int spawnv (int mode, const char* path, const char* const argv[const]) { ... }
-  ```
 
 
 ## 機能の追加改善
