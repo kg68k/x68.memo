@@ -20,6 +20,7 @@
 
 * [LIBC](libc/README.md)
 * [ライブラリのファイル名の選択](libfilename.md)
+* [スタックサイズとヒープサイズの指定](stack_heap.md)
 
 ## 資料
 
