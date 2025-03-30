@@ -18,6 +18,7 @@ X680x0に関するメモです。
     * [elf2x68k](prog/elf2x68k.md)
     * [xdev68k](prog/xdev68k.md)
     * [XC](prog/xc/README.md)
+      * [C Compiler PRO-68K ver2.1 NEW KITの不具合](prog/xc/bugs.md)
   * [アセンブリ言語](prog/asm.md)
     * [アセンブラとリンカとオブジェクトファイル](prog/aslkobj.md)
     * [構造化アセンブラ](prog/structured_asm.md)
