@@ -9,6 +9,7 @@
 * [elf2x68k](elf2x68k.md)
 * [xdev68k](xdev68k.md)
 * [XC](xc/README.md)
+  * [C Compiler PRO-68K ver2.1 NEW KITの不具合](xc/bugs.md)
 
 ## アセンブリ言語
 
