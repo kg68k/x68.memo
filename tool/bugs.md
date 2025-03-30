@@ -171,6 +171,7 @@ bar: .ds.b 1
       ([X-Basic_Manual.pdf](https://junk-pro68k.booth.pm/items/5940250) Page 170)
     * `m_wave_form()`の「オルタニティヴ」は「オルタナティヴ」が正しいと思われる
       (ソースコードで該当する機能が「alternative」なので)。
+    * `int zm_work(char trk_num, int work_offset)`が記載されていない。
   * ZM4.MAN
      * `.WAVE_FORM`の「オルタニティヴ」は「オルタナティヴ」が正しいと思われる。
   * ZM5.MAN
