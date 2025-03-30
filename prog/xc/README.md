@@ -1,5 +1,8 @@
 # XCコンパイラ
 
+* [C Compiler PRO-68K ver2.1 NEW KITの不具合](bugs.md)
+
+
 ## 事前定義マクロ
 ```
 #define __LINE__ ソースファイル中の行番号を表す10進定数
@@ -23,4 +26,6 @@ XCライブラリのスプライト関数はIOCSコールをほぼそのまま�
 
 確認用コード: [iocs_sp_vsync.c](iocs_sp_vsync.c)
 
+
 ----
+goto [index](../../README.md) / [プログラミング](../README.md)
