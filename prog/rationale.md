@@ -4,6 +4,9 @@
 
 GitHub ActionsでCMakeを実行する場合に、ワークフローの書き方が少しだけ簡単になる。
 
+src/*をShift_JISに変換しつつHuman68k上のbuild/に転送したとき、
+build/にHuman68kビルドに不要なCMakeLists.txtを置かないですむ。
+
 
 ## 自分一人で開発する場合もプルリクエストを行う理由
 
