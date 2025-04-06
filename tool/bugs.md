@@ -73,6 +73,8 @@ bar: .ds.b 1
   で間違ったサイズでBSSをクリアしている
   ([Charlie Balogh: "Did I catch a bug in the X6800…" - Mastodon](https://mastodon.social/@chainq/111461500478055714))。
   * そもそもOSがクリアしているのでプログラム側によるクリアは不要。
+* crt0でメモリブロックのサイズを確認していない。
+  * [elf2x68kでも同じ問題がある](https://github.com/yunkya2/elf2x68k/issues/7)ので詳細はそちらを参照。
 
 ### PCM to SMP Version 1.0
 * (参考情報) ヘッダ構造: PCMデータ数 1バイト、{ID 1バイト、データサイズ 2バイト}×データ数、PCMデータ×データ数
