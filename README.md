@@ -52,7 +52,6 @@ X680x0に関するメモです。
 * mt32pi.x
 * Crt_mode select utility (1989/12/24) by ねこ
 * pfloat.x
-* MXDRV ver.2.06+16 Rel.13a
 * P8KEYM.X ver 0.90, 0.96, 1.00
 * NOSF.X ver 2.03 (X68K Normal to Shift Format Converter)
 * 計測技研 FreeSoftwareSelection Vol.1, Vol.2
