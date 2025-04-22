@@ -142,6 +142,10 @@ https://twitter.com/kg68k/status/1610270055765520384
   * C11で追加された拡張のlocaltime_s()は、glibcでサポートされていない、MSVCで同名の関数があるが仕様が異なる、
     という状況のため当面は対応しない。
 
+### printf系
+* asprintf()、vasprintf()
+  * 参考: [C標準でasprintfを実装する](https://nost15459.net/blog/stdc-asprintf/)
+
 ### その他チューンナップ
 * __inline_strlen() ... notを使う手法を検討。`__builtin_constant_p()`と`__builtin_strlen()`を使う手法を検討。
 
@@ -198,14 +202,14 @@ __attribute__((__error__("msg"))) static inline IJUMP(void* _addr);
 
 ## ドキュメント (X680x0 libc Vol.2 Programmer's Reference)
 
-* p.190 `kbhit` 戻り値は「キーボードが押されていれば(入力データがれば)0以外を返し」が正しい。
+* p.190 `kbhit` 戻り値は「キーボードが押されていれば(入力データがあれば)0以外を返し」が正しい。
 * p.533 `_dos_vernum` 下位16ビットと上位16ビットが逆。
 
 
 ## その他
 
 * 改造版の名称、ライセンスを再検討してリブート(2025年を目標)
-* Cコンパイラをelf2x68k(gcc-13.2.0)に変更する
+* Cコンパイラをelf2x68k(gcc-13.2.0)に変更する。またはgcc 15の独自ポート。
 * X680x0固有のヘッダファイルをinclude/x68k/ディレクトリに移動する。
   * sys/dos.h、sys/iocs.hは互換性維持のため`#include <x68k/*.h>`という内容のエイリアスにする。
   * ライブラリ内部で使用しているヘッダファイルはまた別のディレクトリにしたほうが良いかも。
