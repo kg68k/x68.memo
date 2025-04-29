@@ -49,13 +49,13 @@ X680x0に関するメモです。
 * 瘋 (日本語FEP)
 * cgcopy.r
 * dskbench.x v0.45の正規書庫
-* mt32pi.x
 * Crt_mode select utility (1989/12/24) by ねこ
 * pfloat.x
 * P8KEYM.X ver 0.90, 0.96, 1.00
 * NOSF.X ver 2.03 (X68K Normal to Shift Format Converter)
 * 計測技研 FreeSoftwareSelection Vol.1, Vol.2
 * LAYDOCK for Super MZ V1.03 (フルセット、ディスクイメージ)
+* SOUND EDITOR さんでぃ cat!
 * ミラー
   * FSHARPのライブラリ
   * fj.binaries.x68000のアーカイブ
