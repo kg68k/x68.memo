@@ -46,8 +46,10 @@
   で間違ったサイズでBSSをクリアしている
   ([Charlie Balogh: "Did I catch a bug in the X6800…" - Mastodon](https://mastodon.social/@chainq/111461500478055714))。
   * そもそもOSがクリアしているのでプログラム側によるクリアは不要。
-* crt0でメモリブロックのサイズを確認していない。
+* crt0.Sでメモリブロックのサイズを確認していない。
   * [elf2x68kでは修正済み](https://github.com/yunkya2/elf2x68k/issues/7)。該当コードは同じなので詳細はそちらを参照。
+* [crt1.c](https://github.com/Lydux/newlib-1.19.0-human68k/blob/master/newlib/libc/sys/human68k/crt1.c)
+  で環境変数領域が確保されていない場合にアドレスエラーが発生する。
 
 ### PCM to SMP Version 1.0
 * (参考情報) ヘッダ構造: PCMデータ数 1バイト、{ID 1バイト、データサイズ 2バイト}×データ数、PCMデータ×データ数
