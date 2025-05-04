@@ -49,7 +49,7 @@
 * crt0.Sでメモリブロックのサイズを確認していない。
   * [elf2x68kでは修正済み](https://github.com/yunkya2/elf2x68k/issues/7)。該当コードは同じなので詳細はそちらを参照。
 * [crt1.c](https://github.com/Lydux/newlib-1.19.0-human68k/blob/master/newlib/libc/sys/human68k/crt1.c)
-  で環境変数領域が確保されていない場合にアドレスエラーが発生する。
+  で環境変数領域が確保されていない場合にアドレスエラーが発生する(MPU 68020以降ではバスエラー)。
   * [elf2x68k](https://github.com/yunkya2/elf2x68k/issues/8)でも該当。
 
 ### PCM to SMP Version 1.0
