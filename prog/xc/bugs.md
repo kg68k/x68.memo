@@ -15,6 +15,7 @@
   ```c
   		} while (nfiles() == 0 && ftotal <= MAXFILES);
   ```
+  * 無償公開版以外で、出荷ロットによっては`ftotal < MAXFILES`に直っているかも。
 
 ## INCLUDE\\TIME.H
 * `CLOCKS_PER_SEC`が定義されていない。
