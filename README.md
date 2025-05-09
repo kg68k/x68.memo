@@ -56,6 +56,7 @@ X680x0に関するメモです。
 * 計測技研 FreeSoftwareSelection Vol.1, Vol.2
 * LAYDOCK for Super MZ V1.03 (フルセット、ディスクイメージ)
 * SOUND EDITOR さんでぃ cat!
+* DINO.X (だいなあいらん、持ってるかもしれないけど書庫ファイル名が分からない)
 * ミラー
   * FSHARPのライブラリ
   * fj.binaries.x68000のアーカイブ
