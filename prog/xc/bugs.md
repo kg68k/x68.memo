@@ -18,7 +18,8 @@
   ```
 * `([d32,An])`がillegal relative errorになる。
   ```
-  move ([$10000,a0]),d0
+  test.s               3:   illegal relative error
+      3 00000000 3028               move ([$10000,a0]),d0
   ```
 * `([d16])`、`([d32])`がexpression errorになる。
   ```
@@ -33,14 +34,17 @@
       4 00000004 30280000           move ([a0]),d0
   ```
 * `([a0],0)`が`($15,a0,d0.w)`として解釈される。また、リストファイルの出力が化ける。  
-  ソースコード:
   ```
-    move ([a0],0),d0
+      3 00000000 30300015           move ([a0],,),d0    ;ソースコードは move ([a0],0),d0
   ```
-  リストファイル:
+* `([An],ZXn)`、`([bd,An],ZXn)`がexpression errorになる。また、リストファイルの出力が化ける。  
   ```
-      3 00000000 30300015           move ([a0],,),d0
+  test.s               3:   expression error
+      3 00000000                    move ((a0],zd0.w),d0    ;ソースコードは move ([a0],zd0.w),d0
+  test.s               4:   expression error
+      4 00000000                    move ([10(a0],zd0.w),d0    ;ソースコードは move ([10,a0],zd0.w),d0
   ```
+
 
 ## SCD.X
 * (おそらくv3系すべて?) gcc -gで生成した実行ファイルのソースコードデバッグでステップ実行するとアドレスエラーが発生することがある。
