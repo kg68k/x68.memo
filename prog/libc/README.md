@@ -148,6 +148,7 @@ https://twitter.com/kg68k/status/1610270055765520384
 
 ### その他チューンナップ
 * __inline_strlen() ... notを使う手法を検討。`__builtin_constant_p()`と`__builtin_strlen()`を使う手法を検討。
+* malloc()したメモリを後始末でfree()するパターンは、`__attribute__((__cleanup__(func))) char* buf = malloc(...);`を使う。
 
 
 ## 近代的なGCC環境(elf2x68k)への対応
