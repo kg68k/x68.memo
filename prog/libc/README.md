@@ -97,6 +97,14 @@ XC iocslib.h struct TLINEPTR
   int spawnv (int _mode, const char* _path, const char* const _argv[]);
   ```
 
+### putenv()
+* 既存の同名環境変数を上書きする際に`strdup (string)`がエラーになると、`environ`配列から参照されている元の変数のメモリが解放されてしまう。
+* 引数stringに`=`が含まれない理由以外でエラー終了すると`errno`が設定されない。
+* 引数をstrdup()で複製しているためPOSIXと動作が異なる。setenv()も合わせて変更する。
+
+### setenv()
+* 引数をmalloc()で確保したメモリに複製するようにする。putenv()参照。
+
 
 ## 機能の追加改善
 
