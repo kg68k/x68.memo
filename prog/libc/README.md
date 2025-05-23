@@ -105,6 +105,9 @@ XC iocslib.h struct TLINEPTR
 ### setenv()
 * 引数をmalloc()で確保したメモリに複製するようにする。putenv()参照。
 
+### スタートアップ中に環境変数が追加されるとmain()の第3引数で受け取れない
+https://x.com/kg68k/status/1925927255684870476
+
 
 ## 機能の追加改善
 
