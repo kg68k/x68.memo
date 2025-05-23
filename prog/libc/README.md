@@ -108,6 +108,12 @@ XC iocslib.h struct TLINEPTR
 ### スタートアップ中に環境変数が追加されるとmain()の第3引数で受け取れない
 https://x.com/kg68k/status/1925927255684870476
 
+### tzset() in libtz.a
+* 環境変数TZの内容によってはスタック・バッファオーバーフローを起こす。
+  * https://github.com/kg68k/libc-tests/blob/main/src/tz.c
+* libc.aのtzset()はスタブ関数なので問題ない。
+
+
 
 ## 機能の追加改善
 
