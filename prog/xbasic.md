@@ -8,6 +8,12 @@
   * fnc2h.r ... .fncからの.hファイル簡易生成
 
 
+## 無効化されている関数
+https://x.com/kamadox/status/1933754063675666538
+* string float$(float)
+* float hexfloat(string)
+
+
 ## テストケース
 * BAISC.Xで動作確認しています。
 * BASIC.Xで実行する場合はCRLF改行、末尾にEOF付きで保存し、`load@`で読み込みます。
