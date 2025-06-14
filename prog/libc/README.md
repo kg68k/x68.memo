@@ -113,6 +113,10 @@ https://x.com/kg68k/status/1925927255684870476
   * https://github.com/kg68k/libc-tests/blob/main/src/tz.c
 * libc.aのtzset()はスタブ関数なので問題ない。
 
+### ctype.h
+* マクロの引数を複数回評価しないようにする。
+* テーブルを`const unsigned char *_ctype = &_lc_C_ctype[1];`～`return (_ctype[c] & _ISALNUM);`のように
+  参照しているが、ポインタを介する分効率が悪いので、テーブルの定義方法を工夫する。
 
 
 ## 機能の追加改善
