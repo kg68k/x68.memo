@@ -10,8 +10,8 @@
 
 ## 無効化されている関数
 https://x.com/kamadox/status/1933754063675666538
-* string float$(float)
-* float hexfloat(string)
+* str float$(float)
+* float hexfloat(str)
 
 
 ## テストケース
