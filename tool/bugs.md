@@ -275,6 +275,9 @@
     周波数やパンポットの設定値が正しくないため、正しく再生されない。
   * PCM8 v0.48b+2や、PCM8A、MPCM + P8EMUなどの互換ドライバでは問題ない。
 
+### XAPNEL.R version 1.04
+* [既知の不具合](https://github.com/kg68k/xapnel-src?tab=readme-ov-file#%E6%97%A2%E7%9F%A5%E3%81%AE%E4%B8%8D%E5%85%B7%E5%90%88)
+
 
 ## 画面制御
 
