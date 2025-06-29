@@ -118,6 +118,10 @@ https://x.com/kg68k/status/1925927255684870476
 * テーブルを`const unsigned char *_ctype = &_lc_C_ctype[1];`～`return (_ctype[c] & _ISALNUM);`のように
   参照しているが、ポインタを介する分効率が悪いので、テーブルの定義方法を工夫する。
 
+### getrlimit()
+* `getrlimit(RLIMIT_FSIZE, ...)`が`RLIM_INFINITY`より大きい`0xffd00000`を返す。
+  * `_loadrlimits()`で設定している`16774144 * 1024`がオーバーフローしている(`0x3_ffd00000`)。
+
 
 ## 機能の追加改善
 
@@ -133,6 +137,10 @@ https://x.com/kg68k/status/1925927255684870476
 * _countof()
 * _fileno()
 * _setmode()
+
+### POSIXとの互換性向上
+* sys/resource.h
+  * rlim_tを定義する。
 
 ### getexecname(): 実行ファイルのフルパス名を返す
 https://twitter.com/kg68k/status/1610270055765520384
@@ -224,7 +232,9 @@ __attribute__((__error__("msg"))) static inline IJUMP(void* _addr);
 
 ## ドキュメント (X680x0 libc Vol.2 Programmer's Reference)
 
+* p.158 `getrlimit` インクルードファイルは`sys/resource.h`(複数形のsがつかない)が正しい。
 * p.190 `kbhit` 戻り値は「キーボードが押されていれば(入力データがあれば)0以外を返し」が正しい。
+* p.275 `setrlimit` インクルードファイルは`sys/resource.h`(複数形のsがつかない)が正しい。
 * p.533 `_dos_vernum` 下位16ビットと上位16ビットが逆。
 
 
