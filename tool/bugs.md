@@ -250,6 +250,11 @@
 * ZM_ATOI.HAS `zm_atoi()`: `ZM_STOP`ファンクションが呼ばれているため、正しく動作しない。
 * ZMPCMREAD.HAS `zm_pcm_read()`: `char *param`引数が無視され、`a1`レジスタが不定なため正しく動作しない。エラー時に0以外の値が返る。
 
+### OPMDRV3.X version 1.11
+* カレントディレクトリにMIDIBEというファイルが存在すると、OPMDRV3.Xが登録済みと誤認されて常駐できない。
+* カレントディレクトリにOPMというファイルが存在すると、他の音源ドライバが登録済みと誤認されて常駐できない。
+* カレントディレクトリにPCMというファイルが存在すると、PCMDRV.SYSが登録済みと誤認されて常駐できない。
+
 
 ## PCMドライバ
 
@@ -338,6 +343,7 @@
 
 ----
 # SHARP純正ソフトウェア
+(カテゴリがあるものは各カテゴリ内に記載している)
 
 * STUDIO KAMADA &gt; [X680x0 のメーカー純正ソフトウェアの不具合について](https://stdkmd.net/bugsx68k/)
 * [C Compiler PRO-68K ver2.1 NEW KIT](#c-compiler-pro-68k-ver21-new-kit)
