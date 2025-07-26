@@ -45,7 +45,6 @@
       4 00000000                    move ([10(a0],zd0.w),d0    ;ソースコードは move ([10,a0],zd0.w),d0
   ```
 
-
 ## SCD.X
 * (おそらくv3系すべて?) gcc -gで生成した実行ファイルのソースコードデバッグでステップ実行するとアドレスエラーが発生することがある。
   -finline-functionsを指定する(または環境変数`GCC_OPTION1=I`)と発生しない。SCD.X側の問題かどうかは不明。
@@ -57,10 +56,17 @@
   ```
   * 無償公開版以外で、出荷ロットによっては`ftotal < MAXFILES`に直っているかも。
 
-## INCLUDE\\TIME.H
+## INCLUDE/IOCSCALL.MAC
+* IOCSCALL.MAC
+  * `_M_BEND`の値`$2d`は`$45`が正しい。
+  * `_M_MOD`の値`$2e`は`$46`が正しい。
+  * `_M_OPMLFQ`の値`$46`は`$48`が正しい。
+  * これらの値を使用してアセンブルされているBASLIB.L内のMMLLIB3.Oにも影響している。
+
+## INCLUDE/TIME.H
 * `CLOCKS_PER_SEC`が定義されていない。
   ([@towser_meow/1638474969494724609](https://x.com/towser_meow/status/1638474969494724609))
-  * 代わりにINCLUDE\\STDDEF.Hで`CLOCKS_PAR_SEC`が定義されている。
+  * 代わりにINCLUDE/STDDEF.Hで`CLOCKS_PAR_SEC`が定義されている。
 
 ## `IOCTRLFDCTL()`、`IOCTRLDVCTL()`
 * (おそらく全バージョン) 関数の機能が入れ替わっている。  
@@ -72,15 +78,21 @@
 ## `spawnl()`、`spawnle()`、`spawnv()`、`spawnve()`
 * 環境変数pathで指定したディレクトリから実行ファイルを検索してしまう。
 
-## CLIB __MAIN.O (__MAIN.S)
+## CLIB.L __MAIN.O (__MAIN.S)
 * 環境変数領域が確保されていない場合、起動時にアドレスエラーが発生する(MPU 68020以降ではバスエラー)。
   * CONFIG.SYSでENVSET=を記述せず、PROGRAM=でプログラムを起動した場合など。
+
+## BASLIB.L MMLLIB3.O (MMLLIB3.S)
+* m_bend()、m_mod()、m_opmlfq(): IOCSCALL.MACの間違いの影響で正しく動作しない。
+* OPMDRV3.Xを常駐していないときにm_init()、m_alloc()、m_assign()のいずれかを呼び出さずに他の関数を使うと、
+  常駐検査が行われないため`IOCS _OPMDRV`が呼び出され白帯エラー($01F0)が発生してしまう。
+  仕様か不具合かは微妙だが、注意すること。
 
 
 # 無償公開版に特有と思われる問題
 
 ## ライブラリディスク (XC2103.LZH, XC2103I.LZH)
-* \ASK30ディレクトリ内のファイルについて。
+* /ASK30ディレクトリ内のファイルについて。
   * MAKEFILEの内容がACI.Hと同一。
   * FILES_TOUROKU.Sのファイル名がFILES_TO.Sになっている。
   * KANJI_TOUROKU.Sのファイル名がKANJI_TO.Sになっている。
