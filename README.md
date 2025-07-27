@@ -56,7 +56,8 @@ X680x0に関するメモです。
 * 計測技研 FreeSoftwareSelection Vol.1, Vol.2
 * LAYDOCK for Super MZ V1.03 (フルセット、ディスクイメージ)
 * SOUND EDITOR さんでぃ cat!
-* DINO.X (だいなあいらん、持ってるかもしれないけど書庫ファイル名が分からない)
+* だいなあいらん アニメプレイヤー dino.x ver 0.06 dino006.lzh
+* satanime ver 0.02 stanm002.lzh
 * xapnel.rの1294バイトの実行ファイル。バージョンは1.00から1.01のあいだ？ タイムスタンプは1992-02-08 23:12:32ですが、
   ZMSC109A.LZHに入っている差分ファイルが適用できればいいので違っても構いません。
 * XDIR for X68K
