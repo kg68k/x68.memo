@@ -35,6 +35,9 @@ MOTOROLA M68000 FALMILY Programmer's Reference Manual REV.1
   * ノンブル5-105(PDF p.407) FREM、INEX2の「Cleared」は「Refer to inexact result in the appropriate user’s manual.」
     (結果に誤差があるときセット、それ以外はクリア)が正しい。
 
+* https://x.com/kg68k/status/1954852631735615696
+  >p.6-26 最後の段落に2か所ある OinstructionO は、紙の書籍(M68000PM/AD REV.1、MOTOROLA、1992年)を確認したところ “instruction” でした。
+
 
 # MC68030UM.pdf
 MC68030 ENHANCED 32-BIT MICROPROCESSOR USER'S MANUAL Therd Edition
