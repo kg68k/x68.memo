@@ -38,6 +38,10 @@ MOTOROLA M68000 FALMILY Programmer's Reference Manual REV.1
 * https://x.com/kg68k/status/1954852631735615696
   >p.6-26 最後の段落に2か所ある OinstructionO は、紙の書籍(M68000PM/AD REV.1、MOTOROLA、1992年)を確認したところ “instruction” でした。
 
+* https://x.com/kg68k/status/1955316865422811353
+  >p.1-22 Table 1-5 NANs欄のBiased Exponent Format Maximum  
+  >誤 255 ($7FF)  
+  >正 2047 ($7FF)
 
 # MC68030UM.pdf
 MC68030 ENHANCED 32-BIT MICROPROCESSOR USER'S MANUAL Therd Edition
