@@ -5,7 +5,7 @@ https://github.com/yunkya2/elf2x68k
 ----
 ## 事前定義されるマクロの一覧
 
-elf2x68k(Release 20240114、GCC 13.2.0)にて
+elf2x68k(Release 20250727、GCC 13.4.0)にて
 `m68k-xelf-gcc -dM -E - < /dev/null | sort`
 で出力したものです。  
 
@@ -123,7 +123,7 @@ elf2x68k(Release 20240114、GCC 13.2.0)にて
 #define __GCC_IEC_559 0
 #define __GCC_IEC_559_COMPLEX 0
 #define __GNUC_EXECUTION_CHARSET_NAME "UTF-8"
-#define __GNUC_MINOR__ 2
+#define __GNUC_MINOR__ 4
 #define __GNUC_PATCHLEVEL__ 0
 #define __GNUC_STDC_INLINE__ 1
 #define __GNUC_WIDE_EXECUTION_CHARSET_NAME "UTF-32BE"
@@ -266,7 +266,7 @@ elf2x68k(Release 20240114、GCC 13.2.0)にて
 #define __UINT_LEAST8_MAX__ 0xff
 #define __UINT_LEAST8_TYPE__ unsigned char
 #define __USER_LABEL_PREFIX__ 
-#define __VERSION__ "13.2.0"
+#define __VERSION__ "13.4.0"
 #define __WCHAR_MAX__ 0x7fffffffL
 #define __WCHAR_MIN__ (-__WCHAR_MAX__ - 1)
 #define __WCHAR_TYPE__ long int
