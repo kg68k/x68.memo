@@ -5,9 +5,12 @@ https://github.com/yunkya2/elf2x68k
 ----
 ## 事前定義されるマクロの一覧
 
-elf2x68k(Release 20250727、GCC 13.4.0)にて
+elf2x68k(Release 20250907、GCC 13.4.0)にて
 `m68k-xelf-gcc -dM -E - < /dev/null | sort`
 で出力したものです。  
+
+Release 20250907以降では`__human68k`と`__human68k__`の定義が追加されており、
+ターゲットのOSの識別に使うことができます。
 
 ```c
 #define __ATOMIC_ACQUIRE 2
@@ -276,6 +279,8 @@ elf2x68k(Release 20250727、GCC 13.4.0)にて
 #define __WINT_TYPE__ unsigned int
 #define __WINT_WIDTH__ 32
 #define __embedded__ 1
+#define __human68k 1
+#define __human68k__ 1
 #define __m68k__ 1
 #define __mc68000 1
 #define __mc68000__ 1
