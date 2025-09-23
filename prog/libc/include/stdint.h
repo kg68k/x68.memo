@@ -5,6 +5,9 @@
 extern "C" {
 #endif
 
+typedef long int intptr_t;
+typedef long unsigned int uintptr_t;
+
 typedef signed char int8_t;
 typedef short int16_t;
 typedef int int32_t;
