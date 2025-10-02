@@ -132,7 +132,9 @@
 * P.221 B_CONMOD
   * 解説のD1.L = 1～4はD1.L = 0～3が正しい。
 * P.227 ライブラリ一覧
-  * M_M_STOP は M_STOP が正しい(掲載場所も次ページの M_STAT の直後になる)。
+  * M_M_STOP → M_STOP
+  * M_OGMFLT → M_PGMFLT
+  * M_OPMLEQ → M_OPMLFQ
 * P.229 M_INIT
   * 下から4行目「初期化ぜず」→「初期化せず」。
 * P.243 M_PAN
