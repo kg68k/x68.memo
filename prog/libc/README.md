@@ -182,6 +182,12 @@ https://twitter.com/kg68k/status/1610270055765520384
 * asprintf()、vasprintf()
   * 参考: [C標準でasprintfを実装する](https://nost15459.net/blog/stdc-asprintf/)
 
+### XC独自関数の分離
+* xxx()という関数名を_xc_xxx()に変更する。
+* ヘッダファイル`<x68k/xc/***.h>`で_xc_xxx()の宣言とXCの関数名への別名定義(`#define xxx _xc_xxx`)を行う。
+* `_X68K_XC_SOURCE`定義時のみ、標準のヘッダファイルから`<x68k/xc/***.h>`をインクルードする。
+* オブジェクトファイルはlibc.aではなくlibxc.aにアーカイブする(リンク時に-lxcオプションを指定する)。
+
 ### その他チューンナップ
 * __inline_strlen() ... notを使う手法を検討。`__builtin_constant_p()`と`__builtin_strlen()`を使う手法を検討。
 * malloc()したメモリを後始末でfree()するパターンは、`__attribute__((__cleanup__(func))) char* buf = malloc(...);`を使う。
