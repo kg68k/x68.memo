@@ -63,6 +63,9 @@
   * `_M_OPMLFQ`の値`$46`は`$48`が正しい。
   * これらの値を使用してアセンブルされているBASLIB.L内のMMLLIB3.Oにも影響している。
 
+## INCLUDE/DOSLIB.H
+* `struct COMLINE`の`buffer`メンバーの要素数が255なのでNULの分が足りない。
+
 ## INCLUDE/TIME.H
 * `CLOCKS_PER_SEC`が定義されていない。
   ([@towser_meow/1638474969494724609](https://x.com/towser_meow/status/1638474969494724609))
