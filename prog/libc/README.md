@@ -129,6 +129,11 @@ https://x.com/kg68k/status/1925927255684870476
     例えば末尾の空ブロックが6MBのときに`malloc(8*1024*1024)`とすると、2MB拡大すれば足りるのに8MB拡大しようとする。
   * getrlimit()の内部データを直接参照して計算してエラーを返しているため、DOS \_SETBLOCKは実行されない。
 
+### struct _comline (include/sys/dos.h)
+* `buffer`メンバーの要素数が255なのでNULの分が足りない。
+  * XCとの互換性(include/doslib.hで`#define COMLINE _comline`として別名定義されている)を考えると、
+    正しい定義は`struct _cmdline`とかで別に用意する?
+
 
 ## 機能の追加改善
 
