@@ -99,6 +99,15 @@
   * トラブルシューティングの手順(OPT.1によるFD起動、`SCSIDEV=OFF`)で発生する。
   * [SUSIEX](https://github.com/kg68k/susiex)で修正されている。
 
+### 9SCDRV.X Version 3.14+2
+* L002568 にある divu.w L00072A(pc),d2 を実行するとき d2 の上位ワードが不定。
+  ([XEiJ (X68000 Emulator in Java)](https://stdkmd.net/xeijtest/#changes_0251031))
+  * IBMフォーマット(1.44MB)のアクセスに失敗する。
+    ([@kunichiko/1978806645003268385](https://x.com/kunichiko/status/1978806645003268385))
+  * /Dスイッチを指定すれば回避できる。
+    ([@kamadox/1979132819411734627](https://x.com/kamadox/status/1979132819411734627))
+  * [XEiJ](https://stdkmd.net/xeijtest/) 0.25.10.31 TESTに同梱の060turbo.sys 0.61に対策コードが追加されている。
+
 
 ## 音源ドライバ
 
