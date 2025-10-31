@@ -34,6 +34,12 @@ ref. [2009-Semi1-Yuusuke_Miyazaki.pdf](http://www.wata-lab.meijo-u.ac.jp/file/se
 * [X68000用ゲーム「ヴァリストレスナルト」SRAMに侵入してFDに感染する謎のIPL - posfie](https://posfie.com/@rentan_org/p/6c6XvOO)
 * [X68000用ゲーム「ヴァリストレスナルト」IPLについて販売元からの発表 - posfie](https://posfie.com/@rentan_org/p/FRcVmkk)
 
+## DBh-4
+* SRAMとディスクのIPLセクタに感染する。
+* 起動時に「エラーが発生しました。リセットしてください。」と表示される。
+* https://x.com/tkt_kwsk/status/1984211549918269519
+* [volatilityの作法 その19 #Security - Qiita](https://qiita.com/ohisama@github/items/aaca71cf982b2b68f4a7)
+
 
 # ツール
 * WAC.X ... ワクチンプログラム by CARROT PARTY
