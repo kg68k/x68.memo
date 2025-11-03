@@ -259,14 +259,6 @@ __attribute__((__error__("msg"))) static inline IJUMP(void* _addr);
 * GCCの`-mshort`オプションへの対応。
 
 
-## ドキュメント (X680x0 libc Vol.2 Programmer's Reference)
-
-* p.158 `getrlimit` インクルードファイルは`sys/resource.h`(複数形のsがつかない)が正しい。
-* p.190 `kbhit` 戻り値は「キーボードが押されていれば(入力データがあれば)0以外を返し」が正しい。
-* p.275 `setrlimit` インクルードファイルは`sys/resource.h`(複数形のsがつかない)が正しい。
-* p.533 `_dos_vernum` 下位16ビットと上位16ビットが逆。
-
-
 ## 近代的なGCCでビルドする
 * Cコンパイラをelf2x68k(2025-11-04時点では、gcc-13.4.0)に変更する。またはgcc 15の独自ポート。
 * src/stdlib/calloc.c: `calloc()`: そのまま最適化コンパイルすると`malloc()`と`memset()`の呼び出しが`calloc()`
@@ -279,6 +271,7 @@ __attribute__((__error__("msg"))) static inline IJUMP(void* _addr);
   * 参考
     * [KMC Staff Blog:GCCの最適化による予期せぬ無限ループの発生](http://blog.kmckk.com/archives/5532458.html)
     * [gcc optimizes calloc to an infinite recursive call when CONFIG_SPEED_OPTIMIZATION=y · Issue #64941 · zephyrproject-rtos/zephyr](https://github.com/zephyrproject-rtos/zephyr/issues/64941)
+    * https://github.com/gcc-mirror/gcc/blob/master/gcc/gimple-fold.cc
 
 
 ## その他
@@ -287,6 +280,14 @@ __attribute__((__error__("msg"))) static inline IJUMP(void* _addr);
 * X680x0固有のヘッダファイルをinclude/x68k/ディレクトリに移動する。
   * sys/dos.h、sys/iocs.hは互換性維持のため`#include <x68k/*.h>`という内容のエイリアスにする。
   * ライブラリ内部で使用しているヘッダファイルはまた別のディレクトリにしたほうが良いかも。
+
+
+## ドキュメント (X680x0 libc Vol.2 Programmer's Reference)
+
+* p.158 `getrlimit` インクルードファイルは`sys/resource.h`(複数形のsがつかない)が正しい。
+* p.190 `kbhit` 戻り値は「キーボードが押されていれば(入力データがあれば)0以外を返し」が正しい。
+* p.275 `setrlimit` インクルードファイルは`sys/resource.h`(複数形のsがつかない)が正しい。
+* p.533 `_dos_vernum` 下位16ビットと上位16ビットが逆。
 
 
 ----
