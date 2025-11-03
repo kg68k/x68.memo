@@ -206,6 +206,7 @@ https://twitter.com/kg68k/status/1610270055765520384
 
 
 ## 近代的なGCC環境(elf2x68k)への対応
+ライブラリをelf2x68kで使えるようにする。
 
 ### vfprintf()などでbuiltin-declaration-mismatch警告が発生する
 https://twitter.com/kamadox/status/1476568081996849153
@@ -266,10 +267,23 @@ __attribute__((__error__("msg"))) static inline IJUMP(void* _addr);
 * p.533 `_dos_vernum` 下位16ビットと上位16ビットが逆。
 
 
+## 近代的なGCCでビルドする
+* Cコンパイラをelf2x68k(2025-11-04時点では、gcc-13.4.0)に変更する。またはgcc 15の独自ポート。
+* src/stdlib/calloc.c: `calloc()`: そのまま最適化コンパイルすると`malloc()`と`memset()`の呼び出しが`calloc()`
+  の呼び出しに統合されてしまい、無限に再帰ループしてしまう。
+  * 関数に`__attribute__((optimize("-fno-builtin-malloc,-fno-builtin-memset")))`をつけるのは、警告が表示されるのと、
+    optimize属性はデバッグ用なので製品に使うなということなので避けたい。
+  * コンパイル時のコマンドラインオプションで`-fno-builtin-malloc -fno-builtin-memset`を指定するのは問題のない最適化まで行われなくなる、
+    calloc.cだけ個別に指定するのは面倒、ということで避けたい。
+  * `malloc()`に別名を定義し、`calloc()`から呼び出す場合のみそちらを使う、という方法にしようと思う。定義方法は要検討。
+  * 参考
+    * [KMC Staff Blog:GCCの最適化による予期せぬ無限ループの発生](http://blog.kmckk.com/archives/5532458.html)
+    * [gcc optimizes calloc to an infinite recursive call when CONFIG_SPEED_OPTIMIZATION=y · Issue #64941 · zephyrproject-rtos/zephyr](https://github.com/zephyrproject-rtos/zephyr/issues/64941)
+
+
 ## その他
 
 * 改造版の名称、ライセンスを再検討してリブート(2025年を目標)
-* Cコンパイラをelf2x68k(gcc-13.2.0)に変更する。またはgcc 15の独自ポート。
 * X680x0固有のヘッダファイルをinclude/x68k/ディレクトリに移動する。
   * sys/dos.h、sys/iocs.hは互換性維持のため`#include <x68k/*.h>`という内容のエイリアスにする。
   * ライブラリ内部で使用しているヘッダファイルはまた別のディレクトリにしたほうが良いかも。
