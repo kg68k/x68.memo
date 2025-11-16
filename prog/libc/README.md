@@ -106,7 +106,8 @@ XC iocslib.h struct TLINEPTR
 * 引数をmalloc()で確保したメモリに複製するようにする。putenv()参照。
 
 ### スタートアップ中に環境変数が追加されるとmain()の第3引数で受け取れない
-https://x.com/kg68k/status/1925927255684870476
+* https://x.com/kg68k/status/1925927255684870476
+* main()の第3引数自体を廃止してもいいのではないか。
 
 ### tzset() in libtz.a
 * 環境変数TZの内容によってはスタック・バッファオーバーフローを起こす。
@@ -133,6 +134,9 @@ https://x.com/kg68k/status/1925927255684870476
 * `buffer`メンバーの要素数が255なのでNULの分が足りない。
   * XCとの互換性(include/doslib.hで`#define COMLINE _comline`として別名定義されている)を考えると、
     正しい定義は`struct _cmdline`とかで別に用意する?
+
+### startup/_start.c _start()
+* _dos_setblock()より先にスタックポインタを設定している(`MEMCHK()`マクロを呼んでいない)。
 
 
 ## 機能の追加改善
