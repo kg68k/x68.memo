@@ -63,6 +63,11 @@
 ### nm.x version 1.02.1
 * バージョン表示のロングオプション形式`--version`が`-version`になっている。
 
+### TCPPACKB - TCP/IPドライバ無償配布パッケージ(B PACK) 1996/07/03
+* `gethostbyname()`、`getaddrinfo()`にIPv4アドレス形式の文字列を渡したときに、
+  IPv4アドレスとして解釈されずDNSサーバに問い合わせを行ってしまう。
+  ([@yunkya2/1991158863392133619](https://x.com/yunkya2/status/1991158863392133619))
+
 
 ## 情報表示
 
