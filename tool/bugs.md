@@ -338,6 +338,12 @@
 * 常駐解除しようとすると「ベクタが変更されています。」と表示され、解除できない。
   * 修正パッチ: `00000197: 2C 28`
 
+### zx.r version 1.21 patchlevel 2
+* パスデリミタに`\`が使用されている不正なアーカイブがエラーとして扱われず、そのまま書き出そうとする。
+  * 同名ディレクトリがすでに存在すれば書き出せる。
+  * 何らかの脆弱性があるかもしれない。
+  * 参考: [軽減策: ZipArchiveEntry.FullName パスの区切り文字 - .NET Framework | Microsoft Learn](https://learn.microsoft.com/ja-jp/dotnet/framework/migration-guide/mitigation-ziparchiveentry-fullname-path-separator)
+
 
 ## ゲーム
 
