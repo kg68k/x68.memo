@@ -41,7 +41,9 @@ XC iocslib.h struct TLINEPTR
 注意書きに「supprted」という脱字がある。
 
 ### sys/dos.hのstruct _dpbptrのメンバ`id`が`ide`になっている。
-リファレンスは`id`となっており、またXCとの互換が必要なため、単なる誤字。
+* XCと互換性がない。リファレンスは`id`となっている。
+* Objective-Cの予約語との衝突を避けるために変更したのかもしれない(『(#0) X680x0 Develop. & libc II』p.135)。
+* Objective-Cを使うことはないので`id`に戻す。
 
 ### mkstemp()
 * `mktemp()`を使うのをやめ、`DOS _MAKETMP`でファイル名の作成とファイルの作成オープンを同時に行う。
