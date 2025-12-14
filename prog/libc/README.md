@@ -285,10 +285,14 @@ __attribute__((__error__("msg"))) static inline IJUMP(void* _addr);
 ## その他
 
 * 改造版の名称、ライセンスを再検討してリブート(20026年を目標)
+* [ヘッダーファイル](headerfile.md)調査結果。
 * X680x0固有のヘッダファイルをinclude/x68k/ディレクトリに移動する。
   * sys/dos.h、sys/iocs.hは互換性維持のため`#include <x68k/*.h>`という内容のエイリアスにする。
   * ライブラリ内部で使用しているヘッダファイルはまた別のディレクトリにしたほうが良いかも。
-* [ヘッダーファイル](headerfile.md)調査結果。
+* LIBC固有のヘッダファイルをinclude/x68k/libc(+改造版名称)/ディレクトリに移動する。
+* XC固有のヘッダファイルをinclude/x68k/xc/ディレクトリに移動する。
+  * &lt;stdio.h&gt;など標準のヘッダファイルで宣言されているXC固有の識別子はinclude/x68k/xc/xcXXX.hに独立させ、
+    `__X68K_XC_SOURCE__`が定義されている場合のみ読み込むようにする。
 
 
 ## ドキュメント (X680x0 libc Vol.2 Programmer's Reference)
