@@ -287,6 +287,25 @@ Release 20250907以降では`__human68k`と`__human68k__`の定義が追加さ�
 #define mc68000 1
 ```
 
+-funsigned-charオプションを指定した場合
+```diff
++#define __CHAR_UNSIGNED__ 1
+```
+
+-O1、-O2、-O3オプションのいずれかを指定した場合
+```diff
+-#define __NO_INLINE__ 1
++#define __OPTIMIZE__ 1
+```
+
+-Osオプションを指定した場合
+```diff
+-#define __NO_INLINE__ 1
++#define __OPTIMIZE_SIZE__ 1
++#define __OPTIMIZE__ 1
+```
+
+
 ----
 ## libgcc.aに含まれるオブジェクトとシンボル
 elf2x68k(Release 20251106、GCC 13.4.0)にて
