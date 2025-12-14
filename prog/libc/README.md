@@ -288,6 +288,7 @@ __attribute__((__error__("msg"))) static inline IJUMP(void* _addr);
 * X680x0固有のヘッダファイルをinclude/x68k/ディレクトリに移動する。
   * sys/dos.h、sys/iocs.hは互換性維持のため`#include <x68k/*.h>`という内容のエイリアスにする。
   * ライブラリ内部で使用しているヘッダファイルはまた別のディレクトリにしたほうが良いかも。
+* [ヘッダーファイル](headerfile.md)調査結果。
 
 
 ## ドキュメント (X680x0 libc Vol.2 Programmer's Reference)
