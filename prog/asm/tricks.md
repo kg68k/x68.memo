@@ -161,4 +161,4 @@ doeven4: .macro ea,dn
 
 
 ----
-goto [index](../README.md) / [プログラミング](./README.md)
+goto [index](../../README.md) / [プログラミング](../README.md)
