@@ -13,9 +13,10 @@
 
 ## アセンブリ言語
 
-* [アセンブリ言語](asm.md)
-* [アセンブラとリンカとオブジェクトファイル](aslkobj.md)
-* [構造化アセンブラ](structured_asm.md)
+* [アセンブリ言語のネタ各種](asm/tricks.md)
+* [複数のレジスタをゼロクリアする](asm/clear_regs.md)
+* [構造化アセンブラ](asm/structured_asm.md)
+* [アセンブラとリンカとオブジェクトファイル](asm/aslkobj.md)
 
 ## ライブラリ
 
