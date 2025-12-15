@@ -45,4 +45,4 @@
 
 
 ----
-goto [index](../README.md) / [プログラミング](./README.md)
+goto [index](../../README.md) / [プログラミング](../README.md)
