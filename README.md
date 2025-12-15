@@ -20,8 +20,10 @@ X680x0に関するメモです。
     * [XC](prog/xc/README.md)
       * [C Compiler PRO-68K ver2.1 NEW KITの不具合](prog/xc/bugs.md)
   * [アセンブリ言語](prog/asm.md)
-    * [アセンブラとリンカとオブジェクトファイル](prog/aslkobj.md)
-    * [構造化アセンブラ](prog/structured_asm.md)
+    * [アセンブリ言語のネタ各種](prog/asm/tricks.md)
+    * [複数のレジスタをゼロクリアする](prog/asm/clear_regs.md)
+    * [構造化アセンブラ](prog/asm/structured_asm.md)
+    * [アセンブラとリンカとオブジェクトファイル](prog/asm/aslkobj.md)
   * ライブラリ
     * [LIBC](prog/libc/README.md)
     * [ライブラリのファイル名の選択](prog/libfilename.md)
