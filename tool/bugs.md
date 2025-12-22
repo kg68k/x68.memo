@@ -68,6 +68,11 @@
   IPv4アドレスとして解釈されずDNSサーバに問い合わせを行ってしまう。
   ([@yunkya2/1991158863392133619](https://x.com/yunkya2/status/1991158863392133619))
 
+### gcc2.x: gcc version 2.6.3 (68k, Human68k, revision 5)
+* 長い文字列(4KB弱)を記述すると文字化けする。
+  [Cソースコード](https://github.com/kg68k/x68.memo/blob/main/prog/gcc2/gcc2_longstr.c)
+  [コンパイル結果](https://github.com/kg68k/x68.memo/blob/main/prog/gcc2/gcc2_longstr.s)
+
 
 ## 情報表示
 
