@@ -72,6 +72,7 @@
 * 長い文字列(4KB弱)を記述すると文字化けする。
   [Cソースコード](https://github.com/kg68k/x68.memo/blob/main/prog/gcc2/gcc2_longstr.c)
   [コンパイル結果](https://github.com/kg68k/x68.memo/blob/main/prog/gcc2/gcc2_longstr.s)
+  (どちらも文字コードはShift_JIS)
 
 
 ## 情報表示
