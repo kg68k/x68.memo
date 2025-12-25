@@ -140,6 +140,9 @@ XC iocslib.h struct TLINEPTR
 ### startup/_start.c _start()
 * _dos_setblock()より先にスタックポインタを設定している(`MEMCHK()`マクロを呼んでいない)。
 
+### _dos_diskred(), _dos_diskred2(), _dos_diskwrt(), _dos_diskwrt2()
+* XCのマニュアルやDOSLIBでは戻り値がvoidになっているが、実際にはエラーコードを返すのでintに変更する。
+
 
 ## 機能の追加改善
 
