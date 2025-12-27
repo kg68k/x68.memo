@@ -90,6 +90,10 @@
 * (未確認) `IOCS _CRTMOD`の不具合修正の影響を受ける。詳しくはギャラガ'88の項を参照のこと。
   ([@fujitech29/1920684521466237040](https://x.com/fujitech29/status/1920684521466237040))
 
+### ピザバスターズ
+* 0M到達後に撃破するとHAPPY END後にGAME OVERになる。
+  ([@kg68k/1953576684013416677](https://x.com/kg68k/status/1953576684013416677))
+
 
 ----
 [goto index](README.md)
