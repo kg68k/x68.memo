@@ -296,6 +296,7 @@ __attribute__((__error__("msg"))) static inline IJUMP(void* _addr);
 * XC固有のヘッダファイルをinclude/x68k/xc/ディレクトリに移動する。
   * &lt;stdio.h&gt;など標準のヘッダファイルで宣言されているXC固有の識別子はinclude/x68k/xc/xcXXX.hに独立させ、
     `__X68K_XC_SOURCE__`が定義されている場合のみ読み込むようにする。
+* src/ctype/_mbctype.cをsrc/mbctype/に移動する。
 
 
 ## ドキュメント (X680x0 libc Vol.2 Programmer's Reference)
