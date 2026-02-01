@@ -127,5 +127,53 @@ LIBCがリンクされた実行ファイルは、実行時にコマンドライ�
 余談：LIBCのスタートアップルーチンには、ほかに`-+-p`、`-+-f`、`-+-g`オプションもあります。
 
 
+## elf2x68k (newlib)でスタックとヒープサイズを指定する仕組み
+
+既定のスタックサイズを納めた変数`_stack_size`が
+[_stacksize.S](https://github.com/yunkya2/elf2x68k/blob/master/src/libx68k/_stacksize.S)にて
+```
+_stack_size:
+	.long	STACK_SIZE
+```
+として定義されています(elf2x68kはgccのオプションが既定で`-fno-leading-underscore`のため、
+C言語からもアセンブリ言語からも変数名は`_stack_size`として見えます)。
+
+ただしXCやLIBCとは異なりこの`STACK_SIZE`は外部参照値ではなく、インクルードしている
+[config.h](https://github.com/yunkya2/elf2x68k/blob/master/src/libx68k/config.h)にて
+```
+/* Set a default stack size */
+#ifndef STACK_SIZE
+#define STACK_SIZE      32768
+#endif
+```
+として定義されており、プリプロセスとアセンブルの結果、定数値`32768`としてオブジェクトファイル\_stacksize.oに埋め込まれます。
+
+通常はこの\_stacksize.oがリンクされ、`_stack_size`の値をスタートアップルーチンが参照して動的にスタックが設定されます。
+
+ヒープサイズについてもファイルや変数名が異なりますが、同様の仕組みになっています。
+
+### elf2x68k (newlib) 変数定義によるスタックとヒープサイズの指定
+
+スタックサイズを指定する場合は\_stacksize.oをリンクさせず、代わりとなる`_stack_size`を用意すればいいので、
+以下のようなコードを追加するかまたは新規ソースコードに書き込んで一緒にリンクします。
+```c
+int _stack_size = 256*1024;
+```
+
+ヒープサイズの場合は`_heap_size`を定義します。
+
+## elf2x68kでXCライブラリを使用する場合
+`-specs=xc.specs`
+
+## elf2x68k (XC lib) シンボル定義によるスタックとヒープサイズの指定
+
+elf2x68kにはXCの`/Gs<n>`オプション(ヒープの場合は`/Gh<n>`)がないので、
+それ以外の方法でシンボル値`_STACK_SIZE`を設定します。
+
+例えばm68k-xelf-gccでリンクする際に`-Wl,--defsym,STACK_SIZE=262144`オプションを指定すればいい、
+はずなのですが手元の環境(elf2x68k Release 20251124)では既定でも指定した場合でもサイズが正しく反映されなくて
+動作確認できていません。
+
+
 ----
 goto [index](../README.md) / [プログラミング](./README.md)
