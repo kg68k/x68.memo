@@ -5,7 +5,7 @@
 ## 開発ツール
 
 ### PD LIBC
-* [TODO](../prog/libc/README.md#todo)
+* [LIBC TODO](../prog/libc/README.md#todo)
 
 ### C Compiler PRO-68K ver2.1 NEW KIT
 * [C Compiler PRO-68K ver2.1 NEW KITの不具合](../prog/xc/bugs.md)
@@ -14,21 +14,19 @@
 * 仮想ディレクトリまわりの処理がまだ完全には解決していないはず。
 
 ### HAS060.X version 3.09+91
-* HAS060.X - アセンブラ - プログラミング - ソフトウェアライブラリ - X68000 LIBRARY &gt;
-  [既知の不具合](http://retropc.net/x68000/software/develop/as/has060/knownbug.htm)
-* HAS060X.Xの[KNOWNBUGS.md](https://github.com/kg68k/has060xx/blob/main/KNOWNBUGS.md)
+* [HAS060.X 既知の不具合](http://retropc.net/x68000/software/develop/as/has060/knownbug.htm)
+* [HAS060X.X KNOWNBUGS.md](https://github.com/kg68k/has060xx/blob/main/KNOWNBUGS.md)
 
 ### Pure PASCAL Compiler v1.01
 * DEKOのアヤシいお部屋。 &gt; ぴゅあぱすかる。 &gt;
-  [既知の問題 (ver 1.01)](https://ht-deko.com/pure.html#%E6%97%A2%E7%9F%A5%E3%81%AE%E5%95%8F%E9%A1%8C-ver-101)
+  [Pure PASCAL 既知の問題 (ver 1.01)](https://ht-deko.com/pure.html#%E6%97%A2%E7%9F%A5%E3%81%AE%E5%95%8F%E9%A1%8C-ver-101)
 
 ### こ-BASIC ver.0.01 (H8/11/11 版)
-* kofunc.docの
+* kofunc.docの下記関数名は`DrawMonoCard`が正しい。
+  ([@ShirohSuzuki/1672859593654022146](https://x.com/ShirohSuzuki/status/1672859593654022146))
   ```
   DrawCardMono( wno;int, x;int, y;int, num;int, card;int )
   ```
-  の関数名は`DrawMonoCard`が正しい。
-  ([@ShirohSuzuki/1672859593654022146](https://x.com/ShirohSuzuki/status/1672859593654022146))
 
 ### X-BASIC version 2.02
 * `print using "#,";1e308`で「おかしな命令を実行しました」等のエラーが発生する。
@@ -132,160 +130,10 @@
   他の部分のコードの影響により結果として問題が顕在化しないことが多いと思われるが、場合(値)によっては異常動作を引き起こす。
 
 ### Z-MUSIC Version 2.08
-* デバイスドライバ組み込み時にDOS _BUS_ERRでメモリ不足を検出するが、メモリ容量とバッファサイズ指定によっては失敗することがある
-  ([@kg68k/1887554606160576673](https://x.com/kg68k/status/1887554606160576673))
-* 奇数アドレスに配置したZMDデータをOPMデバイスに書き込むとアドレスエラーが発生する。不具合として扱うべきかは検討の余地あり。
-  ([@kg68k/1886460468925227335](https://x.com/kg68k/status/1886460468925227335))
-* `@Kn`の設定可能範囲は-768≦n≦768だが、±769～6144の値がエラーにならない。
-* `@Kn1,n2,dly`の設定可能範囲は-768≦n?≦768だが、±769～6144の値がエラーにならない。
-* `@Kn1,n2,dly`でn1==n2やdly&gt;32767でエラーになったとき「@B COMMAND ERROR (No.29)」と表示される。
-* ピッチベンドの際に時折計算を間違えてデータ2バイトの最上位ビットが立ってしまう事がある
-  ([A ♪SOUND mind in a SOUND <body> : Z-MUSIC for the Web - Qiita](https://qiita.com/toyoshim/items/38dafc97629a98434267))
-  * ZMDコマンド$d1において、MIDIデータを$e0, lower @b, higher @bと送信しているが、higher @bの最上位ビットが立つ。
-  * `@M`(数値なしのスイッチング・オフ)実行時に`p_detune_m + p_port_work2`を求めたあとクランピングしていない。
-  * 前述の`@Kn`、`@Kn1,n2,dly`でZMDコマンドが不正な値になっている場合。
-* ファンクション`$09 m_stat`
-  * ベースチャンネルモードがMIDIチャンネル基準モード(`(b1)`)に設定されている場合、引数`d2.l = 0`で呼び出すと正しい値が取得できない
-    (d0.lのビット31～25が常に0になる、ビット22～16がPCM2～8との論理和になる)。
-  * `(b1)`モードの場合、引数`d2.l`の最上位ビットを1にすると上記挙動の影響を受け正しい値が取得できない。
-* ファンクション`$3c get_play_work`: トラック番号のチェックをしておらず、範囲外の値だとエラーではなく不正なアドレスを返す。
-  * ちなみにd2.b==0の場合はトラック番号1のアドレスを返すようになっている。
-* ZMUSIC.X
-  * 常駐解除時に`trap #12`(COPYキー処理)のベクタを戻す処理の際、(親や祖先のプロセスではない)メモリブロックの内容や、
-    未確保領域のメモリ内容を破壊することがある。そのアドレスがメモリ未実装領域であればメモリ読み込み時にバスエラーが発生する。
-* ZMSC.X
-  * 総トラック数が32を超えるZMDデータを再生するとバッファオーバーフローを起こし、最悪白帯になる。
-    ([@kg68k/1886531820357120282](https://x.com/kg68k/status/1886531820357120282))
-  * 常駐解除時に`trap #12`(COPYキー処理)のベクタを戻す処理の際、常駐時の親プロセスと同じアドレスに別のメモリブロックがあると
-    メモリ内容を破壊する。[zmsc2_t12poc](https://github.com/kg68k/xperiment68k/blob/main/docs/zmsc2.md#zmsc2_t12poc)
-* ZP.R version 2.02
-  * 常駐検査時に常駐プロセスではないメモリブロックを検査したり、メモリブロックの範囲外を参照することがある。
-    これにより誤判定やバスエラーが起きることがある。
-    * 派生版も修正されていなければ同じ不具合あり(ZP3.Rでは修正されている)。
-  * 空きメモリが少ない状態で実行するとプロセスのメモリブロック範囲外を読み書きすることがある。
-    これによりバスエラーやハングアップなどが起きる。
-* マニュアル(ZMSC2MAN.LZH)
-  * 備考：配布アーカイブ(MANUAL.LZH)によっては全ファイルにMacBinaryが書き込まれている場合がある。
-    当アカウントの[zmusic2リポジトリ](https://github.com/kg68k/zmusic2)や、現在のX68000 LIBRARYの
-    [Z-MUSIC ver2](http://retropc.net/x68000/software/sound/zmusic/zmusic2/)にあるものは問題ない。
-  * ZM3.MAN
-    * `m_tempo(tm)`の引数「tm＝トラック番号」は「tm＝テンポ値」が正しい。
-    * `m_stat(ch)`の引数2行目の「全て」は不要。
-    * `m_assign2(ch,tr)`のコード例のchとtrが逆になっている。
-      ([X-Basic_Manual.pdf](https://junk-pro68k.booth.pm/items/5940250) Page 170)
-    * `m_wave_form()`の「オルタニティヴ」は「オルタナティヴ」が正しいと思われる
-      (ソースコードで該当する機能が「alternative」なので)。
-    * `int zm_work(char trk_num, int work_offset)`が記載されていない。
-  * ZM4.MAN
-     * `.WAVE_FORM`の「オルタニティヴ」は「オルタナティヴ」が正しいと思われる。
-  * ZM5.MAN
-    * 備考：1735行～で解説されているスイッチング・オフについて、`@B`と`@K`の場合はオートベンドスイッチオフとなるが、
-      ZM12.MANには`オートベンド・スイッチ  (MML @B) $BD`として載っている(`$BD`を用いてオンにするMMLはない)。
-  * ZM10.MAN
-    * 44行目(10.1. ファンクションコールのコール法)の「(MEASURE12参照)」は「(MEASURE11参照)」が正しい。
-    * ファンクション`$10 adpcm_read`: 333、338行目の「16ピット」(pi)は「16ビット」(bi)が正しい。
-    * ファンクション`$3a get_trk_tbl`: ADPCM2～8のチャンネルが記載されていない。末尾に25～31が並び合計32バイト。
-    * ファンクション`$58 call_int_play_ope`が記載されていない(ZMSC208.LZHのZMVER_UP.DOCに詳細あり)。
-    * ちなみにファンクション`$53`はMMLで`~`／`_`に割り当てられてる機能を相対ボリュームアップ／ダウンから
-      相対ベロシティアップ／ダウンに変更するかどうかを設定する機能。初期化コマンド`(Un)`から呼び出されている。
-    * ファンクション`$3c get_play_work`: ZM_VEDRUP.DOCとZM2.MANには書いてあるが、ZMSC.X常駐時に
-      戻り値のd0.lは意味をなさない(実際の実装では0が返る)。
-  * ZM12.MAN
-    * 「ベースチャンネル設定  (ZMS (Ｂ)コマンド)」はZMDデータには出力されない
-      (ただし再生は対応している。v1.09Dまでは出力していたが、v1.09Eで仕様が変更された)。
-  * ZM16.MAN
-    * `m_stat()`の引数「`track_bit_pattern`」は「`channel_no`」が正しい。詳しくはZMUSIC.Lの項を参照のこと。
+* [Z-MUSIC Version 2.08 KNOWNBUGS.md](https://github.com/kg68k/zmusic2/blob/main/KNOWNBUGS.md)
 
-### Z-MUSIC Version 2.08e
-* ZPCONV.R version 2.04d
-  * X68000(MPU 68000)で実行すると`IOCS _SYS_STAT`を呼び出して白帯になる。
-  * Z-MUSIC Version 2.08に同梱のZPCONV.R version 2.04を使えばよい。
-
-### ZMUSIC.L Version 2.01
-* `zm_ver()`: スーパーバイザモードで呼び出すとバスエラーが発生する。
-  * スーパーバイザになるための`DOS _SUPER`の返り値を見てユーザーモードに戻るための`_SUPER`を省略しなければならないが、
-    その処理が抜けているため。
-  * X-BASIC用外部関数MUSICZ.FNCのライブラリ版という位置付けのため、もともとスーパーバイザモードを想定していないのかも。
-* `zm_ver()`: Z-MUSIC Ver.3が常駐していると、`0`(常駐していない)ではなくZ-MUSIC Ver.3のバージョン番号を返す。
-* `m_stat()`: 引数はチャンネル番号(または0=全チャンネル指定)なので、zmusic.hでの引数名`track_bit_pattern`は正しくない。
-  `m_assign()`に合わせると`channel_no`が適切。
-  * 備考：Z-MUSICのファンクション`$09`はビットマップで複数チャンネルを指定できるが、
-    MUSICZ.FNCとZMUSIC.Lはその呼び出し方法には対応していない。
-* `m_play()`, `m_stop()`, `m_cont()`: track_no?=='NASI'以降を無視しない。
-* `m_out()`: 引数に-1または'NASI'がない場合、スタック上の引数列の末尾を超えてメモリを読み込む。
-* `m_mute()`, `m_solo()`: ch_no?=='NASI'以降を無視しない。
-  * zmusic.hのコメントの「全トラック」は「全チャンネル」が正しい。
-* zmusic.h: m_trk()のMML_ptrなど、書き換えをしないchar\*引数にconstが付いていない。
-
-### Z-MUSIC Ver.3.02C
-* ZMSC3.X
-  * メモリ確保ルーチン(`get_mem:`): 下記不具合はファンクション`$70 ZM_GET_MEM`など、メモリ確保を行う機能すべてに影響する。
-    * 確保サイズ(`d2.l`)に`-8`を指定するとエラー(`ILLEGAL_MEMORY_BLOCK_SIZE`)にならず、確保したメモリブロック範囲外に
-      書き込みを行いバスエラーが発生したり、メモリ内容を破壊してしまう。
-    * メモリが確保できなかった場合、エラー処理ルーチンが呼ばれエラー情報用のメモリが確保される。
-      このメモリも確保できなかった場合はエラー処理が繰り返されるため、スタックオーバーフローを起こしてハングアップ等が発生する。
-  * ファンクション`$13 ZM_SE_ADPCM1`
-    * MPCM.X非常駐時、優先度が低くて再生されない場合の戻り値`d0.l`の値が不定(0以外の値にはなる)。
-    * MPCM.X常駐時、成功すると`d0.l`に0以外の値が返る。
-      * MPCMの不具合の影響を受けているが、それだけではなく、マニュアル記載の仕様ではMPCM`M_EFCT_OUT`は「d0.l≧0 正常終了」であるのに対し、
-        ZMSC3.X`ZM_SE_ADPCM1`は「d0.l=0:正常終了」であるので、戻り値の上書きが必要だがこれをしていない。
-  * ファンクション`$73 ZM_FREE_MEM2`
-    * 小さいメモリブロックがあるとメモリブロック範囲外のメモリを読んでしまう。その場所にメモリが実装されていなければバスエラーが発生する。
-    * メモリブロックを確保したプロセスがZMSC3.Xか確認していないため、メモリ管理ポインタの直後のメモリ内容がメモリ用途IDと偶然一致すると
-      ZMSC3.Xで確保したメモリと誤認して解放してしまう。
-    * 常駐時、常駐解除時、ドライバ初期化時、そのほかさまざまなところで`ZM_FREE_MEM2`を使用しており、この不具合の影響を受ける。
-  * ファンクション`$74 ZM_EXCHANGE_MEMID` (引数`d1.l=-1`を指定した場合)
-    * 小さいメモリブロックがあるとメモリブロック範囲外のメモリを読んでしまう。その場所にメモリが実装されていなければバスエラーが発生する。
-    * メモリブロックを確保したプロセスがZMSC3.Xか確認していないため、メモリ管理ポインタの直後のメモリ内容がメモリ用途IDと偶然一致すると
-      ZMSC3.Xで確保したメモリと誤認して変更してしまう。
-* ZMC.X
-  * 上限下限あり8ビット値の配列で、値の直後の2連続セパレータが単独のセパレータとして解釈されてしまう。
-    ([@kg68k/1482025079017926658](https://x.com/kg68k/status/1482025079017926658))
-  * 上限下限あり16ビット値の配列で、上限値・下限値が正しく適用されないことがある。
-  ([@kg68k/1482027532736245763](https://x.com/kg68k/status/1482027532736245763))
-  * `.FM_TUNE_SETUP`をint16_tではなくint8_tとしてコンパイルしてしまう。
-  ([@arith_rose/1481388558246051842](https://x.com/arith_rose/status/1481388558246051842))
-  * 参考情報：隠し機能かもしれない挙動。
-    * `@Kn1,n2,dly,bnd`、`@Bn1,n2,dly,bnd`のdlyに-32768～-1を指定できる。
-  * 参考情報：ZMDフォーマット(ZM12.MAN)では対応しているが、ZMC.Xの動作やMMLコマンド解説(ZM5.MAN)では使用できない数値指定。
-      * `U±n`、`@U±n`、`Kn`、`@P±n`、`[VOLUME v]`、`[@VOLUME v]`、`[VELOCITY u]`、`[@VELOCITY u]`、`[PANPOT p]`、
-        `[@PANPOT p]`、`[CH_PRESSURE n]`
-        の下限は-127だが、ZMD仕様では-128。
-      * `_n`の上限は127だが、ZMD仕様では128(ZMDデータ上は-128)。
-      * `@Kn1,n2,dly,bnd`と`@Bn1,n2,dly,bnd`のbnd、`@Qn`の下限は-32767だが、ZMD仕様では-32768。
-* ZP3.R
-  * ファイル名を大文字ドライブ名指定すると、そのドライブに対し特殊ブロックデバイス用の`DOS _DRVCTRL (MD=$34xx)`
-    を発行し、返り値によってはファイルがあってもオープンできない。  
-    * FOPEN.HAS::check_drvchgで`d0`レジスタ(の上位バイト)を初期化していないため。
-  * 空きメモリが少ない状態で実行するとプロセスのメモリブロック範囲外を読み書きすることがある。
-    これによりバスエラーやハングアップなどが起きる。
-* ZVT.X version 2.09
-  * グラフィック画面の使用状況が3(破壊)だとエラー終了してしまう。
-  * グラフィック画面が使用できない場合にエラーメッセージの後に使用法を表示してしまう。
-  * version 2.09 patchlevel 1で修正されている。
-* マニュアル(ZM302_M.LZH)
-  * ZM4.MAN
-    * `.FM_TUNE_SETUP`、`.ADPCM_TUNE_SETUP`のt1～t128の値の上限が+32768と書かれている(本文は正しい)。
-  * ZM5.MAN
-    * 値の範囲をA-Bと表記しているものと、A～Bと表記しているものがあり統一されていない。
-    * `[TRACK_DELAY n]`のnの上限は32768ではなく32767。
-    * `[VELOCITY u]`の「・u:-127～+127」は「・u:0～127」が正しい。
-  * ZM10.MAN
-    * ファンクション`$13 ZM_SE_ADPCM1`、`$14 ZM_SE_ADPCM2`の「d4.lw:再生チャンネル(0-15)」は、
-      正しくは「d4.lw:再生チャンネル(0-7)」。
-  * ZM15.MAN
-    * ファンクション`$10xx M_EFCT_OUT`の「ファンクション$8005」は、正しくは「ファンクション$8006」。
-
-### ZMSC3LIB Version 0.01
-* ZMCHECKZMSC.HAS `zm_check_zmsc()`: スーパーバイザモードで呼び出すとアドレスエラーが発生する。
-  * スーパーバイザになるための`IOCS _B_SUPER`の返り値を見てユーザーモードに戻るための`_B_SUPER`を省略しなければならないが、
-    その処理が抜けているため。
-  * X-BASIC用外部関数MUSICZ3.FNCのライブラリ版という位置付けのため、もともとスーパーバイザモードを想定していないのかも。
-* ZMADPCM1.HAS `zm_se_adpcm1()`: スタックに積まれた引数を正しく受け取れず、正しく動作しない。
-  * `move.b param2(sp),d1`ではなく`move.b param2+3(sp),d1`のように読み込む必要がある。
-* ZMADPCM2.HAS `zm_se_adpcm2()`: スタックに積まれた引数を正しく受け取れず、正しく動作しない。
-* ZM_ATOI.HAS `zm_atoi()`: `ZM_STOP`ファンクションが呼ばれているため、正しく動作しない。
-* ZMPCMREAD.HAS `zm_pcm_read()`: `char *param`引数が無視され、`a1`レジスタが不定なため正しく動作しない。エラー時に0以外の値が返る。
+### Z-MUSIC Version 3.02C
+* [Z-MUSIC Version 3.02C KNOWNBUGS.md](https://github.com/kg68k/zmusic3/blob/main/KNOWNBUGS.md)
 
 ### OPMDRV3.X version 1.11
 * ファンクションコールの不具合は[ぷにぐらま～ずまにゅある](https://github.com/kg68k/puni)のopmdrv.txtに記載あり。
@@ -319,7 +167,7 @@
   * PCM8 v0.48b+2や、PCM8A、MPCM + P8EMUなどの互換ドライバでは問題ない。
 
 ### XAPNEL.R version 1.04
-* [既知の不具合](https://github.com/kg68k/xapnel-src?tab=readme-ov-file#%E6%97%A2%E7%9F%A5%E3%81%AE%E4%B8%8D%E5%85%B7%E5%90%88)
+* [XAPNEL.R 既知の不具合](https://github.com/kg68k/xapnel-src?tab=readme-ov-file#%E6%97%A2%E7%9F%A5%E3%81%AE%E4%B8%8D%E5%85%B7%E5%90%88)
 
 
 ## 画面制御
@@ -383,7 +231,7 @@
 * ファイルの日付の表示が乱れる。パッチあり。
 
 ### EDR-plus version 2.0.1(yakko-chan)
-* セレクタ画面のファイルの日付の表示が乱れる。[パッチあり](patch/edrp201.pat)。
+* セレクタ画面のファイルの日付の表示が乱れる。[パッチあり edrp201.pat](patch/edrp201.pat)。
 
 ### lhv version 0.95.2
 * セレクタ画面のファイルの日付の表示が乱れる。パッチあり。
