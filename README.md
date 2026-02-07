@@ -65,6 +65,7 @@ X680x0に関するメモです。
   ZMSC109A.LZHに入っている差分ファイルが適用できればいいので違っても構いません。
 * XDIR for X68K
 * mudrv.x (mxdrvの前身?)
+* MXDRV v2.06+16/02EX
 * ミラー
   * FSHARPのライブラリ
   * fj.binaries.x68000のアーカイブ
