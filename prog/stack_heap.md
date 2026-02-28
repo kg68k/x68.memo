@@ -104,6 +104,10 @@ XCとの互換性が考慮されておりスタックサイズやヒープサイ
 
 ただしコンパイラはGCCを使うのが基本となるため、具体的な手順もGCC用のやり方になります。
 
+LIBCでは`_STACK_SIZE`、`_HEAP_SIZE`の値を保持する変数がスタートアップルーチンのファイルに
+埋め込まれているのではなく、個別のファイルに分離されているため、それぞれのファイルをリンクする代わりに
+独自に用意した変数をリンクするという方法もできます。
+
 参考：当該部分のソースコード
 * [_start.c](https://github.com/kg68k/libc-src/blob/main/src/startup/_start.c)
   ... スタートアップルーチン。
@@ -135,44 +139,62 @@ LIBCがリンクされた実行ファイルは、実行時にコマンドライ�
 _stack_size:
 	.long	STACK_SIZE
 ```
-として定義されています(elf2x68kはgccのオプションが既定で`-fno-leading-underscore`のため、
-C言語からもアセンブリ言語からも変数名は`_stack_size`として見えます)。
+として、また規定のヒープサイズを納めた変数`_heap_size`が
+[_heapsize.S](https://github.com/yunkya2/elf2x68k/blob/master/src/libx68k/_heapsize.S)にて
+```
+_heap_size:
+	.long	HEAP_SIZE
+```
+として定義されています。  
+(elf2x68kはgccのオプションが既定で`-fno-leading-underscore`のため、C言語からもアセンブリ言語からも変数名が
+`_stack_size`、`_heap_size`として見えます)。
 
-ただしXCやLIBCとは異なりこの`STACK_SIZE`は外部参照値ではなく、インクルードしている
+ただしXCやLIBCとは異なりこの`STACK_SIZE`、`HEAP_SIZE`は外部参照値ではなく、インクルードしている
 [config.h](https://github.com/yunkya2/elf2x68k/blob/master/src/libx68k/config.h)にて
 ```
 /* Set a default stack size */
 #ifndef STACK_SIZE
 #define STACK_SIZE      32768
 #endif
+
+/* Allocate at least some space for heap */
+#ifndef HEAP_SIZE
+#define HEAP_SIZE       65536
+#endif
 ```
-として定義されており、プリプロセスとアセンブルの結果、定数値`32768`としてオブジェクトファイル\_stacksize.oに埋め込まれます。
+として定義されており、プリプロセスとアセンブルの結果、それぞれ定数値`32768`としてオブジェクトファイル\_stacksize.o、
+\_heapsize.oに埋め込まれます。
 
-通常はこの\_stacksize.oがリンクされ、`_stack_size`の値をスタートアップルーチンが参照して動的にスタックが設定されます。
-
-ヒープサイズについてもファイルや変数名が異なりますが、同様の仕組みになっています。
+通常はこの\_stacksize.oと\_heapsize.oがリンクされ、`_stack_size`と`_heap_size`の値をスタートアップルーチンが参照して
+動的にスタックとヒープが設定されます。
 
 ### elf2x68k (newlib) 変数定義によるスタックとヒープサイズの指定
 
 スタックサイズを指定する場合は\_stacksize.oをリンクさせず、代わりとなる`_stack_size`を用意すればいいので、
-以下のようなコードを追加するかまたは新規ソースコードに書き込んで一緒にリンクします。
+[スタックサイズ、ヒープサイズの指定](https://github.com/yunkya2/elf2x68k/tree/master?tab=readme-ov-file#%E3%82%B9%E3%82%BF%E3%83%83%E3%82%AF%E3%82%B5%E3%82%A4%E3%82%BA%E3%83%92%E3%83%BC%E3%83%97%E3%82%B5%E3%82%A4%E3%82%BA%E3%81%AE%E6%8C%87%E5%AE%9A)
+で説明されている通り、以下のようなコードを追加するかまたは新規ソースコードに書き込んで一緒にリンクします。
 ```c
-int _stack_size = 256*1024;
+int _stack_size = 128 * 1024;   // 128KB stack
+int _heap_size = 256 * 1024;    // 256KB heap
 ```
 
-ヒープサイズの場合は`_heap_size`を定義します。
 
 ## elf2x68kでXCライブラリを使用する場合
 `-specs=xc.specs`
 
-## elf2x68k (XC lib) シンボル定義によるスタックとヒープサイズの指定
+### elf2x68k (XC lib) シンボル定義によるスタックとヒープサイズの指定
 
-elf2x68kにはXCの`/Gs<n>`オプション(ヒープの場合は`/Gh<n>`)がないので、
-それ以外の方法でシンボル値`_STACK_SIZE`を設定します。
+elf2x68kにはXCの`/Gs<n>`、`/Gh<n>`オプションがないので、それ以外の方法でシンボル値`_STACK_SIZE`、`_HEAP_SIZE`を設定します。
 
-例えばm68k-xelf-gccでリンクする際に`-Wl,--defsym,STACK_SIZE=262144`オプションを指定すればいい、
-はずなのですが手元の環境(elf2x68k Release 20251124)では既定でも指定した場合でもサイズが正しく反映されなくて
-動作確認できていません。
+例えばm68k-xelf-gccでリンクする際に`-Wl,--defsym,STACK_SIZE=262144`オプションを指定します。  
+
+ただし、Release 20251124にはファイル変換に不具合があり指定が正しく反映されません。
+この不具合は`develop`ブランチの
+[Commit a45ad3d](https://github.com/yunkya2/elf2x68k/commit/a45ad3d23b6f56c1edb22ac8ad83ec7a86908bf0)
+で修正されています。
+修正版がリリースされるまでは
+[elf2x68k.py](https://github.com/yunkya2/elf2x68k/blob/develop/src/elf2x68k.py)
+を差し替えてください。
 
 
 ----
