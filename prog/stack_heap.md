@@ -188,13 +188,8 @@ elf2x68kにはXCの`/Gs<n>`、`/Gh<n>`オプションがないので、それ以
 
 例えばm68k-xelf-gccでリンクする際に`-Wl,--defsym,STACK_SIZE=262144`オプションを指定します。  
 
-ただし、Release 20251124にはファイル変換に不具合があり指定が正しく反映されません。
-この不具合は`develop`ブランチの
-[Commit a45ad3d](https://github.com/yunkya2/elf2x68k/commit/a45ad3d23b6f56c1edb22ac8ad83ec7a86908bf0)
-で修正されています。
-修正版がリリースされるまでは
-[elf2x68k.py](https://github.com/yunkya2/elf2x68k/blob/develop/src/elf2x68k.py)
-を差し替えてください。
+ただし、Release 20251124まではファイル変換に不具合があり指定が正しく反映されないので、
+20260301以降を使う必要があります。
 
 
 ----
