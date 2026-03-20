@@ -53,8 +53,7 @@
   * [elf2x68kでは修正済み #8](https://github.com/yunkya2/elf2x68k/issues/8)。
 * [memcpy.S](https://github.com/Lydux/newlib-1.19.0-human68k/blob/master/newlib/libc/machine/m68k/memcpy.S)
   で転送元や転送先アドレスがロングワード境界に整合されていない場合、転送サイズの上位16ビットが無視される。
-  ([@yunkya2/2034999692715766179](https://x.com/yunkya2/status/2034999692715766179))
-  * elf2x68kでも該当。
+  * [elf2x68kでも該当 #34](https://github.com/yunkya2/elf2x68k/issues/34)。
 
 ### PCM to SMP Version 1.0
 * (参考情報) ヘッダ構造: PCMデータ数 1バイト、{ID 1バイト、データサイズ 2バイト}×データ数、PCMデータ×データ数
