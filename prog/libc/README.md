@@ -143,6 +143,16 @@ XC iocslib.h struct TLINEPTR
 ### _dos_diskred(), _dos_diskred2(), _dos_diskwrt(), _dos_diskwrt2()
 * XCのマニュアルやDOSLIBでは戻り値がvoidになっているが、実際にはエラーコードを返すのでintに変更する。
 
+### mbsncmp()
+* 引数`size_t n`が0のとき、文字列が一致しなくなるかNUL文字に到達するまですべて比較してしまう。
+
+### jstrncmp() (mbsncmp()の別名)
+* XCの仕様では引数が`int n`のため負数が渡される可能性があり、その場合問題が生じるが、そもそもXCの実装(JSTRNCMP.S)では
+  `n`を符号なしとして扱っているため文字列が一致しなくなるかNUL文字に到達するまですべて比較してしまう。
+  * XCで負数を渡した場合は未定義動作とされていると解釈するか、またはXCの仕様が`size_t n`の間違いと解釈することにより、
+    LIBC側でこの仕様の違いについて配慮不要として扱えばよいか。
+  * MS-C6.0は`size_t n`なので問題ない。
+
 
 ## 機能の追加改善
 
@@ -298,6 +308,7 @@ __attribute__((__error__("msg"))) static inline IJUMP(void* _addr);
   * &lt;stdio.h&gt;など標準のヘッダファイルで宣言されているXC固有の識別子はinclude/x68k/xc/xcXXX.hに独立させ、
     `__X68K_XC_SOURCE__`が定義されている場合のみ読み込むようにする。
 * src/ctype/_mbctype.cをsrc/mbctype/に移動する。
+* ソースコードやドキュメントの「null文字」は「NUL文字」に統一する。
 
 
 ## ドキュメント (X680x0 libc Vol.2 Programmer's Reference)
