@@ -309,6 +309,7 @@ __attribute__((__error__("msg"))) static inline IJUMP(void* _addr);
   LIBCの挙動に頼ってしまうと移植性がなくなるので、この記述は「～の場合でも移動することがある」といった注意書きに改めるべき。
 * p.275 `setrlimit` インクルードファイルは`sys/resource.h`(複数形のsがつかない)が正しい。
 * p.533 `_dos_vernum` 下位16ビットと上位16ビットが逆。
+* p.773 `mbsncmp` 互換性の「`mbsncmp` 関数を使用すること。」は`jstrncmp`が正しい。
 
 
 ----
