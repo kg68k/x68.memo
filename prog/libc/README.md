@@ -175,6 +175,9 @@ XC iocslib.h struct TLINEPTR
 ### POSIXとの互換性向上
 * sys/resource.h
   * rlim_tを定義する。
+* sys/utsname.h
+  * `struct utsname`の各メンバーを`char[]`に変更する。
+  * src/sys_utsname/uname.cもあわせて変更する。
 
 ### getexecname(): 実行ファイルのフルパス名を返す
 https://twitter.com/kg68k/status/1610270055765520384
