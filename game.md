@@ -53,6 +53,10 @@
 ### キャッスルズ(Castles)
 * メインメモリが10MB以上あると(正確には起動時に空きメモリが8MB以上あると)ゲームが始まらない。
 
+### 餓狼伝説
+* 2000年問題。エンディングでのギース死亡日の表示が乱れる。([gwxNVjCa49Y](https://www.youtube.com/watch?v=gwxNVjCa49Y&t=1073s))
+  * X68000 Z版でも治っていない。([餓狼伝説攻略｜lyrical clarice](https://note.com/clamini/n/naa5b4c928cfe))
+
 ### 餓狼伝説2
 * 魔法パッドのボタン表記がマニュアルと違う。
   ([@arith_rose/2013179353493090626](https://x.com/arith_rose/status/2013179353493090626))
