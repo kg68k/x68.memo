@@ -156,6 +156,9 @@ XC iocslib.h struct TLINEPTR
     かどうかを考える必要がない。
   * MS-C6.0は`size_t n`なので問題ない。
 
+### _dos_malloc0()
+* 第3引数は`struct _psp *pspadr`ではなく`struct _mep *mepadr`。
+
 
 ## 機能の追加改善
 
