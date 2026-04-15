@@ -7,10 +7,10 @@
 * system()
   * `SYSTEM_SHELL`: シェルの実行ファイル名
   * `SYSTEM_SHELLTYPE`: `COMMAND`または`UNIX`
-  * `SYSTEM_SHELL_OPT`: シェルのコマンドライン引数
+  * `SYSTEM_SHELL_OPT`: シェルのコマンドライン引数(既定では`/C`または`-c`)
   * `SHELL`: シェルの実行ファイル名
   * `SHELLTYPE`: `COMMAND`または`UNIX`
-  * `SHELL_OPT`: シェルのコマンドライン引数
+  * `SHELL_OPT`: シェルのコマンドライン引数(既定では`/C`または`-c`)
 * _loadrlimits()
   * `limit_core`
 * uname()
