@@ -159,16 +159,15 @@ XC iocslib.h struct TLINEPTR
 ### _dos_malloc0()
 * 第3引数は`struct _psp *pspadr`ではなく`struct _mep *mepadr`。
 
-### IOCS _ONTIMEのラッパー関数
-* `_iocs_ontime()`: 仕様を変更し、戻り値を以下の型にする。
+### _iocs_ontime2()
+* 戻り値の構造体のメンバー名を修正する。
   ```c
   struct _ontime {
-    unsigned int centiseconds;
-    unsigned int days;
+    int centiseconds;
+    int days;
   };
   ```
-* `_iocs_ontime2()`: 廃止。
-* iocslib.h `ONTIME`マクロ: `(_iocs_ontime().centiseconds)`に展開する(インライン関数を挟んだ方がよいかも)。
+* `_iocs_ontime()`をIOCSに合わせて構造体を返す仕様に変更するという選択もあるが、互換性を考えてintのままにする。
 
 
 ## 機能の追加改善
