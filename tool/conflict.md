@@ -33,6 +33,10 @@
 * 「無効なメディアを使用しました」のエラーになる。9SCDRV.Xに/Dオプションを指定すればよい
   ([@kamadox/1979132819411734627](https://x.com/kamadox/status/1979132819411734627))
 
+## ARRANGER.RとTwentyOne
+* DIR ARRANGER ver2.03
+* ディレクトリ名を大文字に変換しているため、TwentyOne +Cだと「ディレクトリがありません。」というエラーになる。
+
 
 ----
 goto [index](../README.md) / [ツール](./README.md)
