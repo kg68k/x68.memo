@@ -238,6 +238,10 @@ https://twitter.com/kg68k/status/1610270055765520384
 * malloc()したメモリを後始末でfree()するパターンは、`__attribute__((__cleanup__(func))) char* buf = malloc(...);`を使う。
 * malloc()をハイメモリに対応させる(現在はブロックサイズ32bitの上位8bitをフラグに使っている)。
 
+### GCC環境への対応
+* `memcpy()`: 領域が重複していても動作するようにする
+  ([memcpy_overlap.c](https://github.com/kg68k/libc-tests/blob/main/src/memcpy_overlap.c))。
+
 ### その他
 * 標準ではHuman68k v3.02以降専用とする(LIBCぱっちの仕様)。
   * Human68k v2.00以降でも使えるようにするライブラリを新設する。ただしDOSコールベクタの複写のみ行い、動作に関しては関与しない。
