@@ -175,9 +175,7 @@
   * PCM8 v0.48b+2や、PCM8A、MPCM + P8EMUなどの互換ドライバでは問題ない。
 
 ### PCM8A v1.02
-* 8bit PCMを音量`$8`、`$c`、`$7f-%81`、`$89-$8a`で再生するとアドレスエラーが発生する。
-  * 試してないが、MPUが68020以上だとおそらく再生データ領域が1バイト後ろにずれる。
-* v1.02.1でも同じ。
+* [PCM8A改造版](https://github.com/kg68k/pcm8a)
 
 ### XAPNEL.R version 1.04
 * [XAPNEL.R 既知の不具合](https://github.com/kg68k/xapnel-src?tab=readme-ov-file#%E6%97%A2%E7%9F%A5%E3%81%AE%E4%B8%8D%E5%85%B7%E5%90%88)
