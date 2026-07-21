@@ -166,13 +166,15 @@
     (チャンネル0-7とIOCS用チャンネルの合計9チャンネルで発声される挙動)。
 
 ### PCM8 v0.48b
+* `IOCS _ADPCMLOT`が動作しない。
+  * パッチあり。[PCM8 v0.48b+2](https://github.com/kg68k/pcm8)でも修正されている。
 * Z-MUSIC v2のファンクション`$13 se_adpcm1`または`$14 se_adpcm2`でADPCMデータが再生されない、再生周波数がおかしい、
   パンポットがおかしいなどの不具合が生じることがある。
   * Z-MUSICがショートカットで`IOCS _ADPCMOUT`を呼び出す(zmsc_int.s PCM8KON)。このときd0.lの内容は不定。
     PCM8がDMA再起動する(func2.inc rst_dma_s)。周波数(play_freq)とパンポット(play_pan)から設定値テーブル(ppi_c_table)を引くが、
     d0レジスタをクリアせずに使用しているため、d0.wの上位バイトが0でなかった場合に不正なメモリアドレスを参照する。
     周波数やパンポットの設定値が正しくないため、正しく再生されない。
-  * PCM8 v0.48b+2や、PCM8A、MPCM + P8EMUなどの互換ドライバでは問題ない。
+  * PCM8 v0.48b+2で修正されている。PCM8A、MPCM + P8EMUなどの互換ドライバでは問題ない。
 
 ### PCM8A v1.02
 * [PCM8A改造版](https://github.com/kg68k/pcm8a)
