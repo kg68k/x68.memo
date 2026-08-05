@@ -77,6 +77,9 @@
   [コンパイル結果](https://github.com/kg68k/x68.memo/blob/main/prog/gcc2/gcc2_longstr.s)
   (どちらも文字コードはShift_JIS)
 
+### libnetwork.a (TCP/IPドライバ無償配布パッケージ(B PACK))
+* `gethostbyname()`: 戻り値`struct hostent *`の`h_length`が設定されない。
+
 
 ## 情報表示
 
