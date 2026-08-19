@@ -214,8 +214,8 @@ https://twitter.com/kg68k/status/1610270055765520384
 * fsync()
 
 ### 時計操作(time.h)
-* asctime_r() ... POSIX.1-2024では廃止されている。
-* ctime_r() ... POSIX.1-2024では廃止されている。
+* asctime_r() ... ただしPOSIX.1-2024では廃止されている。
+* ctime_r() ... ただしPOSIX.1-2024では廃止されている。
 * gmtime_r()
 * localtime_r()
   * C11で追加された拡張のlocaltime_s()は、glibcでサポートされていない、MSVCで同名の関数があるが仕様が異なる、
@@ -237,6 +237,8 @@ https://twitter.com/kg68k/status/1610270055765520384
 * __inline_strlen() ... notを使う手法を検討。`__builtin_constant_p()`と`__builtin_strlen()`を使う手法を検討。
 * malloc()したメモリを後始末でfree()するパターンは、`__attribute__((__cleanup__(func))) char* buf = malloc(...);`を使う。
 * malloc()をハイメモリに対応させる(現在はブロックサイズ32bitの上位8bitをフラグに使っている)。
+* _isleap(): [A leap year check in three instructions](https://hueffner.de/falk/blog/a-leap-year-check-in-three-instructions.html)
+  のアルゴリズムを使用する。
 
 ### GCC環境への対応
 * `memcpy()`: 領域が重複していても動作するようにする
