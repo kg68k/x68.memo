@@ -33,6 +33,7 @@
 
 ### ぺけ-ＢＡＳＩＣ ver.0.02
 * [X-BASIC'(X-BASIC for iOS)サポート(日本語): ぺけ-BASICのバグについて（見つけ次第更新）](http://x-basicforios.blogspot.com/2013/04/basic.html)
+* [shuyo/peke-basic](https://github.com/shuyo/peke-basic)
 
 ### Ko-Window 開発基本セット Version 2.24+14
 * corlib.a::`DefGraphicPalet()`が動作しない([libcor.aのバグを見つけました](https://spyffe68k.blogspot.com/2023/09/libcora.html))。
