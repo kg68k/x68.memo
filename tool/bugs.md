@@ -124,6 +124,8 @@
   * /Dスイッチを指定すれば回避できる。
     ([@kamadox/1979132819411734627](https://x.com/kamadox/status/1979132819411734627))
   * [XEiJ](https://stdkmd.net/xeij/) 0.25.11.08以降に同梱の060turbo.sys 0.61に対策コードが追加されている。
+* 組み込み時の常駐チェックでバスエラーが発生することがある。
+* _X_KPCHK.O [disk9scver](https://github.com/kg68k/disk9scver)
 
 
 ## 音源ドライバ
