@@ -48,6 +48,11 @@ MOTOROLA M68000 FALMILY Programmer's Reference Manual REV.1
   >「10 ― Long operation i/r field」とあるが、「i/r field」は改行して小見出しになっているのが正しい。  
   >紙版は問題ない。
 
+* https://x.com/kg68k/status/2100221103734215075
+  >p2-20 Table 2-4.  
+  >Long (xxx).L 111 001  
+  >が正しい(末尾の0→1)。
+
 # MC68030UM.pdf
 MC68030 ENHANCED 32-BIT MICROPROCESSOR USER'S MANUAL Therd Edition
 
