@@ -144,6 +144,9 @@
 ### Z-MUSIC Version 3.02C
 * [Z-MUSIC Version 3.02C KNOWNBUGS.md](https://github.com/kg68k/zmusic3/blob/main/KNOWNBUGS.md)
 
+### ZVT version 2.09 patchlevel 1
+* `-A`オプションの16ビットPCMからADPCMへの変換機能が正しく動作しない(エンバグ)。
+
 ### OPMDRV3.X version 1.11
 * ファンクションコールの不具合は[ぷにぐらま～ずまにゅある](https://github.com/kg68k/puni)のopmdrv.txtに記載あり。
 * カレントディレクトリにMIDIBEというファイルが存在すると、OPMDRV3.Xが登録済みと誤認されて常駐できない。
