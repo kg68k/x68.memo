@@ -111,7 +111,8 @@ MOTOROLA M68000 FALMILY Programmer's Reference Manual REV.1
     >手元にある紙の本だと$32は10⁰になってるので、PDF化の時に100に化けた？
 
 * p.6-6 情報源:井崎さんの正誤表
-  >cpRESTORE 命令の EA の表 (右側)、cpRESTORE に即値は指定出来ません。 
+  >cpRESTORE 命令の EA の表 (右側)、cpRESTORE に即値は指定出来ません。
+  * 誤:`#<data> 111 100` 正:`#<data> ― ―`
 
 * p.6-12 情報源:M68000PRMER.pdf
   >In the FRESTORE instruction summary, the description for the BUSY state frame should begin
