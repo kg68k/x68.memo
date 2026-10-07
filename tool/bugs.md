@@ -309,6 +309,16 @@
 
 
 ----
+# Oh!X 令和版
+
+* https://dev.zuiki.com/project-z/community/post/detail/1957 より:
+  * 謹賀新年PRO-68KのDISK1をXVI以降の機種で起動するとANK文字が化ける。IOCS.Xを更新するかHIOCS.Xに差し替えると直る。
+  * 謹賀新年PRO-68KのDISK3がDISK2の内容になっている。
+  * 黄金週間PRO-68KのDISK2～4がDISK1の内容になっている。
+  * disks_list.txtが間違った内容のままになっている
+
+
+----
 # 他機種用ソフトウェア
 
 ### DiskExplorer Version 1.69 (editdisk.exe)
