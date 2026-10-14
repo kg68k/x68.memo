@@ -55,12 +55,33 @@ MOTOROLA M68000 FALMILY Programmer's Reference Manual REV.1
   >BFEXTUとBFFFO、公式リファレンスだと定数ビットが丸かぶりしてるんだけど、もしかしたらリファレンスがミスってるかも。
   * `BFFFO`は`%1110_1101_11mm_mrrr ($edc0)`が正しい。
 
+* p.4-92 DIVS, DIVSL Assembler Syntaxの1行目 https://x.com/kg68k/status/2110378217395847657
+  >誤　DIVS.W <ea>,Dn32/16 → 16r – 16q  
+  >正　DIVS.W <ea>,Dn　　　32/16 → 16r – 16q
+
 * [XEiJ &gt; MC68060.java](https://stdkmd.net/xeij/source/MC68060.htm)
   * ノンブル4-93(PDF p.197) DIVS.W、アドレッシングモード「data alterable」(データ可変)は「data」(データ)が正しい。
   * ノンブル4-93(PDF p.198) DIVS.LとDIVSL.L、アドレッシングモード「data alterable」(データ可変)は「data」(データ)が正しい。
   * ノンブル4-97(PDF p.201) DIVU.W、NOTEのオーバーフロー条件「16-bit signed integer」は「16-bit unsigned integer」が正しい。
   * ノンブル5-105(PDF p.407) FREM、INEX2の「Cleared」は「Refer to inexact result in the appropriate user’s manual.」
     (結果に誤差があるときセット、それ以外はクリア)が正しい。
+
+* p.4-96 DIVU, DIVUL Assembler Syntaxの1行目 https://x.com/kg68k/status/2110378596388995566
+  >誤　DIVU.W <ea>,Dn32/16 → 16r – 16q  
+  >正　DIVU.W <ea>,Dn　　　32/16 → 16r – 16q
+
+* p.4-105 EXG Assembler Syntaxの2行目 https://x.com/kg68k/status/2110379636672839984
+  >誤　EXG Ax,Ay EXG Dx,Ay  
+  >正　EXG Ax,Ay  
+  >　　EXG Dx,Ay
+
+* p.4-106 EXT, EXTB Assembler Syntax https://x.com/kg68k/status/2110380496371040616
+  >誤　EXT.W Dnextend byte ...  
+  >　　EXT.L Dnextend word ...  
+  >　　EXTB.L Dnextend byte ...  
+  >正　EXT.W Dn　 extend byte ...  
+  >　　EXT.L Dn　　extend word ...  
+  >　　EXTB.L Dn　 extend byte ...
 
 * p.4-114 (LSL, LSR) https://x.com/kg68k/status/2082893933512929658
   >「10 ― Long operation i/r field」とあるが、「i/r field」は改行して小見出しになっているのが正しい。  
