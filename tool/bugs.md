@@ -309,6 +309,14 @@
 
 
 ----
+# 市販アプリ
+
+### FIXER ver.4
+* 辞書ファイルのサイズが1024KBを超えると超過部分が変換に使われなくなる。
+  ([@kani7/2114684944010371419](https://x.com/kani7/status/2114684944010371419))
+
+
+----
 # Oh!X 令和版
 
 * https://dev.zuiki.com/project-z/community/post/detail/1957 より:
