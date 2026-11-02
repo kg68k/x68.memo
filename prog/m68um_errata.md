@@ -158,9 +158,24 @@ MOTOROLA M68000 FALMILY Programmer's Reference Manual REV.1
   * p.6-26 https://x.com/kg68k/status/1954852631735615696
     >最後の段落に2か所ある OinstructionO は、紙の書籍(M68000PM/AD REV.1、MOTOROLA、1992年)を確認したところ “instruction” でした。
 
-* p.6-66 PTEST 情報源:井崎さんの正誤表
+* p.6-66 PTEST (MC68030 only) 情報源:井崎さんの正誤表
   >Instruction Format の第2ワード中、 REGISTER/FC の境界が1ビットずれている。
   * 井崎さんの図を参照。bit 7-5(3ビット)がREGISTER、bit 5-0(5ビット)がFC。紙版は問題ない。
+
+* p.6-73 PTEST (MC68851) https://x.com/kg68k/status/2117376668654616634
+  >Descriptionの3.と4.にそれぞれある $‌0D$7 は $0-$7 が正しい(throughの意)。紙版は問題ない。
+  * p.6-73 https://x.com/kg68k/status/2117380259654037944
+    >ちなみにp.6-73のAssembler Syntaxの  
+    >PTESTR FC,\<ea\>,#\<level\>,(An)  
+    >の末尾の(An)はアドレスレジスタ間接アドレッシングではなく、オペランドが省略できるという意味(PTESTWも同様)。
+    >MC68851UM/AD(1st/3rd edition)だと  
+    >PTESTR 〈function code〉,〈ea〉,#〈level〉\[,An\]  
+    >となっている。
+  * p6.75 https://x.com/kg68k/status/2117378319272591447
+    >Instruction Formatの  
+    >bit 8-6 A-REGISTER、bit 5-0 FC は  
+    >bit 8-5 A-REGISTER、bit 4-0 FC が正しい。  
+    >紙版も間違っている。p.6-77 A-Register fieldにあるように、0xxxまたは1RRRを入れるため4ビットの割り当て。
 
 * p.A-4 情報源:井崎さんの正誤表
   >Table A-1 中ほどの FSGLDIV、FSGLMUL の 68040 の欄が「<sup>2,3</sup>」 (ソフトウェアサポートの意) になっていますが、
