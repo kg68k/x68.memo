@@ -53,7 +53,7 @@ MOTOROLA M68000 FALMILY Programmer's Reference Manual REV.1
 
 * p.4-43 https://zenn.dev/link/comments/3374282d808748
   >BFEXTUとBFFFO、公式リファレンスだと定数ビットが丸かぶりしてるんだけど、もしかしたらリファレンスがミスってるかも。
-  * `BFFFO`は`%1110_1101_11mm_mrrr ($edc0)`が正しい。
+  * `BFFFO`は`%1110_1101_11mm_mrrr ($edc0)`が正しい。紙版は問題ない。
 
 * p.4-92 DIVS, DIVSL Assembler Syntaxの1行目 https://x.com/kg68k/status/2110378217395847657
   >誤　DIVS.W <ea>,Dn32/16 → 16r – 16q  
@@ -157,6 +157,10 @@ MOTOROLA M68000 FALMILY Programmer's Reference Manual REV.1
   >address spaces (SFC/DFC = $6 or $2) into data references (SFC/DFC = $5 or $1). 
   * p.6-26 https://x.com/kg68k/status/1954852631735615696
     >最後の段落に2か所ある OinstructionO は、紙の書籍(M68000PM/AD REV.1、MOTOROLA、1992年)を確認したところ “instruction” でした。
+
+* p.6-66 PTEST 情報源:井崎さんの正誤表
+  >Instruction Format の第2ワード中、 REGISTER/FC の境界が1ビットずれている。
+  * 井崎さんの図を参照。bit 7-5(3ビット)がREGISTER、bit 5-0(5ビット)がFC。紙版は問題ない。
 
 * p.A-4 情報源:井崎さんの正誤表
   >Table A-1 中ほどの FSGLDIV、FSGLMUL の 68040 の欄が「<sup>2,3</sup>」 (ソフトウェアサポートの意) になっていますが、
