@@ -171,7 +171,7 @@ MOTOROLA M68000 FALMILY Programmer's Reference Manual REV.1
     >MC68851UM/AD(1st/3rd edition)だと  
     >PTESTR 〈function code〉,〈ea〉,#〈level〉\[,An\]  
     >となっている。
-  * p6.75 https://x.com/kg68k/status/2117378319272591447
+  * p.6-75 https://x.com/kg68k/status/2117378319272591447
     >Instruction Formatの  
     >bit 8-6 A-REGISTER、bit 5-0 FC は  
     >bit 8-5 A-REGISTER、bit 4-0 FC が正しい。  
