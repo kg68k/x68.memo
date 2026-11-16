@@ -59,16 +59,16 @@ MOTOROLA M68000 FALMILY Programmer's Reference Manual REV.1
   >誤　DIVS.W <ea>,Dn32/16 → 16r – 16q  
   >正　DIVS.W <ea>,Dn　　　32/16 → 16r – 16q
 
-* [XEiJ &gt; MC68060.java](https://stdkmd.net/xeij/source/MC68060.htm)
-  * ノンブル4-93(PDF p.197) DIVS.W、アドレッシングモード「data alterable」(データ可変)は「data」(データ)が正しい。
-  * ノンブル4-93(PDF p.198) DIVS.LとDIVSL.L、アドレッシングモード「data alterable」(データ可変)は「data」(データ)が正しい。
-  * ノンブル4-97(PDF p.201) DIVU.W、NOTEのオーバーフロー条件「16-bit signed integer」は「16-bit unsigned integer」が正しい。
-  * ノンブル5-105(PDF p.407) FREM、INEX2の「Cleared」は「Refer to inexact result in the appropriate user’s manual.」
-    (結果に誤差があるときセット、それ以外はクリア)が正しい。
+* p.4-93 (PDF p.197) DIVS DIVSL 情報源:[XEiJ &gt; MC68060.java](https://stdkmd.net/xeij/source/MC68060.htm)
+  * DIVS.W、アドレッシングモード「data alterable」(データ可変)は「data」(データ)が正しい。
+  * DIVS.LとDIVSL.L、アドレッシングモード「data alterable」(データ可変)は「data」(データ)が正しい。
 
 * p.4-96 DIVU, DIVUL Assembler Syntaxの1行目 https://x.com/kg68k/status/2110378596388995566
   >誤　DIVU.W <ea>,Dn32/16 → 16r – 16q  
   >正　DIVU.W <ea>,Dn　　　32/16 → 16r – 16q
+
+* p.4-97 (PDF p.201) DIVU 情報源:[XEiJ &gt; MC68060.java](https://stdkmd.net/xeij/source/MC68060.htm)
+  * DIVU.W、NOTEのオーバーフロー条件「16-bit signed integer」は「16-bit unsigned integer」が正しい。
 
 * p.4-105 EXG Assembler Syntaxの2行目 https://x.com/kg68k/status/2110379636672839984
   >誤　EXG Ax,Ay EXG Dx,Ay  
@@ -92,11 +92,20 @@ MOTOROLA M68000 FALMILY Programmer's Reference Manual REV.1
   >>&#x37;. MOVE16 (ax)+,(ay)+ is functionally the same as MOVE16 (ax),(ay)+ when ax = ay. The address register is
   >>only incremented once, and the line is copied over itself rather than to the next line.
 
+* p.5-18 FATAN 情報源:井崎さんの正誤表
+  * Instruction Formatの2ワード目のbit 6-0 誤:0001100 正:0001010。紙版は問題ない。
+
 * p.5-20 情報源:井崎さんの正誤表
   >FATANH 命令の Description: の中、  
   >誤：and the result is equal to -infinity or +infinity if the source is equal to +1 or -1,  
   >正：and the result is equal to -infinity or +infinity if the source is equal to -1 or +1,  
   >のような気がします。
+
+* p.5-26 FCMP 情報源:井崎さんの正誤表
+  * Instruction Formatの2ワード目のbit 6-0 誤:0001100 正:0111000。紙版は問題ない。
+
+* p.5-32 FCOSH 情報源:井崎さんの正誤表
+  * Instruction Formatの2ワード目のbit 6-0 誤:0011101 正:0011001。紙版は問題ない。
 
 * p.5-35 情報源:M68000PRMER.pdf
   >In the Instruction Fields section of the FDBcc instruction summary, the displacement field
@@ -108,6 +117,12 @@ MOTOROLA M68000 FALMILY Programmer's Reference Manual REV.1
   >FLOGNP1 の Operation Table の NOTES: 2 の2行目  
   >誤?：exception byte and returns a NAN. …  
   >とありますが、返すのは NAN ではなく -infinity だと思います。 
+
+* p.5-41 FETOX 情報源:井崎さんの正誤表
+  * Instruction Formatの2ワード目のbit 6-0 誤:0001100 正:0010000。紙版は問題ない。
+
+* p.5-44 FETOXM1 情報源:井崎さんの正誤表
+  * Instruction Formatの2ワード目のbit 6-0 誤:0001100 正:0001000。紙版は問題ない。
 
 * p.5-71 情報源:M68000PRMER.pdf
   >In the Instruction Format figure of the FMOD instruction summary, bits 6:0 of the second word
@@ -130,6 +145,13 @@ MOTOROLA M68000 FALMILY Programmer's Reference Manual REV.1
   * p.5-84 https://x.com/kg68k/status/1364232300452483072
     >×1n ○ln、×100 ○10⁰ が知られている図。$32から10のn乗が続いてる。
     >手元にある紙の本だと$32は10⁰になってるので、PDF化の時に100に化けた？
+
+* p.5-105 (PDF p.407) FREM 情報源:[XEiJ &gt; MC68060.java](https://stdkmd.net/xeij/source/MC68060.htm)
+  * FREM、INEX2の「Cleared」は「Refer to inexact result in the appropriate user’s manual.」
+    (結果に誤差があるときセット、それ以外はクリア)が正しい。
+
+* p5-107 FSCALE 情報源:井崎さんの正誤表
+  * Operationの乗数 誤:INT(2Source) 正:INT(2<sup>Source</sup>)。冪乗なので上付き。紙版は問題ない。
 
 * p.6-6 情報源:井崎さんの正誤表
   >cpRESTORE 命令の EA の表 (右側)、cpRESTORE に即値は指定出来ません。
