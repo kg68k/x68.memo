@@ -51,9 +51,49 @@ MOTOROLA M68000 FALMILY Programmer's Reference Manual REV.1
   >表 3-23 の IEEE Aware Tests のうち以下の3つの式が違うようです。
   >また IEEE Nonaware Tests、Miscellaneous Tests の欄にもオーバーライン抜けがあるような気がしますが調べてません。
 
+* p.4-5 ADDのEffective Address field
+  >誤:(bd,PC,Xn)† 正:(bd,PC,Xn)**
+
+* p.4-12 ADDQのEffective Address field
+  >誤:(bd,PC,Xn)† 正:(bd,PC,Xn)**
+
+* p.4-28 BCHG (BIT NUMBER DYNAMIC)のEffective Address field
+  >誤:(bd,PC,Xn)† 正:(bd,PC,Xn)**
+
+* p.4-29 BCHG (BIT NUMBER STATIC)のEffective Address field https://x.com/kg68k/status/2122704521784934605
+  >誤:  
+  >| (bd,PC,Xn)† | — | (bd,An,Xn)** |  
+  >| ([bd,PC,Xn],od) | — | ([bd,An,Xn],od) |  
+  >| ([bd,PC],Xn,od) | — | ([bd,An],Xn,od) |  
+  >正:  
+  >| (bd,PC,Xn)** | — | — |  
+  >| ([bd,PC,Xn],od) | — | — |  
+  >| ([bd,PC],Xn,od) | — | — |
+
+* p.4-31 BCLR (BIT NUMBER DYNAMIC)のEffective Address field
+  >誤:(bd,PC,Xn)† 正:(bd,PC,Xn)**
+
+* p.4-32 BCLR (BIT NUMBER STATIC)のEffective Address field
+  >誤:(bd,PC,Xn)† 正:(bd,PC,Xn)**
+
 * p.4-43 https://zenn.dev/link/comments/3374282d808748
   >BFEXTUとBFFFO、公式リファレンスだと定数ビットが丸かぶりしてるんだけど、もしかしたらリファレンスがミスってるかも。
   * `BFFFO`は`%1110_1101_11mm_mrrr ($edc0)`が正しい。紙版は問題ない。
+
+* p.4-57 BSET (BIT NUMBER DYNAMIC)のEffective Address field
+  >誤:(bd,PC,Xn)† 正:(bd,PC,Xn)**
+
+* p.4-58 BSET (BIT NUMBER STATIC)のEffective Address field
+  >誤:(bd,PC,Xn)† 正:(bd,PC,Xn)**
+
+* p.4-62 BTST (BIT NUMBER DYNAMIC)のEffective Address field
+  >誤:(bd,PC,Xn)† 正:(bd,PC,Xn)**
+
+* p.4-76 CMPのEffective Address field
+  >誤:(bd,PC,Xn)† 正:(bd,PC,Xn)**
+
+* p.4-80 CMPIのEffective Address field
+  >誤:(bd,PC,Xn)† 正:(bd,PC,Xn)**
 
 * p.4-92 DIVS, DIVSL Assembler Syntaxの1行目 https://x.com/kg68k/status/2110378217395847657
   >誤　DIVS.W <ea>,Dn32/16 → 16r – 16q  
