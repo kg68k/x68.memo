@@ -51,16 +51,16 @@ MOTOROLA M68000 FALMILY Programmer's Reference Manual REV.1
   >表 3-23 の IEEE Aware Tests のうち以下の3つの式が違うようです。
   >また IEEE Nonaware Tests、Miscellaneous Tests の欄にもオーバーライン抜けがあるような気がしますが調べてません。
 
-* p.4-5 ADDのEffective Address field
+* p.4-5 ADDのEffective Address field。紙版は問題ない。
   >誤:(bd,PC,Xn)† 正:(bd,PC,Xn)**
 
-* p.4-12 ADDQのEffective Address field
+* p.4-12 ADDQのEffective Address field。紙版は問題ない。
   >誤:(bd,PC,Xn)† 正:(bd,PC,Xn)**
 
-* p.4-28 BCHG (BIT NUMBER DYNAMIC)のEffective Address field
+* p.4-28 BCHG (BIT NUMBER DYNAMIC)のEffective Address field。紙版は問題ない。
   >誤:(bd,PC,Xn)† 正:(bd,PC,Xn)**
 
-* p.4-29 BCHG (BIT NUMBER STATIC)のEffective Address field https://x.com/kg68k/status/2122704521784934605
+* p.4-29 BCHG (BIT NUMBER STATIC)のEffective Address field。紙版は問題ない。 https://x.com/kg68k/status/2122704521784934605
   >誤:  
   >| (bd,PC,Xn)† | — | (bd,An,Xn)** |  
   >| ([bd,PC,Xn],od) | — | ([bd,An,Xn],od) |  
@@ -70,32 +70,32 @@ MOTOROLA M68000 FALMILY Programmer's Reference Manual REV.1
   >| ([bd,PC,Xn],od) | — | — |  
   >| ([bd,PC],Xn,od) | — | — |
 
-* p.4-31 BCLR (BIT NUMBER DYNAMIC)のEffective Address field
+* p.4-31 BCLR (BIT NUMBER DYNAMIC)のEffective Address field。紙版は問題ない。
   >誤:(bd,PC,Xn)† 正:(bd,PC,Xn)**
 
-* p.4-32 BCLR (BIT NUMBER STATIC)のEffective Address field
+* p.4-32 BCLR (BIT NUMBER STATIC)のEffective Address field。紙版は問題ない。
   >誤:(bd,PC,Xn)† 正:(bd,PC,Xn)**
 
 * p.4-43 https://zenn.dev/link/comments/3374282d808748
   >BFEXTUとBFFFO、公式リファレンスだと定数ビットが丸かぶりしてるんだけど、もしかしたらリファレンスがミスってるかも。
   * `BFFFO`は`%1110_1101_11mm_mrrr ($edc0)`が正しい。紙版は問題ない。
 
-* p.4-57 BSET (BIT NUMBER DYNAMIC)のEffective Address field
+* p.4-57 BSET (BIT NUMBER DYNAMIC)のEffective Address field。紙版は問題ない。
   >誤:(bd,PC,Xn)† 正:(bd,PC,Xn)**
 
-* p.4-58 BSET (BIT NUMBER STATIC)のEffective Address field
+* p.4-58 BSET (BIT NUMBER STATIC)のEffective Address field。紙版は問題ない。
   >誤:(bd,PC,Xn)† 正:(bd,PC,Xn)**
 
-* p.4-62 BTST (BIT NUMBER DYNAMIC)のEffective Address field
+* p.4-62 BTST (BIT NUMBER DYNAMIC)のEffective Address field。紙版は問題ない。
   >誤:(bd,PC,Xn)† 正:(bd,PC,Xn)**
 
-* p.4-76 CMPのEffective Address field
+* p.4-76 CMPのEffective Address field。紙版は問題ない。
   >誤:(bd,PC,Xn)† 正:(bd,PC,Xn)**
 
-* p.4-80 CMPIのEffective Address field
+* p.4-80 CMPIのEffective Address field。紙版は問題ない。
   >誤:(bd,PC,Xn)† 正:(bd,PC,Xn)**
 
-* p.4-92 DIVS, DIVSL Assembler Syntaxの1行目 https://x.com/kg68k/status/2110378217395847657
+* p.4-92 DIVS, DIVSL Assembler Syntaxの1行目。紙版は問題ない。 https://x.com/kg68k/status/2110378217395847657
   >誤　DIVS.W <ea>,Dn32/16 → 16r – 16q  
   >正　DIVS.W <ea>,Dn　　　32/16 → 16r – 16q
 
@@ -103,19 +103,19 @@ MOTOROLA M68000 FALMILY Programmer's Reference Manual REV.1
   * DIVS.W、アドレッシングモード「data alterable」(データ可変)は「data」(データ)が正しい。
   * DIVS.LとDIVSL.L、アドレッシングモード「data alterable」(データ可変)は「data」(データ)が正しい。
 
-* p.4-96 DIVU, DIVUL Assembler Syntaxの1行目 https://x.com/kg68k/status/2110378596388995566
+* p.4-96 DIVU, DIVUL Assembler Syntaxの1行目。紙版は問題ない。 https://x.com/kg68k/status/2110378596388995566
   >誤　DIVU.W <ea>,Dn32/16 → 16r – 16q  
   >正　DIVU.W <ea>,Dn　　　32/16 → 16r – 16q
 
 * p.4-97 (PDF p.201) DIVU 情報源:[XEiJ &gt; MC68060.java](https://stdkmd.net/xeij/source/MC68060.htm)
   * DIVU.W、NOTEのオーバーフロー条件「16-bit signed integer」は「16-bit unsigned integer」が正しい。
 
-* p.4-105 EXG Assembler Syntaxの2行目 https://x.com/kg68k/status/2110379636672839984
+* p.4-105 EXG Assembler Syntaxの2行目。紙版は問題ない。 https://x.com/kg68k/status/2110379636672839984
   >誤　EXG Ax,Ay EXG Dx,Ay  
   >正　EXG Ax,Ay  
   >　　EXG Dx,Ay
 
-* p.4-106 EXT, EXTB Assembler Syntax https://x.com/kg68k/status/2110380496371040616
+* p.4-106 EXT, EXTB Assembler Syntax。紙版は問題ない。 https://x.com/kg68k/status/2110380496371040616
   >誤　EXT.W Dnextend byte ...  
   >　　EXT.L Dnextend word ...  
   >　　EXTB.L Dnextend byte ...  
