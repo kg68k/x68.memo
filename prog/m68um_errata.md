@@ -92,6 +92,13 @@ MOTOROLA M68000 FALMILY Programmer's Reference Manual REV.1
   >>&#x37;. MOVE16 (ax)+,(ay)+ is functionally the same as MOVE16 (ax),(ay)+ when ax = ay. The address register is
   >>only incremented once, and the line is copied over itself rather than to the next line.
 
+* p.5-8 FACOSのOperation Table。紙版は問題ない。 https://x.com/kg68k/status/2122440282994299374
+  >誤:SOURCE 正:SOURCE¹  
+  >誤:NAN 正:NAN²
+
+* p.5-11 FADDのOperation Table。紙版は問題ない。 https://x.com/kg68k/status/2122440282994299374
+  >誤:NAN‡ 正:NAN³
+
 * p.5-18 FATAN 情報源:井崎さんの正誤表
   * Instruction Formatの2ワード目のbit 6-0 誤:0001100 正:0001010。紙版は問題ない。
 
@@ -113,16 +120,24 @@ MOTOROLA M68000 FALMILY Programmer's Reference Manual REV.1
   >four) to the destination in bytes.”
   * 井崎さんの正誤表に補足あり。
 
-* p.5-67 情報源:井崎さんの正誤表
-  >FLOGNP1 の Operation Table の NOTES: 2 の2行目  
-  >誤?：exception byte and returns a NAN. …  
-  >とありますが、返すのは NAN ではなく -infinity だと思います。 
+* p.5-36 FDIVのOperation Table。紙版は問題ない。 https://x.com/kg68k/status/2122440282994299374
+  >誤:NAN‡ 正:NAN³
 
 * p.5-41 FETOX 情報源:井崎さんの正誤表
   * Instruction Formatの2ワード目のbit 6-0 誤:0001100 正:0010000。紙版は問題ない。
 
 * p.5-44 FETOXM1 情報源:井崎さんの正誤表
   * Instruction Formatの2ワード目のbit 6-0 誤:0001100 正:0001000。紙版は問題ない。
+
+* p.5-52 FINTのOperation Table。紙版は問題ない。 https://x.com/kg68k/status/2122440282994299374
+  >誤:+inf-inf 正:+inf　　-inf
+
+* p.5-67 FLOGNP1のOperation Table
+  * 紙版は問題ない。 https://x.com/kg68k/status/2122440282994299374
+    >誤:NAN²3 正:NAN³
+  * NOTES: 2 の2行目。情報源:井崎さんの正誤表
+    >誤?：exception byte and returns a NAN. …  
+    >とありますが、返すのは NAN ではなく -infinity だと思います。 
 
 * p.5-71 情報源:M68000PRMER.pdf
   >In the Instruction Format figure of the FMOD instruction summary, bits 6:0 of the second word
@@ -133,18 +148,22 @@ MOTOROLA M68000 FALMILY Programmer's Reference Manual REV.1
   >• The COPROCESSOR ID field should be located in bits 9-11
   >• Bit 12 has a fixed value of 1
 
-* p.5-84 情報源:井崎さんの正誤表
-  >定数表の写植か OCR のミスのようです。  
-  >誤：	$30     1n(2)  
-  >$31     1n(10)  
-  >$32     100  
-  >正：	$30     ln(2)  
-  >$31     ln(10)  
-  >$32     10<sup>0</sup>  
-  >要するに $30 は loge(2)、 $31 は loge(10)、 $32 は 1 ということです。 
-  * p.5-84 https://x.com/kg68k/status/1364232300452483072
+* p.5-84 FMOVECRの定数表
+  * 情報源:井崎さんの正誤表
+    >定数表の写植か OCR のミスのようです。  
+    >誤：	$30     1n(2)  
+    >$31     1n(10)  
+    >$32     100  
+    >正：	$30     ln(2)  
+    >$31     ln(10)  
+    >$32     10<sup>0</sup>  
+    >要するに $30 は loge(2)、 $31 は loge(10)、 $32 は 1 ということです。 
+  * https://x.com/kg68k/status/1364232300452483072
     >×1n ○ln、×100 ○10⁰ が知られている図。$32から10のn乗が続いてる。
     >手元にある紙の本だと$32は10⁰になってるので、PDF化の時に100に化けた？
+
+* p.5-104 FREMのOperation Table。紙版は問題ない。 https://x.com/kg68k/status/2122445513215852617
+  >誤:NAN†² 正:NAN²
 
 * p.5-105 (PDF p.407) FREM 情報源:[XEiJ &gt; MC68060.java](https://stdkmd.net/xeij/source/MC68060.htm)
   * FREM、INEX2の「Cleared」は「Refer to inexact result in the appropriate user’s manual.」
@@ -152,6 +171,11 @@ MOTOROLA M68000 FALMILY Programmer's Reference Manual REV.1
 
 * p5-107 FSCALE 情報源:井崎さんの正誤表
   * Operationの乗数 誤:INT(2Source) 正:INT(2<sup>Source</sup>)。冪乗なので上付き。紙版は問題ない。
+
+* p.5-132 FSUBのOperation Table
+  * 2か所。紙版は問題ない。 https://x.com/kg68k/status/2122445513215852617
+    >誤:NAN² 正:NAN³
+  * 右下セルの右上 誤:-inf 正:+inf。+inf-(-inf)なので+infになる。情報源:井崎さんの正誤表
 
 * p.6-6 情報源:井崎さんの正誤表
   >cpRESTORE 命令の EA の表 (右側)、cpRESTORE に即値は指定出来ません。
