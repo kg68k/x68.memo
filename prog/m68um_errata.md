@@ -89,6 +89,14 @@ MOTOROLA M68000 FALMILY Programmer's Reference Manual REV.1
 * p.4-62 BTST (BIT NUMBER DYNAMIC)のEffective Address field。紙版は問題ない。
   >誤:(bd,PC,Xn)† 正:(bd,PC,Xn)**
 
+* p.4-63 BTST (BIT NUMBER STATIC)のEffective Address field。。紙版は問題ない。 https://x.com/kg68k/status/2123439359697596433
+  >誤:Dn 正:Dn*  
+  >誤:(bd,An,Xn) 正:(bd,An,Xn)**  
+  >誤:(bd,PC,Xn)* 正:(bd,PC,Xn)**  
+  >誤:*Can be used with CPU32.  
+  >正:*Long only; all others are byte only.  
+  >　 **Can be used with CPU32.
+
 * p.4-76 CMPのEffective Address field。紙版は問題ない。
   >誤:(bd,PC,Xn)† 正:(bd,PC,Xn)**
 
@@ -132,12 +140,18 @@ MOTOROLA M68000 FALMILY Programmer's Reference Manual REV.1
   >>&#x37;. MOVE16 (ax)+,(ay)+ is functionally the same as MOVE16 (ax),(ay)+ when ax = ay. The address register is
   >>only incremented once, and the line is copied over itself rather than to the next line.
 
+* p.5-6 FABS 情報源:井崎さんの正誤表
+  * Effective address field 誤:Dn 正:Dn*。紙版は問題ない。
+
 * p.5-8 FACOSのOperation Table。紙版は問題ない。 https://x.com/kg68k/status/2122440282994299374
   >誤:SOURCE 正:SOURCE¹  
   >誤:NAN 正:NAN²
 
 * p.5-11 FADDのOperation Table。紙版は問題ない。 https://x.com/kg68k/status/2122440282994299374
   >誤:NAN‡ 正:NAN³
+
+* p.5-13 FADD 情報源:井崎さんの正誤表
+  * Effective address field 誤:Dn 正:Dn*。紙版は問題ない。
 
 * p.5-18 FATAN 情報源:井崎さんの正誤表
   * Instruction Formatの2ワード目のbit 6-0 誤:0001100 正:0001010。紙版は問題ない。
@@ -182,6 +196,9 @@ MOTOROLA M68000 FALMILY Programmer's Reference Manual REV.1
 * p.5-71 情報源:M68000PRMER.pdf
   >In the Instruction Format figure of the FMOD instruction summary, bits 6:0 of the second word
   >should be 0100001 (matching the figure on page 8-33), not 0101101.
+
+* p.5-72 FMODのEffective address field。紙版は問題ない。 https://x.com/kg68k/status/2123439359697596433
+  >誤:Dn 正:Dn*
 
 * p.5-78 情報源:M68000PRMER.pdf
   >In the Instruction Format figure of the FMOVE instruction summary:
