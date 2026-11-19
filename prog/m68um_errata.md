@@ -205,6 +205,14 @@ MOTOROLA M68000 FALMILY Programmer's Reference Manual REV.1
   >• The COPROCESSOR ID field should be located in bits 9-11
   >• Bit 12 has a fixed value of 1
 
+* p.5-81 FMOVE (Move Floating-Point System Control Register) https://x.com/kg68k/status/2123446055635480950
+  >EA field (Memory-to-Register)  
+  >　誤:*Only if the source ...  
+  >　正:*Only if the destination ...  
+  >紙版のみ EA field (Register-to-Memory)  
+  >　誤:*Only if the destination ...  
+  >　正:*Only if the source ...
+
 * p.5-84 FMOVECRの定数表
   * 情報源:井崎さんの正誤表
     >定数表の写植か OCR のミスのようです。  
