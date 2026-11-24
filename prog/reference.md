@@ -152,7 +152,7 @@ Oh!X連載の単行本化。グラフィックを描画するルーチンを自�
 # その他
 
 * STUDIO KAMADA &gt; [文字コード表](https://stdkmd.net/charcode/)
-
+* [X68000 OR X680x0 OR X68030 - 国立国会図書館デジタルコレクション](https://dl.ndl.go.jp/search/searchResult?accessRestrictions=ooc&accessRestrictions=internet&collection=A00001&collection=A00002&fullText=true&title=X68000+OR+X680x0+OR+X68030)
 
 
 ----
